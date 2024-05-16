@@ -166,8 +166,6 @@ const PopularItemsNearby = ({ title, subTitle }) => {
   return (
     <HomeComponentsWrapper>
       {popularItemsNearby && popularItemsNearby?.products?.length > 0 && (
-        <>
-        <h1>Hello</h1>
           <CustomStackFullWidth
             alignItems="center"
             justyfyContent="center"
@@ -244,7 +242,6 @@ const PopularItemsNearby = ({ title, subTitle }) => {
               </Grid>
             </CustomBoxFullWidth>
           </CustomStackFullWidth>
-        </>
       )}
     </HomeComponentsWrapper>
   );
