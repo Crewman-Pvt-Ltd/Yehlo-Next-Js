@@ -90,7 +90,7 @@ const PopularItemsNearby = ({ title, subTitle }) => {
       {
         breakpoint: 320,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           // slidesPerRow: 1,
           rows: 1,
           slidesToScroll: 1,
@@ -99,7 +99,7 @@ const PopularItemsNearby = ({ title, subTitle }) => {
       {
         breakpoint: 375,
         settings: {
-          slidesToShow: 1.1,
+          slidesToShow: 2,
           // slidesPerRow: 1,
           rows: 1,
           slidesToScroll: 1,
@@ -108,7 +108,7 @@ const PopularItemsNearby = ({ title, subTitle }) => {
       {
         breakpoint: 450,
         settings: {
-          slidesToShow: 1.2,
+          slidesToShow: 2,
           // slidesPerRow: 1,
           rows: 1,
           slidesToScroll: 1,
@@ -117,7 +117,7 @@ const PopularItemsNearby = ({ title, subTitle }) => {
       {
         breakpoint: 750,
         settings: {
-          slidesToShow: 1.5,
+          slidesToShow:2,
           // slidesPerRow: 2,
           rows: 1,
           slidesToScroll: 1,
@@ -126,7 +126,7 @@ const PopularItemsNearby = ({ title, subTitle }) => {
       {
         breakpoint: 830,
         settings: {
-          slidesToShow: 1.55,
+          slidesToShow: 4,
           // slidesPerRow: 1,
           rows: 1,
           slidesToScroll: 1,
@@ -135,7 +135,7 @@ const PopularItemsNearby = ({ title, subTitle }) => {
       {
         breakpoint: 900,
         settings: {
-          slidesToShow: 1.75,
+          slidesToShow: 5,
           // slidesPerRow: 1,
           rows: 1,
           slidesToScroll: 1,
@@ -144,7 +144,7 @@ const PopularItemsNearby = ({ title, subTitle }) => {
       {
         breakpoint: 1150,
         settings: {
-          slidesToShow: 1.8,
+          slidesToShow: 5,
           // slidesPerRow: 1,
           rows: 1,
           slidesToScroll: 1,
