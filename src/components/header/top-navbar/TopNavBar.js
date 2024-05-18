@@ -59,7 +59,7 @@ const TopNavBar = () => {
                       />
                     )}
                   </CustomStackForLoaction>
-                  <Stack
+                  {/* <Stack
                     direction="row"
                     spacing={2}
                     justifyContent="end"
@@ -71,7 +71,7 @@ const TopNavBar = () => {
                       countryCode={countryCode}
                       language={language}
                     />
-                  </Stack>
+                  </Stack> */}
                 </Stack>
               </Box>
               {!location && (
