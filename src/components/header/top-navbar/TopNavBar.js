@@ -30,7 +30,7 @@ const TopNavBar = () => {
       <NoSsr>
         <Box
           sx={{
-            width: "110%",
+            width: "100%",
             background: (theme) => theme.palette.neutral[100],
             // animation: `fadeIn 0.3s ease-in-out`,
           }}
