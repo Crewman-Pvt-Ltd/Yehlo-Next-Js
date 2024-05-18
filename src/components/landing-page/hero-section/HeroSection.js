@@ -54,7 +54,6 @@ const HeroSection = ({ configData, landingPageData, handleOrderNow }) => {
 
   return (
     <>
-    <h1>Hello World</h1>
     <CustomContainer>
       <CustomBoxFullWidth
         sx={{
