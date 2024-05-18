@@ -31,24 +31,24 @@ const background = {
 const divider = "#E6E8F0";
 
 const primary = {
-	main: "#039D55",
-	deep: "#288258",
-	light: "#EBFDF2",
+	main: "#010d75",
+	deep: "#010d75",
+	light: "#010d75",
 	dark: "#1c6641",
 	semiLight: "#E4FFF3",
 	contrastText: "#FFFFFF",
-	customType1: "#0DCB72",
+	customType1: "#010d75",
 	customType2: "#3BB77E",
 	customType3: "#29CE00",
 	overLay: "#000000",
 	lite: "rgba(3, 157, 85, 0.1)",
-	icon: "#039D55",
+	icon: "#010d75",
 };
 const moduleTheme = {
-	pharmacy: "#039D55",
-	ecommerce: "#039D55",
-	food: "#039D55",
-	parcel: "#039D55",
+	pharmacy: "#010d75",
+	ecommerce: "#010d75",
+	food: "#010d75",
+	parcel: "#010d75",
 };
 const horizontalCardBG = "#E4FFF3";
 

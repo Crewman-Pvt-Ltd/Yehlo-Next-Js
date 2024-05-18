@@ -64,7 +64,7 @@ const GridItem = ({
               sx={{
                 mb: "1rem",
                 cursor: "pointer",
-                fontSize: "0.75rem",
+                fontSize: "0.80rem",
                 color: (theme) => theme.palette.neutral[500],
                 transition: "all ease 0.5s",
                 "&:hover": {

@@ -1128,7 +1128,7 @@ const ProductCard = (props) => {
                 alt={item?.title}
                 height="100%"
                 width="100%"
-                objectfit="cover"
+                objectfit="contain"
                 borderRadius="3px"
               />
               {item?.module?.module_type === "food" && (

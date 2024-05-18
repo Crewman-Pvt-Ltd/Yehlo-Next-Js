@@ -54,7 +54,7 @@ const HeroSection = ({ configData, landingPageData, handleOrderNow }) => {
 
   return (
     <>
-    <CustomContainer>
+   <CustomContainer>
       <CustomBoxFullWidth
         sx={{
           backgroundColor: (theme) => alpha(theme.palette.primary.main, 0.2),

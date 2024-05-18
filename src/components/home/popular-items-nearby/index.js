@@ -91,8 +91,8 @@ const PopularItemsNearby = ({ title, subTitle }) => {
         breakpoint: 320,
         settings: {
           slidesToShow: 1,
-          slidesPerRow: 1,
-          rows: 2,
+          // slidesPerRow: 1,
+          rows: 1,
           slidesToScroll: 1,
         },
       },
@@ -100,8 +100,8 @@ const PopularItemsNearby = ({ title, subTitle }) => {
         breakpoint: 375,
         settings: {
           slidesToShow: 1.1,
-          slidesPerRow: 1,
-          rows: 2,
+          // slidesPerRow: 1,
+          rows: 1,
           slidesToScroll: 1,
         },
       },
@@ -109,8 +109,8 @@ const PopularItemsNearby = ({ title, subTitle }) => {
         breakpoint: 450,
         settings: {
           slidesToShow: 1.2,
-          slidesPerRow: 1,
-          rows: 2,
+          // slidesPerRow: 1,
+          rows: 1,
           slidesToScroll: 1,
         },
       },
@@ -118,8 +118,8 @@ const PopularItemsNearby = ({ title, subTitle }) => {
         breakpoint: 750,
         settings: {
           slidesToShow: 1.5,
-          slidesPerRow: 2,
-          rows: 2,
+          // slidesPerRow: 2,
+          rows: 1,
           slidesToScroll: 1,
         },
       },
@@ -127,8 +127,8 @@ const PopularItemsNearby = ({ title, subTitle }) => {
         breakpoint: 830,
         settings: {
           slidesToShow: 1.55,
-          slidesPerRow: 1,
-          rows: 2,
+          // slidesPerRow: 1,
+          rows: 1,
           slidesToScroll: 1,
         },
       },
@@ -136,8 +136,8 @@ const PopularItemsNearby = ({ title, subTitle }) => {
         breakpoint: 900,
         settings: {
           slidesToShow: 1.75,
-          slidesPerRow: 1,
-          rows: 2,
+          // slidesPerRow: 1,
+          rows: 1,
           slidesToScroll: 1,
         },
       },
@@ -145,17 +145,17 @@ const PopularItemsNearby = ({ title, subTitle }) => {
         breakpoint: 1150,
         settings: {
           slidesToShow: 1.8,
-          slidesPerRow: 1,
-          rows: 3,
+          // slidesPerRow: 1,
+          rows: 1,
           slidesToScroll: 1,
         },
       },
       {
         breakpoint: 1300,
         settings: {
-          slidesToShow: flashSaleslength() ? 2 : 2.5,
-          slidesPerRow: 1,
-          rows: 3,
+          slidesToShow: 5,
+         
+          rows: 1,
           slidesToScroll: 1,
         },
       },
@@ -166,6 +166,7 @@ const PopularItemsNearby = ({ title, subTitle }) => {
   return (
     <HomeComponentsWrapper>
       {popularItemsNearby && popularItemsNearby?.products?.length > 0 && (
+        <>
           <CustomStackFullWidth
             alignItems="center"
             justyfyContent="center"
@@ -217,8 +218,8 @@ const PopularItemsNearby = ({ title, subTitle }) => {
                             <ProductCard
                               key={index}
                               item={item}
-                              cardheight="160px"
-                              horizontalcard="true"
+                              cardheight="300px"
+                              horizontalcard="false"
                               cardFor="popular items"
                             />
                           );
