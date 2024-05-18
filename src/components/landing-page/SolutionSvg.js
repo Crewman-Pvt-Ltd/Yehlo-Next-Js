@@ -314,4 +314,5 @@ SolutionSvg.propTypes = {
     
 };
 
+
 export default SolutionSvg;
