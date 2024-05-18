@@ -221,12 +221,12 @@ const Sidebar = (props) => {
               {state.categories?.length > 0 &&
                 state.categories?.map((item, index) => {
                   return (
-                    <CheckboxWithChild
-                      key={index}
-                      item={item}
-                      checkHandler={categoriesCheckBoxHandler}
-                      selectedItems={selectedCategories}
-                    />
+                      <CheckboxWithChild
+                        key={index}
+                        item={item}
+                        checkHandler={categoriesCheckBoxHandler}
+                        selectedItems={selectedCategories}
+                      />
                   );
                 })}
             </Scrollbar>
@@ -276,7 +276,7 @@ const Sidebar = (props) => {
               alignItems="center"
               spacing={2}
               pt=".5rem"
-              //flexWrap='wrap'
+            //flexWrap='wrap'
             >
               <TextField
                 sx={{

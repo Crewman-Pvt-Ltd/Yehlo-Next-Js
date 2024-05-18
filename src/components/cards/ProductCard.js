@@ -625,6 +625,7 @@ const ProductCard = (props) => {
         )}
         <PrimaryToolTip text={item?.name} placement="bottom" arrow="false">
           <Typography
+            className={classes.singleLineEllipsis}
             variant={horizontalcard === "true" ? "subtitle2" : "h6"}
             marginBottom="4px"
             sx={{
@@ -633,7 +634,6 @@ const ProductCard = (props) => {
               color: (theme) => theme.palette.text.custom,
               fontSize: { xs: "13px", sm: "inherit" },
               overflow: "hidden",
-              textOverflow: "ellipsis",
               display: "-webkit-box",
               WebkitLineClamp: "2",
               WebkitBoxOrient: "vertical",
@@ -644,7 +644,6 @@ const ProductCard = (props) => {
                 width: "146px",
               },
             }}
-            className="name"
           >
             {item?.name}
           </Typography>
