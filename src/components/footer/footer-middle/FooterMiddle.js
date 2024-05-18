@@ -118,7 +118,7 @@ const FooterMiddle = (props) => {
                     {isSmall && <FooterBottomItems handleClickToRoute={handleClickToRoute} configData={configData} />}
                   </CustomStackFullWidth>
                 </Grid>
-                <Grid
+                {/* <Grid
                   item
                   xs={12}
                   sm={6}
@@ -179,7 +179,7 @@ const FooterMiddle = (props) => {
                       href={false}
                     />
                   </Box>
-                </Grid>
+                </Grid> */}
               </Grid>
             </Box>
           </Box>

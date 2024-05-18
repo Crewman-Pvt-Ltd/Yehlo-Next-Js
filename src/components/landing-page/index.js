@@ -96,9 +96,9 @@ const LandingPage = ({ configData, landingPageData }) => {
             landingPageData={landingPageData}
           />
         )}
-        {landingPageData?.testimonial_list?.length > 0 && (
+        {/* {landingPageData?.testimonial_list?.length > 0 && (
           <Testimonials landingPageData={landingPageData} isSmall={isSmall} />
-        )}
+        )} */}
         {open && (
           <MapModal
             open={open}

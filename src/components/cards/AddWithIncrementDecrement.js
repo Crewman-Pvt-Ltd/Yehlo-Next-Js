@@ -1,7 +1,7 @@
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
-import { alpha, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { alpha, Button, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Box, Stack } from "@mui/system";
 import React, { useState } from "react";
@@ -273,8 +273,8 @@ const AddWithIncrementDecrement = (props) => {
               </Stack>
             ) : (
               <PrimaryToolTip text="Add to cart">
-                <Stack
-                  onMouseEnter={handleMouseEnter}
+                <Stack  
+                  // onMouseEnter={handleMouseEnter}
                   onClick={(e) => handleCart(e)}
                   alignItems="center"
                   justifyContent="center"
@@ -291,8 +291,8 @@ const AddWithIncrementDecrement = (props) => {
                         : getCurrentModuleType() === ModuleTypes.FOOD
                         ? theme.palette.moduleTheme.food
                         : "primary.main",
-                    height: { xs: "25px", md: "35px" },
-                    width: { xs: "25px", md: "35px" },
+                    height: { xs: "30px", md: "40px" },
+                    width: { xs: "60%", md: "60%" },
                     borderRadius: "5px",
                     transition: "all ease 0.5s",
                     border: (theme) =>
@@ -307,7 +307,7 @@ const AddWithIncrementDecrement = (props) => {
                     // },
                   }}
                 >
-                  <ShoppingBagIcon fontSize="small" />
+                  Add to Cart
                 </Stack>
               </PrimaryToolTip>
             )}
