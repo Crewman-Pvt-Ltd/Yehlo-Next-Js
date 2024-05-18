@@ -243,7 +243,6 @@ const PopularItemsNearby = ({ title, subTitle }) => {
               </Grid>
             </CustomBoxFullWidth>
           </CustomStackFullWidth>
-        </>
       )}
     </HomeComponentsWrapper>
   );
