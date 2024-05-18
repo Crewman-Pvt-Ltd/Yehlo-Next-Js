@@ -31,24 +31,24 @@ const background = {
 const divider = "#E6E8F0";
 
 const primary = {
-	main: "#010d75",
-	deep: "#010d75",
-	light: "#010d75",
+	main: "#101d75",
+	deep: "#101d75",
+	light: "#101d75",
 	dark: "#1c6641",
 	semiLight: "#E4FFF3",
 	contrastText: "#FFFFFF",
-	customType1: "#010d75",
+	customType1: "#101d75",
 	customType2: "#3BB77E",
 	customType3: "#29CE00",
 	overLay: "#000000",
 	lite: "rgba(3, 157, 85, 0.1)",
-	icon: "#010d75",
+	icon: "#101d75",
 };
 const moduleTheme = {
-	pharmacy: "#010d75",
-	ecommerce: "#010d75",
-	food: "#010d75",
-	parcel: "#010d75",
+	pharmacy: "#101d75",
+	ecommerce: "#101d75",
+	food: "#101d75",
+	parcel: "#101d75",
 };
 const horizontalCardBG = "#E4FFF3";
 
@@ -96,7 +96,7 @@ const error = {
 };
 
 const text = {
-	primary: "#3E594D",
+	primary: "#101d75",
 	secondary: "#93A2AE",
 	disabled: "rgba(55, 65, 81, 0.48)",
 	custom: "#3F3F3F",
@@ -109,7 +109,7 @@ const footer = {
 	bottom: "rgba(0, 98, 52, 0.3)",
 	foodBottom: "#686B78",
 	appDownloadButtonBg: "#1A1A1A",
-	appDownloadButtonBgGray: "#3E594D",
+	appDownloadButtonBgGray: "#101d75",
 	appDownloadButtonBgHover: "#4f4f4f",
 	foodFooterBg: "#414141",
 };
