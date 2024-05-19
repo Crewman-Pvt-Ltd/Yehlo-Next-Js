@@ -118,7 +118,7 @@ const FooterMiddle = (props) => {
                     {isSmall && <FooterBottomItems handleClickToRoute={handleClickToRoute} configData={configData} />}
                   </CustomStackFullWidth>
                 </Grid>
-                <Grid
+                {/* <Grid
                   item
                   xs={12}
                   sm={6}
@@ -127,8 +127,8 @@ const FooterMiddle = (props) => {
                     display: { xs: "flex", sm: "none", md: "flex" },
                     alignItems: "flex-start",
                     justifyContent: "center"
-                  }}
-                >
+                  }} */}
+                {/* >
                   <SomeInfo
                     image={ractangle}
                     alt="rantangle"
@@ -137,8 +137,8 @@ const FooterMiddle = (props) => {
                     t={t}
                     href={`mailto:${configData?.email}`}
                   />
-                </Grid>
-                <Grid
+                </Grid> */}
+                {/* <Grid
                   item
                   xs={12}
                   sm={6}
@@ -157,8 +157,8 @@ const FooterMiddle = (props) => {
                     t={t}
                     href={`tel:${configData?.phone}`}
                   />
-                </Grid>
-                <Grid
+                </Grid> */}
+                {/* <Grid
                   item
                   xs={12}
                   sm={6}
@@ -179,7 +179,7 @@ const FooterMiddle = (props) => {
                       href={false}
                     />
                   </Box>
-                </Grid>
+                </Grid> */}
               </Grid>
             </Box>
           </Box>

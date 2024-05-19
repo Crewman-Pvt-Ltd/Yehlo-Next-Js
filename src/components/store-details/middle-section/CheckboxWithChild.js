@@ -26,7 +26,7 @@ const CheckboxWithChild = (props) => {
           checkHandler={checkHandler}
           isChecked={() => isCheckedHandler(item?.id)}
         />
-        {item?.childes?.length > 0 && (
+        {/* {item?.childes?.length > 0 && (
           <>
             {open ? (
               <KeyboardArrowUpIcon
@@ -42,17 +42,17 @@ const CheckboxWithChild = (props) => {
               />
             )}
           </>
-        )}
+        )} */}
       </Stack>
       {open && (
         <>
           {item?.childes?.map((childItem, childIndex) => (
             <CustomStackFullWidth key={childIndex} sx={{ padding: "0px 16px" }}>
-              <CustomCheckbox
+              {/* <CustomCheckbox
                 item={childItem}
                 checkHandler={checkHandler}
                 isChecked={() => isCheckedHandler(childItem?.id)}
-              />
+              /> */}
             </CustomStackFullWidth>
           ))}
         </>
