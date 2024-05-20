@@ -41,7 +41,41 @@ const RouteLinks = (props) => {
   const isXsmall = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
-    <CustomStackFullWidth spacing={2} alignItems={{ xs: "start" }}>
+    <CustomStackFullWidth
+
+    sx={{
+
+      display: "flex",
+
+      flexDirection: {
+
+        xs: "column",  
+
+        sm: "row"      
+
+      },
+
+      justifyContent: "space-between",
+
+      alignItems: {
+
+        xs: "flex-start",  
+
+        sm: "center"    
+
+      },
+
+      gap: "2",
+
+      width: "100%",
+
+     
+
+    }}
+
+      alignItems={{ xs: "start" }}
+
+    >
       {RouteLinksData.map((item, index) => {
         return (
           <Typography
