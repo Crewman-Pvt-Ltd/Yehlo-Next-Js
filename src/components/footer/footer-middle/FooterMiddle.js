@@ -43,7 +43,7 @@ const FooterMiddle = (props) => {
         <Grid item xs={12} sm={6} md={4.2}>
           <CustomStackFullWidth
             // spacing={2}
-            gap="10px"
+            gap="1px"
             alignItems={{ xs: "center", sm: "flex-start" }}
             justifyContent="flex-start"
           >
@@ -63,7 +63,7 @@ const FooterMiddle = (props) => {
                 src={businessLogo}
                 alt={`${configData?.business_name}`}
                 width="auto"
-                height="50px"
+                height="40px"
                 objectfit="contain"
               />
             </Box>
@@ -90,7 +90,7 @@ const FooterMiddle = (props) => {
           <Box
             sx={{
               position: "relative",
-              height: "100%",
+              height: "auto",
               "&::before": {
                 content: '""',
                 position: "absolute",
@@ -109,6 +109,7 @@ const FooterMiddle = (props) => {
                     : alpha(theme.palette.primary.main, 0.051),
                 borderRadius: "23px",
                 position: "relative",
+                height: "auto",
               }}
             >
               <Grid container spacing={1}>
