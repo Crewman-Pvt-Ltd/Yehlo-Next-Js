@@ -310,16 +310,20 @@ const MiddleSection = (props) => {
 
   useEffect(() => {
     if (state.searchKey) {
-      if (searchData?.pages?.length > 0) {
-        searchData?.pages?.forEach((item) => {
-          handleSuccess(item);
-        });
+      if (data?.pages[0]?.open == 1) {
+        if (searchData?.pages?.length > 0) {
+          searchData?.pages?.forEach((item) => {
+            handleSuccess(item);
+          });
+        }
       }
     } else {
-      if (data?.pages?.length > 0) {
-        data?.pages?.forEach((item) => {
-          handleSuccess(item);
-        });
+      if (data?.pages[0]?.open == 1) {
+        if (data?.pages?.length > 0) {
+          data?.pages?.forEach((item) => {
+            handleSuccess(item);
+          });
+        }
       }
     }
   }, [data, searchData, state.categoryId]);
@@ -528,7 +532,7 @@ const MiddleSection = (props) => {
                       direction="row"
                       alignItems="center"
                       justifyContent="flex-end"
-                      // spacing={1}
+                    // spacing={1}
                     >
                       {!open ? (
                         <IconButton
@@ -681,7 +685,7 @@ const MiddleSection = (props) => {
                                 cardheight="365px"
                                 cardFor="vertical"
                                 cardType="vertical-type"
-                                // cardFor="popular items"
+                              // cardFor="popular items"
                               />
                             </Grid>
                           );
