@@ -21,33 +21,33 @@ const CustomPaper = styled(Paper)(({ theme }) => ({
 const CustomSettings = (props) => {
   const { configData } = props;
   const { countryCode, language } = useSelector((state) => state.configData);
-  return (
-    <CustomStackFullWidth
-      mt="2rem"
-      minHeight="80vh"
-      paddingLeft={{ xs: "10px", sm: "20px", md: "25px" }}
-      paddingRight={{ xs: "10px", sm: "20px", md: "40px" }}
-    >
-      <Grid container spacing={3} justifyContent="center" alignItems="center">
-        <Grid item xs={12} sm={6} md={4} lg={3}>
-          <CustomPaper elevation={8}>
-            <Stack alignItems="center" justifyContent="center" spacing={1}>
-              <Typography fontWeight="bold">{t("Theme Settings")}</Typography>
-              <ThemeSwitches />
-            </Stack>
-          </CustomPaper>
-        </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={3}>
-          <CustomPaper elevation={8}>
-            <Stack alignItems="center" justifyContent="center" spacing={1}>
-              <Typography fontWeight="bold">{t("Change language")}</Typography>
-              <CustomLanguage countryCode={countryCode} language={language} />
-            </Stack>
-          </CustomPaper>
-        </Grid>
-      </Grid>
-    </CustomStackFullWidth>
-  );
+  // return (
+  //   <CustomStackFullWidth
+  //     mt="2rem"
+  //     minHeight="80vh"
+  //     paddingLeft={{ xs: "10px", sm: "20px", md: "25px" }}
+  //     paddingRight={{ xs: "10px", sm: "20px", md: "40px" }}
+  //   >
+  //     <Grid container spacing={3} justifyContent="center" alignItems="center">
+  //       <Grid item xs={12} sm={6} md={4} lg={3}>
+  //         <CustomPaper elevation={8}>
+  //           <Stack alignItems="center" justifyContent="center" spacing={1}>
+  //             <Typography fontWeight="bold">{t("Theme Settings")}</Typography>
+  //             <ThemeSwitches />
+  //           </Stack>
+  //         </CustomPaper>
+  //       </Grid>
+  //       <Grid item xs={12} sm={6} md={4} lg={3}>
+  //         <CustomPaper elevation={8}>
+  //           <Stack alignItems="center" justifyContent="center" spacing={1}>
+  //             <Typography fontWeight="bold">{t("Change language")}</Typography>
+  //             <CustomLanguage countryCode={countryCode} language={language} />
+  //           </Stack>
+  //         </CustomPaper>
+  //       </Grid>
+  //     </Grid>
+  //   </CustomStackFullWidth>
+  // );
 };
 
 CustomSettings.propTypes = {};

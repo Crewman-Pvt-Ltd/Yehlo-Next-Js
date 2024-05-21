@@ -34,14 +34,14 @@ const primary = {
 	main: "#101d75",
 	deep: "#101d75",
 	light: "#101d75",
-	dark: "#1c6641",
-	semiLight: "#E4FFF3",
+	dark: "#101d75",
+	semiLight: "#bac1f7",
 	contrastText: "#FFFFFF",
 	customType1: "#101d75",
-	customType2: "#3BB77E",
-	customType3: "#29CE00",
+	customType2: "#454f99",
+	customType3: "#1c2b8c",
 	overLay: "#000000",
-	lite: "rgba(3, 157, 85, 0.1)",
+	lite: "rgba(16, 29, 117, 0.1)",
 	icon: "#101d75",
 };
 const moduleTheme = {
@@ -50,19 +50,19 @@ const moduleTheme = {
 	food: "#101d75",
 	parcel: "#101d75",
 };
-const horizontalCardBG = "#E4FFF3";
+const horizontalCardBG = "#dee2fa";
 
 const secondary = {
-	main: "#10B981",
-	light: "#3FC79A",
-	dark: "#0B815A",
+	main: "#101d75",
+	light: "#101d75",
+	dark: "#101d75",
 	contrastText: "#FFFFFF",
 };
 
 const success = {
-	main: "#14B8A6",
-	light: "#43C6B7",
-	dark: "#0E8074",
+	main: "#101d75",
+	light: "#101d75",
+	dark: "#101d75",
 	contrastText: "#FFFFFF",
 };
 
@@ -104,8 +104,8 @@ const text = {
 };
 
 const footer = {
-	inputButton: "#BBFFDF",
-	inputButtonHover: "#6dcfa6",
+	inputButton: "#bbe8ff",
+	inputButtonHover: "##6dcfa6",
 	bottom: "rgba(0, 98, 52, 0.3)",
 	foodBottom: "#686B78",
 	appDownloadButtonBg: "#1A1A1A",

@@ -385,12 +385,12 @@ const SecondNavBar = ({ configData }) => {
                   justifyContent="end"
                   alignItems="center"
                 >
-                  <ThemeSwitches />
+                  {/* <ThemeSwitches />
                   <CallToAdmin configData={configData} />
                   <CustomLanguage
                     countryCode={countryCode}
                     language={language}
-                  />
+                  /> */}
                 </Stack>
               )}
               <CustomSignInButton from={router.pathname.replace("/", "")} />
