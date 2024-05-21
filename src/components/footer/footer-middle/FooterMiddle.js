@@ -112,7 +112,7 @@ const FooterMiddle = (props) => {
               }}
             >
               <Grid container spacing={1}>
-                <Grid item xs={12} sm={6} md={3} align={isSmall && "center"}>
+                <Grid item xs={12} align={isSmall && "center"}>
                   <CustomStackFullWidth flexDirection="row" justifyContent="space-between" gap="10px">
                     <RouteLinks token={token} configData={configData} />
                     {isSmall && <FooterBottomItems handleClickToRoute={handleClickToRoute} configData={configData} />}
