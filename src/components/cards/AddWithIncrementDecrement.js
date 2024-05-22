@@ -291,8 +291,9 @@ const AddWithIncrementDecrement = (props) => {
                         : getCurrentModuleType() === ModuleTypes.FOOD
                         ? theme.palette.moduleTheme.food
                         : "primary.main",
-                    height: { xs: "30px", md: "40px" },
-                    width: { xs: "60%", md: "60%" },
+                    height: { xs: "35px", md: "40px" },
+                    fontSize: { xs: "11px"},
+                    width: { xs: "80%", md: "60%" },
                     borderRadius: "5px",
                     transition: "all ease 0.5s",
                     border: (theme) =>

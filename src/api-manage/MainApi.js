@@ -7,7 +7,7 @@ MainApi.interceptors.request.use(function (config) {
   let zoneid = undefined;
   let token = undefined;
   let language = undefined;
-  let currentLocation = undefined;
+  let currentLocation = '259, Block A, Industrial Area, Sector 62, Noida, Uttar Pradesh 201307, India';
   let software_id = 33571750;
   let hostname = process.env.NEXT_CLIENT_HOST_URL;
   let moduleid = undefined;
