@@ -8,7 +8,7 @@ import CustomImageContainer from "../../CustomImageContainer";
 
 export const CustomButton = styled(Button)(({ theme, graybackground }) => ({
 	// width: "115px",
-	height: "50px",
+	height: "40px",
 	padding: "8px 15px",
 	borderRadius: "5px",
 	cursor: "pointer",
@@ -21,7 +21,7 @@ export const CustomButton = styled(Button)(({ theme, graybackground }) => ({
 	},
 	[theme.breakpoints.down("md")]: {
 		maxWidth: "140px",
-		height: "50px",
+		height: "40px",
 	},
 }));
 const AppLinks = (props) => {
@@ -61,7 +61,7 @@ const AppLinks = (props) => {
 				<Stack alignItems="flex-start" justifyContent="center">
 					<Typography
 						sx={{
-							fontSize: { xs: "8px", sm: "10px", md:"12px" },
+							fontSize: { xs: "8px", sm: "10px", md:"10px" },
 							color: theme.palette.whiteContainer.main,
 						}}
 					>
@@ -70,7 +70,7 @@ const AppLinks = (props) => {
 					<Typography
 						sx={{
 							fontWeight: 700,
-							fontSize: { xs: "10px", sm: "13px",md:"15px" },
+							fontSize: { xs: "10px", sm: "13px",md:"10px" },
 						}}
 						color={theme.palette.whiteContainer.main}
 					>
@@ -104,7 +104,7 @@ const AppLinks = (props) => {
 				<Stack alignItems="flex-start" justifyContent="center">
 					<Typography
 						sx={{
-							fontSize: { xs: "8px", sm: "10px", md:"12px" },
+							fontSize: { xs: "8px", sm: "10px", md:"10px" },
 							color: theme.palette.whiteContainer.main,
 						}}
 					>
@@ -113,7 +113,7 @@ const AppLinks = (props) => {
 					<Typography
 						sx={{
 							fontWeight: 700,
-							fontSize: { xs: "10px", sm: "13px",md:"15px" },
+							fontSize: { xs: "10px", sm: "13px",md:"10px" },
 						}}
 						color={theme.palette.whiteContainer.main}
 					>

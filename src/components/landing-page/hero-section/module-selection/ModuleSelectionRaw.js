@@ -19,8 +19,8 @@ import { settings } from "./sliderSettings";
 const CardWrapper = styled(Stack)(({ theme, bg_change }) => ({
 	backgroundColor: theme.palette.background.paper,
 	color: "inherit",
-	minWidth: "163px",
-	minHeight: "80px",
+	minWidth: "100px",
+	minHeight: "100px",
 	padding: "12px",
 	border: `1px solid ${alpha(theme.palette.neutral[400], 0.2)}`,
 	borderRadius: "10px",
@@ -37,8 +37,8 @@ const CardWrapper = styled(Stack)(({ theme, bg_change }) => ({
 	},
 }));
 const ImageWrapper = styled(Box)(({ theme }) => ({
-	width: "33px",
-	height: "33px",
+	width: "50px",
+	height: "50px",
 	position: "relative",
 }));
 const Card = ({ item, configData, isSelected, handleClick }) => {
@@ -48,7 +48,20 @@ const Card = ({ item, configData, isSelected, handleClick }) => {
 		<CardWrapper
 			onClick={() => handleClick(item)}
 			bg_change={isSelected === item?.module_type ? "true" : "false"}
+			textAlign="center"
+			alignItems="center"
 		>
+			<ImageWrapper>
+		<CustomImageContainer
+			src={`${configData?.base_urls?.module_image_url}/${item?.icon}`}
+			alt={item?.module_name}
+			height="100%"
+			width="100%"
+			obejctfit="contained"
+			borderRadius="5px"
+			
+		/>
+	</ImageWrapper>
 			<Typography
 				sx={{
 					cursor: "pointer",
@@ -58,7 +71,7 @@ const Card = ({ item, configData, isSelected, handleClick }) => {
 				{item?.module_name}
 			</Typography>
 			<CustomStackFullWidth
-				direction="row"
+				direction="column"
 				alignItems="center"
 				spacing={1}
 				justifyContent={item?.module_type !== "parcel" ? "space-between" : "flex-end"}
@@ -69,11 +82,13 @@ const Card = ({ item, configData, isSelected, handleClick }) => {
 					},
 				}}
 			>
+				
+				
 				{item?.module_type !== "parcel" && (
 					<Stack>
-						<Typography variant="body2" color="text.secondary" className="text">
+						{/* <Typography variant="body2" color="text.secondary" className="text">
 							{t("Over")}
-						</Typography>
+						</Typography> */}
 						{item?.module_type === "ecommerce" ? (
 							<Typography variant="body2" color="text.secondary" className="text">
 								{item?.items_count > 2
@@ -92,16 +107,6 @@ const Card = ({ item, configData, isSelected, handleClick }) => {
 						)}
 					</Stack>
 				)}
-				<ImageWrapper>
-					<CustomImageContainer
-						src={`${configData?.base_urls?.module_image_url}/${item?.icon}`}
-						alt={item?.module_name}
-						height="100%"
-						width="100%"
-						obejctfit="contained"
-						borderRadius="5px"
-					/>
-				</ImageWrapper>
 			</CustomStackFullWidth>
 		</CardWrapper>
 	);
@@ -121,50 +126,28 @@ const ModuleSelectionRaw = (props) => {
 	};
 
 	return (
-		<>
-			{isSmall ? (
-				<CustomBoxFullWidth sx={{ mt: "15px" }}>
-					<SliderCustom>
-						<Slider {...settings}>
-							{modules?.length > 0 &&
-								modules.map((item, index) => {
-									return (
-										<Card
-											key={index}
-											item={item}
-											configData={configData}
-											isSelected={isSelected}
-											handleClick={handleClick}
-										/>
-									);
-								})}
-						</Slider>
-					</SliderCustom>
-				</CustomBoxFullWidth>
-			) : (
-				<CustomStackFullWidth
-					flexDirection="row"
-					alignItems="center"
-					flexWrap="wrap"
-					gap="15px"
-					mt="30px"
-				>
-					{modules?.length > 0 &&
-						modules.map((item, index) => {
-							return (
-								<Card
-									key={index}
-									item={item}
-									configData={configData}
-									isSelected={isSelected}
-									handleClick={handleClick}
-								/>
-							);
-						})}
-				</CustomStackFullWidth>
-			)}
-		</>
-	);
+		<CustomStackFullWidth
+		  flexDirection="row"
+		  alignItems="center"
+		  flexWrap="wrap"
+		  gap="15px"
+		  mt="30px"
+		>
+		  {modules?.length > 0 &&
+			modules.map((item, index) => {
+			  return (
+				<Card
+				  key={index}
+				  item={item}
+				  configData={configData}
+				  isSelected={isSelected}
+				  handleClick={handleClick}
+				/>
+			  );
+			})}
+		</CustomStackFullWidth>
+	  );
+	  
 };
 
 ModuleSelectionRaw.propTypes = {};

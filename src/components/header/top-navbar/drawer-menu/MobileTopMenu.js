@@ -154,7 +154,7 @@ const MobileTopMenu = ({
                   />
                 </>
               )}
-              <ListItemButton
+              {/* <ListItemButton
                 sx={{ color: (theme) => theme.palette.primary.main }}
               >
                 <ListItemText>{t("Theme Mode")}</ListItemText>
@@ -169,7 +169,7 @@ const MobileTopMenu = ({
                   language={language}
                   noText
                 />
-              </ListItemButton>
+              </ListItemButton> */}
               {/*{token && (*/}
               {/*  <>*/}
               {/*    {router.pathname === "/" && (*/}

@@ -88,14 +88,14 @@ const LandingPage = ({ configData, landingPageData }) => {
             isSmall={isSmall}
           />
         )}
-        {(landingPageData?.business_title ||
+        {/* {(landingPageData?.business_title ||
           landingPageData?.business_sub_title ||
           landingPageData?.business_image) && (
           <AppDownloadSection
             configData={configData}
             landingPageData={landingPageData}
           />
-        )}
+        )} */}
         {/* {landingPageData?.testimonial_list?.length > 0 && (
           <Testimonials landingPageData={landingPageData} isSmall={isSmall} />
         )} */}
