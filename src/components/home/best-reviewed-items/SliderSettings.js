@@ -98,17 +98,18 @@ export const NextFood = ({
         isdisabled={className?.includes("slick-disabled")}
       >
         {getLanguage() === "rtl" ? (
-          <ChevronLeftIcon
-            sx={{
-              fontSize: "30px",
-              color: (theme) => theme.palette.neutral[600],
-            }}
-          />
+         <ChevronLeftIcon
+         sx={{
+           fontSize: "30px",
+           color: "white", 
+         }}
+       />
+       
         ) : (
           <ChevronRightIcon
             sx={{
               fontSize: "30px",
-              color: (theme) => theme.palette.neutral[600],
+              color: "white", 
             }}
           />
         )}
@@ -143,14 +144,14 @@ export const PrevFood = ({
           <ChevronRightIcon
             sx={{
               fontSize: "30px",
-              color: (theme) => theme.palette.neutral[600],
+              color: "white",
             }}
           />
         ) : (
           <ChevronLeftIcon
             sx={{
               fontSize: "30px",
-              color: (theme) => theme.palette.neutral[600],
+              color: "white",
             }}
           />
         )}

@@ -182,31 +182,54 @@ const StoreCard = (props) => {
         </CustomOverLay>
       </ImageWrapper>
 
-      <CustomBoxFullWidth>
-        <Grid container>
-          <Grid item xs={9.5}>
-            <PrimaryToolTip text={item?.name} placement="bottom" arrow="false">
-              <Typography
-                className={classes.singleLineEllipsis}
-                fontSize={{ xs: "12px", md: "14px" }}
-                fontWeight="500"
-              >
-                {item?.name}
-              </Typography>
-            </PrimaryToolTip>
-            {/*<H4 text={item?.name} />*/}
-          </Grid>
-          <Grid item xs={2.5}>
-            <CustomRatingBox rating={item?.avg_rating} />
-          </Grid>
-          <Grid item xs={12} sx={{ mt: "10px" }}>
-            <Body2 text={item?.address} />
-          </Grid>
-          <Grid item xs={12} sx={{ mt: "7px" }}>
-            <Body2 text={timeAndDeliveryTypeHandler(item)} />
-          </Grid>
-        </Grid>
-      </CustomBoxFullWidth>
+      <CustomBoxFullWidth sx={{ display: { xs: "none", sm: "block" } }}>
+    <Grid container>
+      <Grid item xs={9.5}>
+        <PrimaryToolTip text={item?.name} placement="bottom" arrow={false}>
+          <Typography
+            className={classes.singleLineEllipsis}
+            fontSize={{ xs: "12px", md: "14px" }}
+            fontWeight="500"
+          >
+            {item?.name}
+          </Typography>
+        </PrimaryToolTip>
+      </Grid>
+      <Grid item xs={2.5}>
+        <CustomRatingBox rating={item?.avg_rating} />
+      </Grid>
+      <Grid item xs={12} sx={{ mt: "10px" }}>
+        <Body2 text={item?.address} />
+      </Grid>
+      <Grid item xs={12} sx={{ mt: "7px" }}>
+        <Body2 text={timeAndDeliveryTypeHandler(item)} />
+      </Grid>
+    </Grid>
+  </CustomBoxFullWidth>
+
+  {/* Mobile Layout */}
+  <CustomBoxFullWidth sx={{ display: { xs: "block", sm: "none" } }}>
+    <Grid container alignItems="center">
+      <Grid item xs={9.5}>
+        <PrimaryToolTip text={item?.name} placement="bottom" arrow={false}>
+          <Typography
+            className={classes.singleLineEllipsis}
+            fontSize={{ xs: "12px", md: "14px" }}
+            fontWeight="500"
+          >
+            {item?.name}
+          </Typography>
+        </PrimaryToolTip>
+      </Grid>
+      <Grid item xs={12} sm={6} md={7} sx={{ mt: "10px" }}>
+        <Body2 text={item?.address} />
+      </Grid>
+      <Grid item xs={12} sm={6} md={5} sx={{ mt: "7px", display: "flex", justifyContent: "space-between" }}>
+        <Body2 text={timeAndDeliveryTypeHandler(item)} />
+        <CustomRatingBox rating={item?.avg_rating} />
+      </Grid>
+    </Grid>
+  </CustomBoxFullWidth>
     </Wrapper>
   );
 };

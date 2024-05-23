@@ -56,7 +56,7 @@ const SmallerScreen = (props) => {
 						<CustomImageContainer
 							src={`${landingPageData?.base_urls?.business_image_url}/${landingPageData?.business_image}`}
 							objectFit="cover"
-							height="auto"
+							height="180px"
 							width="100%"
 						/>
 					</ImageWrapper>
