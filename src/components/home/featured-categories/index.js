@@ -6,7 +6,7 @@ import {
   SliderCustom,
 } from "styled-components/CustomStyles.style";
 
-import { styled } from "@mui/material";
+import { Grid, styled } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import Slider from "react-slick";
 import { useGetFeaturedCategories } from "api-manage/hooks/react-query/all-category/all-categorys";
@@ -72,19 +72,21 @@ const FeaturedCategories = ({ configData }) => {
               },
             }}
           >
-            <Slider {...settings} ref={slider}>
+            <Grid container columnSpacing={{xs: 3, md: 1}} rowSpacing={{xs: 3, md: 1}}>
               {[...featuredCategories].reverse().map((item, index) => {
                 return (
-                  <FeaturedItemCard
-                    key={index}
-                    image={`${configData?.base_urls?.category_image_url}/${item?.image}`}
-                    title={item?.name}
-                    id={item?.id}
-                    slug={item?.slug}
-                  />
+                  <Grid item xs={3} md={2}>
+                    <FeaturedItemCard
+                      key={index}
+                      image={`${configData?.base_urls?.category_image_url}/${item?.image}`}
+                      title={item?.name}
+                      id={item?.id}
+                      slug={item?.slug}
+                    />
+                  </Grid>
                 );
               })}
-            </Slider>
+            </Grid>
           </CustomBoxFullWidth>
         );
       case ModuleTypes.PHARMACY:

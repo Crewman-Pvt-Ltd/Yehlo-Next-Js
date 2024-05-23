@@ -464,7 +464,7 @@ export const CustomImageContainerStyled = styled(Box)(
     "& img": {
       width: "100%",
       height: "100%",
-      objectFit: objectfit ? objectfit : "cover",
+      objectFit: objectfit ? objectfit : "contain",
       borderRadius: border_radius,
       aspectRatio: aspect_ratio ? aspect_ratio : "",
     },

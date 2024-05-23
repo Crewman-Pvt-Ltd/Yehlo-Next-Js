@@ -97,8 +97,8 @@ const FeaturedItemCard = (props) => {
             sx={{
               padding: ".5rem",
               cursor: "pointer",
-              height: { xs: "130px", md: "155px" },
-              width: { xs: "100px", md: "124px" },
+              height: { xs: "120px", md: "155px" },
+              width: { xs: "80px", md: "200px" },
               backgroundColor: (theme) => theme.palette.background.paper,
               // padding: ".5rem",
               border: (theme) =>
@@ -130,7 +130,7 @@ const FeaturedItemCard = (props) => {
                 alt={title}
                 height="100%"
                 width="100%"
-                objectFit="cover"
+                objectFit="contain"
               />
             </Stack>
             <Tooltip
