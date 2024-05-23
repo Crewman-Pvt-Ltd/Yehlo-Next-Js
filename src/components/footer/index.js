@@ -36,7 +36,7 @@ const FooterComponent = (props) => {
           justifyContent="space-between"
           spacing={2}
         >
-          <CustomContainer>
+          <CustomContainer maxwidth="100%" backgroundcolor="rgba(68,42,125,0.17)">
             <CustomStackFullWidth spacing={3}>
               <FooterMiddle
                 configData={configData}
