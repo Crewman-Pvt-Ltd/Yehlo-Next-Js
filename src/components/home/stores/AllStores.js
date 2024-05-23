@@ -79,7 +79,7 @@ const AllStores = (props) => {
         {storeData?.length > 0 &&
           storeData?.map((item, index) => {
             return (
-              <Grid key={index} item xs={12} sm={6} md={3}>
+              <Grid key={index} item xs={6} sm={6} md={3}>
                 <StoreCard
                   item={item}
                   imageUrl={`${configData?.base_urls?.store_cover_photo_url}/${item?.cover_photo}`}
