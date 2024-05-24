@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { CustomStackFullWidth } from "../../../styled-components/CustomStyles.style";
 
 import {
+  Grid,
   alpha,
   Stack,
   Typography,
@@ -17,7 +18,7 @@ import CustomImageContainer from "../../CustomImageContainer";
 import DollarSignHighlighter from "../../DollarSignHighlighter";
 import down_arrow from "../assets/downarrow.png";
 import HeroLocationForm from "./HeroLocationForm";
-import ModuleSelectionRaw from "./module-selection/ModuleSelectionRaw";
+// import ModuleSelectionRaw from "./module-selection/ModuleSelectionRaw";
 import DownArrow from "../assets/DownArrow";
 import { RTL } from "components/rtl";
 import DownArrowRTL from "../assets/DownArrowRTL";
@@ -45,58 +46,70 @@ const HeroTitleSection = ({ configData, landingPageData, handleOrderNow }) => {
     }
   };
   return (
-    <CustomStackFullWidth>
-      <CustomStackFullWidth spacing={0.4}>
-        <Stack
-          direction="row"
-          alignItems="center"
-          justifyContent="flex-start"
-          spacing={0.5}
-          flexWrap="wrap"
-        >
+    <>
+      <CustomStackFullWidth>
+        <CustomStackFullWidth spacing={0.4}>
+          <Stack
+            direction="row"
+            alignItems="center"
+            justifyContent="flex-start"
+            spacing={0.5}
+            flexWrap="wrap"
+          >
+            <Typography
+              sx={{
+                color: (theme) => theme.palette.primary.main,
+                fontSize: isXSmall ? "20px" : "54px",
+                lineHeight: isXSmall ? "24px" : "58px",
+                fontWeight: "bold",
+              }}
+            >
+              <DollarSignHighlighter
+                theme={theme}
+                text={landingPageData?.header_title}
+              />
+            </Typography>
+          </Stack>
           <Typography
-            sx={{
-              color: (theme) => theme.palette.primary.main,
-              fontSize: isXSmall ? "20px" : "54px",
-              lineHeight: isXSmall ? "24px" : "58px",
-              fontWeight: "bold",
-            }}
+            color={alpha(theme.palette.neutral[700], 0.8)}
+            fontSize={isXSmall ? "16px" : "35px"}
+            lineHeight={isXSmall ? "22px" : "58px"}
+            fontWeight="400"
           >
             <DollarSignHighlighter
               theme={theme}
-              text={landingPageData?.header_title}
+              text={landingPageData?.header_sub_title}
             />
           </Typography>
-        </Stack>
-        <Typography
-          color={alpha(theme.palette.neutral[700], 0.8)}
-          fontSize={isXSmall ? "16px" : "35px"}
-          lineHeight={isXSmall ? "22px" : "58px"}
-          fontWeight="400"
+        </CustomStackFullWidth>
+        <CustomStackFullWidth
+          flexDirection="row"
+          spacing={2}
+          justifyContent="space-between"
+          mt="14px"
+          sx={{ position: "relative" }}
         >
-          <DollarSignHighlighter
-            theme={theme}
-            text={landingPageData?.header_sub_title}
-          />
-        </Typography>
+          <Typography
+            sx={{
+              fontSize: { xs: "12px", md: "20px" },
+              color: (theme) => alpha(theme.palette.neutral[500], 0.5),
+            }}
+            fontWeight="400"
+          >
+            <DollarSignHighlighter
+              theme={theme}
+              text={landingPageData?.header_tag_line}
+            />
+          </Typography>
+          {!getCurrentModuleType() && !isXSmall && (
+            <Stack sx={{}}>
+              {lanDirection === "rtl" ? <DownArrowRTL /> : <DownArrow />}
+            </Stack>
+          )}
+        </CustomStackFullWidth>
       </CustomStackFullWidth>
-      <CustomStackFullWidth flexDirection="row" spacing={2} justifyContent="space-between" mt="14px" sx={{ position: "relative" }}>
-        <Typography
-          sx={{
-            fontSize: { xs: "12px", md: "20px" },
-            color: (theme) => alpha(theme.palette.neutral[500], 0.5),
-          }}
-          fontWeight="400"
-        >
-          <DollarSignHighlighter
-            theme={theme}
-            text={landingPageData?.header_tag_line}
-          />
-        </Typography>
-        {(!getCurrentModuleType() && !isXSmall) && (<Stack sx={{}}>{lanDirection === "rtl" ? <DownArrowRTL /> : <DownArrow />}</Stack>)}
-      </CustomStackFullWidth>
-      {!isXSmall && getSearchOrModulesBySelectedModules()}
-    </CustomStackFullWidth>
+      {/* <Grid container>{!isXSmall && getSearchOrModulesBySelectedModules()}</Grid> */}
+    </>
   );
 };
 

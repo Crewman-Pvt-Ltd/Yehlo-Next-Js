@@ -14,6 +14,7 @@ import {
   CustomStackFullWidth,
 } from "../../../styled-components/CustomStyles.style";
 import CustomImageContainer from "../../CustomImageContainer";
+import ModuleSelectionRaw from "./module-selection/ModuleSelectionRaw";
 import CustomContainer from "../../container";
 import iconicBg from "../assets/hero_background.png";
 import HeroLocationForm from "./HeroLocationForm";
@@ -50,44 +51,61 @@ const HeroSection = ({ configData, landingPageData, handleOrderNow }) => {
         md: "5rem",
       };
     }
-  }
+  };
+
+  const getSearchOrModulesBySelectedModules = () => {
+    if (currentLocation) {
+      return <ModuleSelectionRaw />;
+    } else {
+      return (
+        <CustomStackFullWidth mt="15px">
+          <HeroLocationForm />
+        </CustomStackFullWidth>
+      );
+    }
+  };
 
   return (
     <>
-   <CustomContainer>
-      <CustomBoxFullWidth
-        sx={{
-          backgroundColor: (theme) => alpha(theme.palette.primary.main, 0.2),
-          marginTop: calculateTopMagin(),
-          borderRadius: "20px",
-          position: "relative",
-          overflow: "hidden",
-          ".shape img": {
-            transition: "all ease-in 1s",
-          },
-        }}
-      >
-        <Box sx={{ position: "absolute" }} className="shape">
-          <CustomImageContainer
-            src={iconicBg.src}
-            alt={t("Background")}
-            height="100%"
-            width="100%"
-            borderRadius="20px"
-            objectFit="cover"
-          />
-        </Box>
-        <Grid container>
-          <Grid item xs={8} md={7} sx={{ padding: { xs: "1rem", sm: "2rem", md: "3rem" } }}>
-            <NoSsr>
-              <HeroTitleSection
-                configData={configData}
-                landingPageData={landingPageData}
-                handleOrderNow={handleOrderNow}
-              />
-            </NoSsr>
-          </Grid>
-          <Grid item xs={4} md={5} align="right">
+      <CustomContainer>
+        <CustomBoxFullWidth
+          sx={{
+            backgroundColor: (theme) => alpha(theme.palette.primary.main, 0.2),
+            marginTop: calculateTopMagin(),
+            borderRadius: "20px",
+            position: "relative",
+            overflow: "hidden",
+            ".shape img": {
+              transition: "all ease-in 1s",
+            },
+          }}
+        >
+          <Box sx={{ position: "absolute" }} className="shape">
+            <CustomImageContainer
+              src={iconicBg.src}
+              alt={t("Background")}
+              height="100%"
+              width="100%"
+              borderRadius="20px"
+              objectFit="cover"
+            />
+          </Box>
+          <Grid container>
+            <Grid
+              item
+              xs={8}
+              md={7}
+              sx={{ padding: { xs: "1rem", sm: "2rem", md: "3rem" } }}
+            >
+              <NoSsr>
+                <HeroTitleSection
+                  configData={configData}
+                  landingPageData={landingPageData}
+                  handleOrderNow={handleOrderNow}
+                />
+              </NoSsr>
+            </Grid>
+            {/* <Grid item xs={4} md={5} align="right">
             <CustomStackFullWidth height="100%"
               alignItems="flex-start"
               justifyContent="flex-end" paddingTop={{ xs: "2rem", md: "3rem" }} >
@@ -132,21 +150,24 @@ const HeroSection = ({ configData, landingPageData, handleOrderNow }) => {
                 />
               </Box>
             </CustomStackFullWidth>
+          </Grid> */}
           </Grid>
+        </CustomBoxFullWidth>
+        <Grid container>
+          {!isXSmall && getSearchOrModulesBySelectedModules()}
         </Grid>
-      </CustomBoxFullWidth>
-      {isXSmall && (
-        <>
-          {currentLocation ? (
-            <DynamicModuleSelection isSmall />
-          ) : (
-            <CustomStackFullWidth mt="10px">
-              <HeroLocationForm />
-            </CustomStackFullWidth>
-          )}
-        </>
-      )}
-    </CustomContainer>
+        {isXSmall && (
+          <>
+            {currentLocation ? (
+              <DynamicModuleSelection isSmall />
+            ) : (
+              <CustomStackFullWidth mt="10px">
+                <HeroLocationForm />
+              </CustomStackFullWidth>
+            )}
+          </>
+        )}
+      </CustomContainer>
     </>
   );
 };
