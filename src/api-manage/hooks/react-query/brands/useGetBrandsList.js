@@ -14,6 +14,6 @@ export default function useGetBrandsList(handleSuccess) {
 	return useQuery("get-brandlists", () => getData(), {
 		enabled: false,
 		onSuccess: handleSuccess,
-		onError: onSingleErrorResponse,
+		// onError: onSingleErrorResponse,
 	});
 }

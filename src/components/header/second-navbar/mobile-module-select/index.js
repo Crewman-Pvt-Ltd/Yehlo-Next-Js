@@ -17,7 +17,7 @@ const MobileModuleSelection = () => {
   const dispatch = useDispatch();
   const handleCloseModuleModal = (item) => {
     if (item) {
-      toast.success(t("A module has been selected."));
+      // toast.success(t("A module has been selected."));
       dispatch(setSelectedModule(item));
     }
     setOpenModuleSelection(false);

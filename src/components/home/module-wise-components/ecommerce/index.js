@@ -1,5 +1,5 @@
 import { Grid } from "@mui/material";
-import Brands from "components/home/brands";
+// import Brands from "components/home/brands";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import useGetOtherBanners from "../../../../api-manage/hooks/react-query/useGetOtherBanners";
@@ -120,9 +120,9 @@ const Shop = (props) => {
         </CustomContainer>
       </Grid>
       <Grid item xs={12}>
-        <CustomContainer>
+        {/* <CustomContainer>
           <Brands />
-        </CustomContainer>
+        </CustomContainer> */}
       </Grid>
       <Grid item xs={12}>
         <CustomContainer>
