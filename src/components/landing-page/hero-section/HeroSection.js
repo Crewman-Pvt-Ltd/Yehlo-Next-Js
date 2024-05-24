@@ -26,6 +26,7 @@ const DynamicModuleSelection = dynamic(() =>
   import("./module-selection/ModuleSelectionRaw")
 );
 const HeroSection = ({ configData, landingPageData, handleOrderNow }) => {
+  console.log(landingPageData);
   const theme = useTheme();
   const isXSmall = useMediaQuery(theme.breakpoints.down("sm"));
   const isSmall = useMediaQuery(theme.breakpoints.down("md"));
@@ -70,7 +71,9 @@ const HeroSection = ({ configData, landingPageData, handleOrderNow }) => {
       <CustomContainer>
         <CustomBoxFullWidth
           sx={{
-            backgroundColor: (theme) => alpha(theme.palette.primary.main, 0.2),
+            backgroundImage: `url(${landingPageData?.base_urls?.header_banner_url}/${landingPageData?.header_banner})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
             marginTop: calculateTopMagin(),
             borderRadius: "20px",
             position: "relative",
@@ -80,7 +83,7 @@ const HeroSection = ({ configData, landingPageData, handleOrderNow }) => {
             },
           }}
         >
-          <Box sx={{ position: "absolute" }} className="shape">
+          {/* <Box sx={{ position: "absolute" }} className="shape">
             <CustomImageContainer
               src={iconicBg.src}
               alt={t("Background")}
@@ -89,7 +92,7 @@ const HeroSection = ({ configData, landingPageData, handleOrderNow }) => {
               borderRadius="20px"
               objectFit="cover"
             />
-          </Box>
+          </Box> */}
           <Grid container>
             <Grid
               item
