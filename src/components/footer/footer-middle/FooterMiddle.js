@@ -39,10 +39,10 @@ const FooterMiddle = (props) => {
 
   return (
     <CustomStackFullWidth sx={{
-      backgroundColor:
-        getCurrentModuleType() === ModuleTypes?.FOOD
-          ? alpha(theme.palette.moduleTheme.food, 0.051)
-          : alpha(theme.palette.primary.main, 0.051),
+      // backgroundColor:
+      //   getCurrentModuleType() === ModuleTypes?.FOOD
+      //     ? alpha(theme.palette.moduleTheme.food, 0.051)
+      //     : alpha(theme.palette.primary.main, 0.051),
          
      
     }}>
@@ -109,17 +109,17 @@ const FooterMiddle = (props) => {
                 position: "absolute",
                 borderRadius: "23px",
                 inset: "0",
-                background: theme.palette.background.default,
+                // background: theme.palette.background.default,
               },
             }}
           >
             <Box
               padding={{ xs: "20px 8px", sm: "10px" }}
               sx={{
-                backgroundColor:
-                  getCurrentModuleType() === ModuleTypes?.FOOD
-                    ? alpha(theme.palette.moduleTheme.food, 0.051)
-                    : alpha(theme.palette.primary.main, 0.051),
+                // backgroundColor:
+                //   getCurrentModuleType() === ModuleTypes?.FOOD
+                //     ? alpha(theme.palette.moduleTheme.food, 0.051)
+                //     : alpha(theme.palette.primary.main, 0.051),
                 borderRadius: "10px",
                 position: "relative",
                 height: "auto",
@@ -133,7 +133,8 @@ const FooterMiddle = (props) => {
                     justifyContent="space-between"
                     gap="10px"
                   >
-                    <RouteLinks token={token} configData={configData} />
+                    <RouteLinks 
+                     token={token} configData={configData} />
                     {isSmall && (
                       <FooterBottomItems
                         handleClickToRoute={handleClickToRoute}
