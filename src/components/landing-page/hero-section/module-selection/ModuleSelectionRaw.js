@@ -50,6 +50,8 @@ const Card = ({ item, configData, isSelected, handleClick }) => {
 			bg_change={isSelected === item?.module_type ? "true" : "false"}
 			textAlign="center"
 			alignItems="center"
+			width={{ xs: '30%', sm: '30%', md: '15%' }}
+			
 		>
 			<ImageWrapper>
 		<CustomImageContainer
