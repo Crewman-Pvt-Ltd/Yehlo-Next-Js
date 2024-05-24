@@ -21,6 +21,7 @@ import CustomContainer from "../container";
 import Subtitle1 from "../typographies/Subtitle1";
 import deliveryMan from "./assets/delivery-man.svg";
 import seller from "./assets/seller.svg";
+import CustomButtonComponent from "./app-download-section/CustomButtonComponent";
 
 const ImageContainer = styled(Box)(({ theme }) => ({
   position: "relative",
@@ -68,6 +69,7 @@ const Card = ({
   redirectLink,
   image,
   isSmall,
+  data
 }) => {
   const { t } = useTranslation();
   const theme = useTheme();
@@ -91,7 +93,7 @@ const Card = ({
       }}
     >
       <Grid container spacing={{ xs: 0, sm: .5, md: 2 }} alignItems="center" justifyContent="center">
-        <Grid item xs={4} sm={4} md={4}>
+        <Grid item xs={4} sm={4} md={3}>
           <ImageContainer>
             <CustomImageContainer
               height="100%"
@@ -129,17 +131,31 @@ const Card = ({
           </Stack>
         </Grid>
         <Grid item xs={3} sm={3} md={2.5} align="end">
-          {buttonText && redirectLink && (
-            <CustomButtonPrimary onClick={redirectHandler}>
-              <Typography
-                variant={isSmall ? "body3" : "body1"}
-                fontWeight="bold"
-                color="whiteContainer.main,"
-              >
-                {buttonText ? buttonText : ""}
-              </Typography>
-            </CustomButtonPrimary>
-          )}
+          {(data?.download_business_app_links
+            ?.seller_playstore_url_status === "1" ||
+            data?.download_business_app_links
+              ?.seller_appstore_url_status === "1") && (
+              <CustomButtonComponent
+                t={t}
+                landingPageData={data}
+                title={t("Register")}
+                urls={{
+                  playStoreStatus:
+                    data?.download_business_app_links
+                      ?.seller_playstore_url_status,
+                  playStoreUrl:
+                    data?.download_business_app_links
+                      ?.seller_playstore_url,
+                  appStoreStatus:
+                    data?.download_business_app_links
+                      ?.seller_appstore_url_status,
+                  appStoreUrl:
+                    data?.download_business_app_links
+                      ?.seller_appstore_url,
+                }}
+              />
+            )}
+          
         </Grid>
       </Grid>
     </CustomBoxFullWidth>
@@ -162,6 +178,7 @@ const CenterCards = ({ data, isSmall }) => {
           buttonText={data?.earning_seller_button_name}
           redirectLink={data?.earning_seller_button_url}
           isSmall={isSmall}
+          data={data}
         />
       )}
 
@@ -173,6 +190,7 @@ const CenterCards = ({ data, isSmall }) => {
           buttonText={data?.earning_dm_button_name}
           redirectLink={data?.earning_dm_button_url}
           isSmall={isSmall}
+          data={data}
         />
       )}
     </CustomStackFullWidth>

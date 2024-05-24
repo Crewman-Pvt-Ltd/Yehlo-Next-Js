@@ -95,8 +95,8 @@ const LandingPage = ({ configData, landingPageData }) => {
             configData={configData}
             landingPageData={landingPageData}
           />
-        )} */}
-        {/* {landingPageData?.testimonial_list?.length > 0 && (
+        )} 
+        {landingPageData?.testimonial_list?.length > 0 && (
           <Testimonials landingPageData={landingPageData} isSmall={isSmall} />
         )} */}
         {open && (

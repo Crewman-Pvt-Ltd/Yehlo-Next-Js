@@ -24,7 +24,7 @@ MainApi.interceptors.request.use(function (config) {
   if (zoneid) config.headers.zoneid = zoneid;
   if (moduleid) config.headers.moduleId = moduleid;
   if (token) config.headers.authorization = `Bearer ${token}`;
-  if (language) config.headers["X-localization"] = language;
+  if (language) config.headers["X-localization"] = 'default';
   if (hostname) config.headers["origin"] = hostname;
   config.headers["X-software-id"] = software_id;
   config.headers["Accept"] = 'application/json'

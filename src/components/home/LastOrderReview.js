@@ -41,8 +41,8 @@ const LastOrderReview = ({
       <CustomStackFullWidth justifyContent="center" alignItems="center">
         <ProductMoreView
           products={productImage}
-          width="36px"
-          height="36px"
+          width="45px"
+          height="45px"
           justifyContent="center"
         />
       </CustomStackFullWidth>
