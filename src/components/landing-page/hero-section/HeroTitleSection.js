@@ -47,6 +47,14 @@ const HeroTitleSection = ({ configData, landingPageData, handleOrderNow }) => {
   };
   return (
     <>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <CustomStackFullWidth>
         <CustomStackFullWidth spacing={0.4}>
           <Stack
@@ -56,9 +64,8 @@ const HeroTitleSection = ({ configData, landingPageData, handleOrderNow }) => {
             spacing={0.5}
             flexWrap="wrap"
           >
-            <Typography
+            <Typography className="abcd"
               sx={{
-                color: (theme) => theme.palette.primary.main,
                 fontSize: isXSmall ? "20px" : "54px",
                 lineHeight: isXSmall ? "24px" : "58px",
                 fontWeight: "bold",
@@ -71,7 +78,7 @@ const HeroTitleSection = ({ configData, landingPageData, handleOrderNow }) => {
             </Typography>
           </Stack>
           <Typography
-            color={alpha(theme.palette.neutral[700], 0.8)}
+            color="white"
             fontSize={isXSmall ? "16px" : "35px"}
             lineHeight={isXSmall ? "22px" : "58px"}
             fontWeight="400"
@@ -92,7 +99,7 @@ const HeroTitleSection = ({ configData, landingPageData, handleOrderNow }) => {
           <Typography
             sx={{
               fontSize: { xs: "12px", md: "20px" },
-              color: (theme) => alpha(theme.palette.neutral[500], 0.5),
+              color: "white",
             }}
             fontWeight="400"
           >
