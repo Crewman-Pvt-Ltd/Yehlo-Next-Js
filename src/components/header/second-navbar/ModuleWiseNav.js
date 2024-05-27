@@ -13,6 +13,8 @@ import CustomImageContainer from "../../CustomImageContainer";
 import AddressReselect from "../top-navbar/address-reselect/AddressReselect";
 import DrawerMenu from "../top-navbar/drawer-menu/DrawerMenu";
 import MobileModuleSelection from "./mobile-module-select";
+import ManageSearch from "./ManageSearch";
+import SearchIcon from "@mui/icons-material/Search";
 
 const ModuleWiseNav = (props) => {
   const { router, configData, token, setToggled, location } = props;
@@ -54,11 +56,16 @@ const ModuleWiseNav = (props) => {
       justifyContent="flex-end"
       alignItems="center"
     >
-      <Avatar
+      {/* <Avatar
         src={profileImageUrl}
         sx={{ width: 18, height: 18, cursor: "pointer" }}
         onClick={handleProfileClick}
-      />
+      /> */}
+      <SearchIcon
+       sx={{
+        color:"black"
+      }}></SearchIcon>
+        {/* <ManageSearch></ManageSearch> */}
       <DrawerMenu
         setToggled={setToggled}
         setOpenDrawer={setOpenDrawer}

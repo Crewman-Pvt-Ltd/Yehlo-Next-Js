@@ -81,6 +81,7 @@ const HeroSection = ({ configData, landingPageData, handleOrderNow }) => {
             ".shape img": {
               transition: "all ease-in 1s",
             },
+            backgroundPosition:"center"
           }}
         >
           {/* <Box sx={{ position: "absolute" }} className="shape">

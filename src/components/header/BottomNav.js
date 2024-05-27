@@ -16,6 +16,7 @@ import { useSelector } from "react-redux";
 import { getCartListModuleWise } from "../../helper-functions/getCartListModuleWise";
 import WishListCardView from "../wishlist";
 import { getToken } from "../../helper-functions/getToken";
+import {Avatar} from "@mui/material";
 
 const styles = {
   maxWidth: 2000,
@@ -25,13 +26,15 @@ const styles = {
   //paddingRight: "10px",
 };
 
-const BottomNav = () => {
+const BottomNav = ({configData}) => {
   const { wishLists } = useSelector((state) => state.wishList);
   const { cartList } = useSelector((state) => state.cart);
   const { selectedModule } = useSelector((state) => state.utilsData);
   const totalWishList = wishLists?.item?.length + wishLists?.store?.length;
   const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
   const [wishListSideDrawerOpen, setWishListSideDrawerOpen] = useState(false);
+  // const { profileInfo } = useSelector((state) => state.profileInfo);
+  const profileImageUrl = `${configData?.base_urls?.customer_image_url}`;
   const router = useRouter();
   const currentRoute = router.pathname.replace("/", "");
   const handleCartDrawerOpen = () => {
@@ -42,6 +45,17 @@ const BottomNav = () => {
       setWishListSideDrawerOpen(true);
     } else {
       router.push("/auth/sign-in");
+    }
+  };  
+  const handleProfileClick = () => {
+    if (getToken()) {
+      router.push(
+        { pathname: "/profile", query: { page: "profile-settings" } },
+        undefined,
+        { shallow: true }
+      );
+    } else {
+      router.push("/auth/sign-in", undefined, { shallow: true });
     }
   };
   // const handleChange = () => {};
@@ -89,7 +103,6 @@ const BottomNav = () => {
               value="home"
               icon={<HomeIcon />}
             />
-
             <CustomBottomNavigationAction
               label={t("My Orders")}
               value="my-orders"
@@ -101,7 +114,7 @@ const BottomNav = () => {
             />
             {selectedModule?.module_type !== "parcel" && (
               <CustomBottomNavigationAction
-                onClick={() => handleCartDrawerOpen()}
+                onClick={handleCartDrawerOpen}
                 label={t("Cart")}
                 value="cart"
                 icon={
@@ -114,8 +127,7 @@ const BottomNav = () => {
                 }
               />
             )}
-
-            <CustomBottomNavigationAction
+            {/* <CustomBottomNavigationAction
               label={t("Chat")}
               value="inbox"
               icon={
@@ -123,17 +135,22 @@ const BottomNav = () => {
                   <SmsRoundedIcon />
                 </Badge>
               }
-            />
-            {!!sideDrawerOpen && (
-              <CardView
-                sideDrawerOpen={sideDrawerOpen}
-                setSideDrawerOpen={setSideDrawerOpen}
+            /> */}
+              <CustomBottomNavigationAction
+                label={t("Profile")}
+                value="profile"
+                icon={
+                  <Avatar
+                    src={profileImageUrl}
+                    sx={{ width: 24, height: 24, cursor: "pointer" }}
+                  />
+                }
+                onClick={handleProfileClick}
               />
-            )}
             <CustomBottomNavigationAction
               label={t("WishList")}
               value="wishlist"
-              onClick={() => handleWishListsDrawerOpen()}
+              onClick={handleWishListsDrawerOpen}
               icon={
                 <Badge badgeContent={totalWishList} color="error">
                   <FavoriteIcon />
@@ -142,6 +159,7 @@ const BottomNav = () => {
             />
           </BottomNavigation>
         </SimpleBar>
+
         {!!sideDrawerOpen && (
           <CardView
             sideDrawerOpen={sideDrawerOpen}
@@ -160,5 +178,6 @@ const BottomNav = () => {
     </CustomStackFullWidth>
   );
 };
+
 
 export default React.memo(BottomNav);

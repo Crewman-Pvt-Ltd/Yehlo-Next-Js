@@ -69,6 +69,7 @@ const HeroTitleSection = ({ configData, landingPageData, handleOrderNow }) => {
                 fontSize: isXSmall ? "20px" : "54px",
                 lineHeight: isXSmall ? "24px" : "58px",
                 fontWeight: "bold",
+                color:"white",
               }}
             >
               <DollarSignHighlighter
