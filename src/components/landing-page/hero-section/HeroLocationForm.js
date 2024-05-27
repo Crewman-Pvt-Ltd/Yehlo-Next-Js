@@ -71,14 +71,14 @@ const HeroLocationForm = () => {
   // const dispatch = useDispatch();
 
   //****getting current location/***/
-  const { coords, isGeolocationAvailable, isGeolocationEnabled, getPosition } =
+  /* const { coords, isGeolocationAvailable, isGeolocationEnabled, getPosition } =
     useGeolocated({
       positionOptions: {
         enableHighAccuracy: false,
       },
       userDecisionTimeout: 5000,
       isGeolocationEnabled: true,
-    });
+    }); */
 
   const handleCloseLocation = () => {
     setOpenLocation(false);

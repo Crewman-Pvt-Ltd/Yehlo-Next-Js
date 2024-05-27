@@ -5,7 +5,7 @@ import { persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
 const persistConfig = {
-	key: "sixam-mart",
+	key: "yehlo",
 	storage: storage,
 	blacklist: ["categoryIds", "cashbackList", "brands"],
 };

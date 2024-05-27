@@ -26,7 +26,6 @@ const DynamicModuleSelection = dynamic(() =>
   import("./module-selection/ModuleSelectionRaw")
 );
 const HeroSection = ({ configData, landingPageData, handleOrderNow }) => {
-  console.log(landingPageData);
   const theme = useTheme();
   const isXSmall = useMediaQuery(theme.breakpoints.down("sm"));
   const isSmall = useMediaQuery(theme.breakpoints.down("md"));
@@ -75,6 +74,7 @@ const HeroSection = ({ configData, landingPageData, handleOrderNow }) => {
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
             marginTop: calculateTopMagin(),
+            backgroundPosition: "center",
             borderRadius: "20px",
             position: "relative",
             overflow: "hidden",
@@ -96,7 +96,7 @@ const HeroSection = ({ configData, landingPageData, handleOrderNow }) => {
           <Grid container>
             <Grid
               item
-              xs={8}
+              xs={12}
               md={7}
               sx={{ padding: { xs: "1rem", sm: "2rem", md: "3rem" } }}
             >
