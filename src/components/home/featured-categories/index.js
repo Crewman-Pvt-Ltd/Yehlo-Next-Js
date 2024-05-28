@@ -72,7 +72,7 @@ const FeaturedCategories = ({ configData }) => {
               },
             }}
           >
-            <Grid container columnSpacing={{xs: 3, md: 1}} rowSpacing={{xs: 3, md: 1}}>
+            <Grid container columnSpacing={{ xs: 3, md: 1 }} rowSpacing={{ xs: 3, md: 1 }}>
               {[...featuredCategories].reverse().map((item, index) => {
                 return (
                   <Grid item xs={3} md={2}>
@@ -91,51 +91,57 @@ const FeaturedCategories = ({ configData }) => {
         );
       case ModuleTypes.PHARMACY:
         return (
-          <Slider {...settings} ref={slider}>
+          <Grid container columnSpacing={{ xs: 3, md: 1 }} rowSpacing={{ xs: 3, md: 1 }}>
             {featuredCategories?.map((item, index) => {
               return (
-                <PharmacyCategoryCard
-                  key={index}
-                  image={`${configData?.base_urls?.category_image_url}/${item?.image}`}
-                  title={item?.name}
-                  slug={item?.slug}
-                  id={item?.id}
-                />
+                <Grid item xs={3} md={2}>
+                  <PharmacyCategoryCard
+                    key={index}
+                    image={`${configData?.base_urls?.category_image_url}/${item?.image}`}
+                    title={item?.name}
+                    slug={item?.slug}
+                    id={item?.id}
+                  />
+                </Grid>
               );
             })}
-          </Slider>
+          </Grid>
         );
       case ModuleTypes.ECOMMERCE:
         return (
-          <Slider {...shopCategorySliderSettings} ref={slider}>
+          <Grid container columnSpacing={{ xs: 0, md: 1 }} rowSpacing={{ xs: 1, md: 1 }} style={{justifyContent: "center"}}>
             {featuredCategories?.map((item, index) => {
               return (
-                <ShopCategoryCard
-                  key={index}
-                  imageUrl={configData?.base_urls?.category_image_url}
-                  item={item}
-                />
+                <Grid item xs={3} md={3}>
+                  <ShopCategoryCard
+                    key={index}
+                    imageUrl={configData?.base_urls?.category_image_url}
+                    item={item}
+                  />
+                </Grid>
               );
             })}
-          </Slider>
+          </Grid>
         );
       case ModuleTypes.FOOD:
         return (
-          <Slider {...foodCategorySliderSettings} ref={slider}>
+          <Grid container columnSpacing={{ xs: 3, md: 1 }} rowSpacing={{ xs: 3, md: 1 }}>
             {featuredCategories?.map((item, index) => {
               return (
-                <FoodCategoryCard
-                  key={item?.id}
-                  id={item?.id}
-                  categoryImage={item?.image}
-                  name={item?.name}
-                  slug={item?.slug}
-                  categoryImageUrl={configData?.base_urls?.category_image_url}
-                  height="40px"
-                />
+                <Grid item xs={3} md={2}>
+                  <FoodCategoryCard
+                    key={item?.id}
+                    id={item?.id}
+                    categoryImage={item?.image}
+                    name={item?.name}
+                    slug={item?.slug}
+                    categoryImageUrl={configData?.base_urls?.category_image_url}
+                    height="40px"
+                  />
+                </Grid>
               );
             })}
-          </Slider>
+          </Grid>
         );
     }
   };

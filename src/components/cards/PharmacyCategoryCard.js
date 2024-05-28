@@ -22,7 +22,7 @@ const Wrapper = styled(Box)(({ theme }) => ({
     borderRadius: "60px 60px 55px 55px",
   },
   [theme.breakpoints.down("md")]: {
-    width: "100px",
+    width: "80px",
     height: "140px",
     boxShadow: "0px 10px 20px rgba(88, 110, 125, 0.1)",
   },
@@ -45,7 +45,20 @@ const TextWrapper = styled(Box)(({ theme }) => ({
   justifyContent: "center",
   flexWrap: "wrap",
   [theme.breakpoints.down("md")]: {
-    padding: "10px 12px",
+    padding: "0px 8px",
+  },
+}));
+
+const StyledTypography = styled(Typography)(({ theme }) => ({
+  textAlign: "center",
+  maxHeight: "40px",
+  color: (props) => (props.hover ? theme.palette.primary.main : "inherit"),
+  overflow: "hidden",
+  display: "-webkit-box",
+  WebkitBoxOrient: "vertical",
+  WebkitLineClamp: 1,
+  [theme.breakpoints.down("md")]: {
+    WebkitLineClamp: 2,
   },
 }));
 
@@ -95,7 +108,7 @@ const PharmacyCategoryCard = (props) => {
                 height="100%"
                 width="100%"
                 borderRadius="60px 60px 0px 0px"
-                objectFit="cover"
+                objectFit="contain"
               />
             </ImageWrapper>
             <Tooltip
@@ -114,15 +127,9 @@ const PharmacyCategoryCard = (props) => {
               }}
             >
               <TextWrapper>
-                <Typography
-                  textAlign="center"
-                  // className={classes.multiLineEllipsis}
-                  maxHeight="20px"
-                  color={hover && "primary.main"}
-                  noWrap
-                >
+                <StyledTypography>
                   {title}
-                </Typography>
+                  </StyledTypography>
               </TextWrapper>
             </Tooltip>
           </Wrapper>

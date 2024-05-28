@@ -21,6 +21,12 @@ const Wrapper = styled(Box)(({ theme }) => ({
   ".MuiTypography-h7": {
     transition: "all ease 0.5s",
   },
+  [theme.breakpoints.down("md")]: {
+    width: "80px",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  },
   "&:hover": {
     boxShadow: "0px 10px 20px rgba(88, 110, 125, 0.1)",
     ".MuiTypography-h7": {
@@ -29,14 +35,25 @@ const Wrapper = styled(Box)(({ theme }) => ({
     },
     img: {
       transform: "scale(1.1)",
-    },
+    }
   },
 }));
 const ImageWrapper = styled(CustomBoxFullWidth)(({ theme }) => ({
   position: "relative",
   borderRadius: "10px",
   height: "115px",
+  [theme.breakpoints.down("md")]: {
+    height: "50px",
+    width: "100%",
+  },
 }));
+
+const ResponsiveTypography = styled(Typography)(({ theme }) => ({
+  [theme.breakpoints.down("md")]: {
+    fontSize: "0.75rem",
+  },
+}));
+
 
 const ShopCategoryCard = (props) => {
   const { item, imageUrl, onlyshimmer } = props;
@@ -89,7 +106,7 @@ const ShopCategoryCard = (props) => {
           <Grid container>
             <Grid
               item
-              xs={6}
+              xs={12}
               container
               sx={{ p: "8px" }}
               alignItems="center"
@@ -111,22 +128,22 @@ const ShopCategoryCard = (props) => {
                     },
                   }}
                 >
-                  <Typography
+                  <ResponsiveTypography
                     variant="h7"
                     fontWeight="400"
                     className={classes.multiLineEllipsis}
                   >
                     {item?.name}
-                  </Typography>
+                  </ResponsiveTypography>
                 </Tooltip>
               </Grid>
               <Grid item xs={12}>
-                <Typography variant="body2" color="customColor.textGray">
+                <Typography variant="body3" color="customColor.textGray">
                   {t("Explore Items")}
                 </Typography>
               </Grid>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12}>
               <ImageWrapper>
                 <CustomImageContainer
                   height="100%"

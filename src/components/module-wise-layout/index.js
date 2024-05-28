@@ -52,7 +52,7 @@ const ModuleWiseLayout = ({ configData }) => {
 
   return (
     <CustomStackFullWidth>
-      {!isSmall && data && data.length > 1 && !router.query.search && (
+      {data && data.length > 1 && !router.query.search && (
         <ModuleSelect
           moduleSelectHandler={moduleSelectHandler}
           selectedModule={selectedModule}

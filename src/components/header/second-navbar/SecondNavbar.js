@@ -347,7 +347,7 @@ const SecondNavBar = ({ configData }) => {
               handleClick={() => handleWishlistClick("inbox")}
             />
           )}
-          {token && zoneId && moduleType !== "parcel" && (
+          {token && zoneid && moduleType !== "parcel" && (
             <WishListSideBar totalWishList={totalWishList} />
           )}
 
