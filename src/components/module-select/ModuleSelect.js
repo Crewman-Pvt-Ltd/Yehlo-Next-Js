@@ -1,10 +1,13 @@
-import { Skeleton, styled, Tooltip } from "@mui/material";
+import { Skeleton, styled, Tooltip, Grid, Typography } from "@mui/material";
 import { Box, Stack } from "@mui/system";
 import React from "react";
 import { setSelectedModule } from "../../redux/slices/utils";
 import CustomImageContainer from "../CustomImageContainer";
+import Slider from "react-slick";
+import { textWithEllipsis } from "styled-components/TextWithEllipsis";
+import { makeStyles } from "@mui/styles";
 
-const Container = styled(Stack)(({ theme }) => ({
+/* const Container = styled(Stack)(({ theme }) => ({
   position: "fixed",
   zIndex: 1000,
   top: 150,
@@ -16,14 +19,58 @@ const Container = styled(Stack)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
     display: "none",
   },
+})); */
+
+var settings = {
+  dots: false,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 8,
+  slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 8,
+        slidesToScroll: 1,
+        infinite: true,
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 1
+      }
+    }
+  ]
+};
+
+const useStyles = makeStyles((theme) => ({
+  slider: {
+    margin: '10px 10px', // Default margin for all screens
+    [theme.breakpoints.up('md')]: { // Adjust the breakpoint as needed
+      margin: '20px 20px', // Margin for medium and larger screens
+    },
+  },
 }));
+
 const ModuleContainer = styled(Box)(({ theme, selected }) => ({
   zIndex: 1000,
+  padding: "10px",
   cursor: "pointer",
-  width: "62px",
-  height: "62px",
+  width: "120px",
+  height: "120px",
   borderRadius: "11px",
   display: "flex",
+  flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
   backgroundColor: "rgba(227, 227, 227, 0.2)",
@@ -42,6 +89,10 @@ const ModuleContainer = styled(Box)(({ theme, selected }) => ({
     "img, svg": {
       transform: "scale(1.1)",
     },
+  },
+  [theme.breakpoints.down("sm")]: {
+    width: "90px",
+    height: "75px",
   },
 }));
 
@@ -65,34 +116,43 @@ const ModuleSelect = ({
     dispatch(setSelectedModule(item));
     moduleSelectHandler(item);
   };
+
+  const classes = textWithEllipsis();
+  const classes2 = useStyles();
+
   return (
-    <Container p=".8rem" spacing={2}>
+    <>
       {data ? (
-        zoneWiseModule?.(data)?.map((item, index) => {
-          return (
-            <Tooltip
-              title={item?.module_name}
-              key={index}
-              placement="left-start"
-            >
-              <ModuleContainer
-                selected={
-                  item?.module_type === selectedModule?.module_type &&
-                  item?.id === selectedModule?.id
-                }
-                onClick={() => handleModuleSelect(item)}
-              >
-                <CustomImageContainer
-                  src={`${configData?.base_urls?.module_image_url}/${item?.icon}`}
-                  width="36px"
-                  height="36px"
-                  alt="mobile"
-                  objectFit="cover"
-                />
-              </ModuleContainer>
-            </Tooltip>
-          );
-        })
+        <Slider {...settings} className={classes2.slider}>
+          {zoneWiseModule?.(data)?.map((item, index) => {
+            return (
+              <Grid item>
+                <Tooltip
+                  title={item?.module_name}
+                  key={index}
+                  placement="left-start"
+                >
+                  <ModuleContainer
+                    selected={
+                      item?.module_type === selectedModule?.module_type &&
+                      item?.id === selectedModule?.id
+                    }
+                    onClick={() => handleModuleSelect(item)}
+                  >
+                    <CustomImageContainer
+                      src={`${configData?.base_urls?.module_image_url}/${item?.icon}`}
+                      alt="mobile"
+                      objectFit="cover"
+                    />
+                    <Typography className={classes.singleLineEllipsis}>
+                      {item?.module_name}
+                    </Typography>
+                  </ModuleContainer>
+                </Tooltip>
+              </Grid>
+            );
+          })}
+        </Slider>
       ) : (
         <>
           {[...Array(5)].map((item, index) => (
@@ -105,7 +165,7 @@ const ModuleSelect = ({
           ))}
         </>
       )}
-    </Container>
+    </>
   );
 };
 
