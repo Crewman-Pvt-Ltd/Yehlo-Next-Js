@@ -78,7 +78,7 @@ const SearchWithTitle = (props) => {
           {t(getBannerTexts().subTitle)}
         </Typography>
       </CustomStackFullWidth>
-      {moduleType !== "parcel" ? (
+      {/* {moduleType !== "parcel" ? (
         <ManageSearch
           zoneid={zoneid}
           token={token}
@@ -89,7 +89,7 @@ const SearchWithTitle = (props) => {
         />
       ) : (
         <TrackParcelFromHomePage />
-      )}
+      )} */}
     </CustomStackFullWidth>
   );
 };

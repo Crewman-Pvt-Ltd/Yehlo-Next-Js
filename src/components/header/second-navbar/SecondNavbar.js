@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import {
+  
   alpha,
   Avatar,
   IconButton,
@@ -42,6 +43,8 @@ import useGetGuest from "../../../api-manage/hooks/react-query/guest/useGetGuest
 import ThemeSwitches from "../top-navbar/ThemeSwitches";
 import CallToAdmin from "../../CallToAdmin";
 import CustomLanguage from "../top-navbar/language/CustomLanguage";
+import ManageSearch from "./ManageSearch";
+import TrackParcelFromHomePage from "components/parcel/TrackParcelFromHomePage";
 
 const Cart = ({ isLoading }) => {
   const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
@@ -146,8 +149,11 @@ const SecondNavBar = ({ configData }) => {
   const anchorRef = useRef(null);
   let token = undefined;
   let location = undefined;
-  let zoneId = undefined;
+  // let zoneId = undefined;
   let guestId = undefined;
+  let zoneid =
+  typeof window !== "undefined" ? localStorage.getItem("zoneid") : undefined;
+  
 
   if (typeof window !== "undefined") {
     token = localStorage.getItem("token");
@@ -241,7 +247,7 @@ const SecondNavBar = ({ configData }) => {
   if (typeof window !== "undefined") {
     location = localStorage.getItem("location");
     token = localStorage.getItem("token");
-    zoneId = JSON.parse(localStorage.getItem("zoneid"));
+    zoneid = JSON.parse(localStorage.getItem("zoneid"));
   }
 
   const handleOpenPopover = () => {
@@ -295,7 +301,16 @@ const SecondNavBar = ({ configData }) => {
           <NavLinks t={t} zoneid="zoneid" moduleType={moduleType} />
         )}
       </Stack>
-
+      {router.pathname !== "/" && (
+        <ManageSearch
+          zoneid={zoneid}
+          token={token}
+          maxwidth="false"
+          fullWidth
+          // query={query}
+          name={name}
+        />
+      )}
       {!isSmall && (
         <CustomStackFullWidth
           direction="row"
