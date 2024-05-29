@@ -211,7 +211,9 @@ const MapModal = ({
         if (fromStore) {
           handleClose();
         } else {
-          setOpenModuleSelection(true);
+          // setOpenModuleSelection(true);
+          router.push("/home", undefined, { shallow: true });
+          handleClose?.();
         }
       }
     }
@@ -223,7 +225,7 @@ const MapModal = ({
       router.push("/home", undefined, { shallow: true });
     }
     setOpenModuleSelection(false);
-    handleClose?.();
+    
   };
 
   return (
@@ -430,7 +432,7 @@ const MapModal = ({
             </SimpleBar>
           </CustomStackFullWidth>
         </CustomBoxWrapper>
-      </Modal >
+      </Modal>
       {openModuleSelection && (
         <ModuleSelection
           location={currentLocation}

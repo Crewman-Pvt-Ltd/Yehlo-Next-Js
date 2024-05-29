@@ -297,9 +297,9 @@ const SecondNavBar = ({ configData }) => {
             objectFit="contain"
           />
         )}
-        {!isSmall && location && (
+        {/* {!isSmall && location && (
           <NavLinks t={t} zoneid="zoneid" moduleType={moduleType} />
-        )}
+        )} */}
       </Stack>
       {router.pathname !== "/" && (
         <ManageSearch
