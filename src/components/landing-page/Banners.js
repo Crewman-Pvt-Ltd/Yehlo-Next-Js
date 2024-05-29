@@ -113,12 +113,12 @@ const Banners = ({ landingPageData, isSmall }) => {
                   width: "100%",
                   borderRadius: "5px",
                   overflow: "hidden",
-                  "&:hover": {
-                    img: {
-                      transform: "scale(1.1)",
-                      transition: "transform 0.8s ease-in-out",
-                    },
-                  },
+                  // "&:hover": {
+                  //   img: {
+                  //     transform: "scale(1.1)",
+                  //     transition: "transform 0.8s ease-in-out",
+                  //   },
+                  // },
                 }}
               >
                 <CustomImageContainer

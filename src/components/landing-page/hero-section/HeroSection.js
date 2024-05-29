@@ -59,7 +59,7 @@ const HeroSection = ({ configData, landingPageData, handleOrderNow }) => {
     } else {
       return (
         <CustomStackFullWidth mt="15px">
-          <HeroLocationForm />
+          {/* <HeroLocationForm /> */}
         </CustomStackFullWidth>
       );
     }
