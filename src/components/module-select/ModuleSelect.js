@@ -6,6 +6,8 @@ import CustomImageContainer from "../CustomImageContainer";
 import Slider from "react-slick";
 import { textWithEllipsis } from "styled-components/TextWithEllipsis";
 import { makeStyles } from "@mui/styles";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 /* const Container = styled(Stack)(({ theme }) => ({
   position: "fixed",
@@ -24,6 +26,7 @@ import { makeStyles } from "@mui/styles";
 var settings = {
   dots: false,
   infinite: true,
+  adaptiveHeight: true,
   speed: 500,
   slidesToShow: 8,
   slidesToScroll: 1,
@@ -40,14 +43,17 @@ var settings = {
       breakpoint: 600,
       settings: {
         slidesToShow: 4,
-        slidesToScroll: 2
+        slidesToScroll: 1,
+        infinite: true
       }
     },
     {
       breakpoint: 480,
       settings: {
         slidesToShow: 4,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        infinite: true
+
       }
     }
   ]
@@ -123,36 +129,38 @@ const ModuleSelect = ({
   return (
     <>
       {data ? (
-        <Slider {...settings} className={classes2.slider}>
-          {zoneWiseModule?.(data)?.map((item, index) => {
-            return (
-              <Grid item>
-                <Tooltip
-                  title={item?.module_name}
-                  key={index}
-                  placement="left-start"
-                >
-                  <ModuleContainer
-                    selected={
-                      item?.module_type === selectedModule?.module_type &&
-                      item?.id === selectedModule?.id
-                    }
-                    onClick={() => handleModuleSelect(item)}
+        <div className="slick-slider-container">
+          <Slider {...settings} className={classes2.slider}>
+            {zoneWiseModule?.(data)?.map((item, index) => {
+              return (
+                <>
+                  <Tooltip
+                    title={item?.module_name}
+                    key={index}
+                    placement="left-start"
                   >
-                    <CustomImageContainer
-                      src={`${configData?.base_urls?.module_image_url}/${item?.icon}`}
-                      alt="mobile"
-                      objectFit="cover"
-                    />
-                    <Typography className={classes.singleLineEllipsis}>
-                      {item?.module_name}
-                    </Typography>
-                  </ModuleContainer>
-                </Tooltip>
-              </Grid>
-            );
-          })}
-        </Slider>
+                    <ModuleContainer
+                      selected={
+                        item?.module_type === selectedModule?.module_type &&
+                        item?.id === selectedModule?.id
+                      }
+                      onClick={() => handleModuleSelect(item)}
+                    >
+                      <CustomImageContainer
+                        src={`${configData?.base_urls?.module_image_url}/${item?.icon}`}
+                        alt="mobile"
+                        objectFit="cover"
+                      />
+                      <Typography className={classes.singleLineEllipsis}>
+                        {item?.module_name}
+                      </Typography>
+                    </ModuleContainer>
+                  </Tooltip>
+                </>
+              );
+            })}
+          </Slider>
+        </div>
       ) : (
         <>
           {[...Array(5)].map((item, index) => (
