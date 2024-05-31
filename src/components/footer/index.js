@@ -4,8 +4,8 @@ import {
   StyledFooterTopContainer,
 } from "./Footer.style";
 import { CustomStackFullWidth } from "../../styled-components/CustomStyles.style";
-import FooterBottom from "./FooterBottom";
-import FooterTop from "./footer-top/FooterTop";
+// import FooterBottom from "./FooterBottom";
+// import FooterTop from "./footer-top/FooterTop";
 import FooterMiddle from "./footer-middle/FooterMiddle";
 import { useRouter } from "next/router";
 import CustomContainer from "../container";
@@ -26,7 +26,7 @@ const FooterComponent = (props) => {
         },
       }}
     >
-      <FooterTop landingPageData={landingPageData} />
+      {/* <FooterTop landingPageData={landingPageData} /> */}
       <StyledFooterBackground
         nobottommargin={isLandingPage}
       >
@@ -36,7 +36,7 @@ const FooterComponent = (props) => {
           justifyContent="space-between"
           spacing={2}
         >
-          <CustomContainer maxwidth="100%" backgroundcolor="rgba(68,42,125,0.17)">
+          <CustomContainer maxwidth="100%" backgroundcolor="rgba(100, 80, 160, 0.1)">
             <CustomStackFullWidth spacing={3}>
               <FooterMiddle
                 configData={configData}
@@ -44,7 +44,7 @@ const FooterComponent = (props) => {
               />
             </CustomStackFullWidth>
           </CustomContainer>
-          <FooterBottom configData={configData} />
+         {/*  <FooterBottom configData={configData} /> */}
         </CustomStackFullWidth>
       </StyledFooterBackground>
     </CustomStackFullWidth>

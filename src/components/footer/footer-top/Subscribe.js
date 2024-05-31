@@ -48,9 +48,10 @@ const Subscribe = () => {
         display: "flex",
         alignItems: "center",
         backgroundColor: "white",
-        width: { xs: "100%" },
+        width: { xs: "80%" },
         mr: "auto",
         borderRadius: "10px",
+        height: "45px",
       }}
     >
       <InputBase
@@ -60,7 +61,7 @@ const Subscribe = () => {
           flex: 1,
           color: "black",
           align: "center",
-          height: "48px",
+          height: "45px",
         }}
         value={emailAddress}
         type="email"

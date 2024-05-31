@@ -7,10 +7,10 @@ const FooterBottomItems = ({ configData,handleClickToRoute }) => {
     const theme = useTheme();
     return (
         <CustomStackFullWidth
-            direction={{ xs: "column", sm: "row" }}
-            spacing={{ xs: 2, md: 3 }}
-            alignItems={{ xs: "start", sm:"center"}}
-            justifyContent={{xs:"flex-start", sm:"flex-end"}}
+            direction={{ xs: "column", sm: "row" , md:"column"}}
+            // spacing={{ xs: 2, md: 3 }}
+            // alignItems={{ xs: "start", sm:"center"}}
+            // justifyContent={{xs:"flex-start", sm:"flex-end"}}
         >
             <Typography
                 onClick={() => handleClickToRoute("/terms-and-conditions")}

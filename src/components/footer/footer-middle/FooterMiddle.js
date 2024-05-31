@@ -16,6 +16,12 @@ import SomeInfo from "./SomeInfo";
 import FooterBottomItems from "../FooterBottomItems";
 import { useRouter } from "next/router";
 import LocationViewOnMap from "../../Map/location-view/LocationViewOnMap";
+import Subscribe from "../footer-top/Subscribe";
+import Divider from "@mui/material/Divider";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import PinterestIcon from "@mui/icons-material/Pinterest";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 const FooterMiddle = (props) => {
   const { configData, landingPageData } = props;
@@ -37,27 +43,24 @@ const FooterMiddle = (props) => {
   let token;
   const businessLogo = `${configData?.base_urls?.business_logo_url}/${configData?.logo}`;
 
+
   return (
-    <CustomStackFullWidth sx={{
-      // backgroundColor:
-      //   getCurrentModuleType() === ModuleTypes?.FOOD
-      //     ? alpha(theme.palette.moduleTheme.food, 0.051)
-      //     : alpha(theme.palette.primary.main, 0.051),
-         
+    <CustomStackFullWidth
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        paddingLeft: { xs: 0, md: "40px" },
+    paddingRight: { xs: 0, md: "35px" },
+      }}
+    >
      
-    }}>
-      <Grid container spacing={{ xs: 3, md: 2 }} justifyContent="flex-start">
-        <Grid item xs={12} sm={6} md={4.2}>
-          <CustomStackFullWidth
-            gap="0px"
-            // alignItems={{ xs: "center", sm: "flex-start" }}
-            justifyContent="flex-start"
-          >
-           
+
+      <Grid container spacing={{ xs: 3, md: 2 }} justifyContent="flex-start" >
+        <Grid item xs={12} sm={6} md={5}>
+          <CustomStackFullWidth gap="0px" justifyContent="flex-start">
             <Box
               sx={{
-                display: "flex",
-                alignItems: "center", 
                 paddingTop: "20px",
                 img: {
                   transition: "all ease 0.5s",
@@ -73,91 +76,98 @@ const FooterMiddle = (props) => {
                 src={businessLogo}
                 alt={`${configData?.business_name}`}
                 width="auto"
-                height="40px"
+                height="55px"
                 objectfit="contain"
               />
-              {/* Spacer */}
-              <Box sx={{ flexGrow: 1 }} />
-              {(Number.parseInt(
-                landingPageData?.download_user_app_links?.playstore_url_status
-              ) === 1 ||
-                Number.parseInt(
-                  landingPageData?.download_user_app_links
-                    ?.apple_store_url_status
-                ) === 1) && (
+              <h3>Newsletter</h3>
+              <p>Subscribe to our newsletter and unlock a world of exclusive</p>
+              <Subscribe />
+            </Box>
+          </CustomStackFullWidth>
+        </Grid>
+
+        <Grid item xs={12} sm={6} md={3}>
+          <CustomStackFullWidth gap="0px" justifyContent="flex-start" >
+            <p class="footer-heading">DOWNLOAD OUR APP</p>
+            {(Number.parseInt(
+              landingPageData?.download_user_app_links?.playstore_url_status
+            ) === 1 ||
+              Number.parseInt(
+                landingPageData?.download_user_app_links?.apple_store_url_status
+              ) === 1) && (
+                <Box
+                sx={{
+                  width: {
+                    sm: '50%',
+                  md: '50%',
+                  },
+                  marginTop: {
+                    sm: '0',
+                  md: '15px',
+                  }
+                }}
+              >
                 <AppLinks
                   configData={configData}
                   changeSingle
                   landingPageData={landingPageData}
                 />
-              )}
-            </Box>
-            <SocialLinks
-              configData={configData}
-              landingPageData={landingPageData}
-            />
+              </Box>
+            )}
           </CustomStackFullWidth>
         </Grid>
 
-        <Grid item xs={12} sm={6} md={7.8}>
-          <Box
-            sx={{
-              position: "relative",
-              height: "auto",
-              "&::before": {
-                content: '""',
-                position: "absolute",
-                borderRadius: "23px",
-                inset: "0",
-                // background: theme.palette.background.default,
-              },
-            }}
-          >
-            <Box
-              padding={{ xs: "20px 8px", sm: "10px" }}
-              sx={{
-                // backgroundColor:
-                //   getCurrentModuleType() === ModuleTypes?.FOOD
-                //     ? alpha(theme.palette.moduleTheme.food, 0.051)
-                //     : alpha(theme.palette.primary.main, 0.051),
-                borderRadius: "10px",
-                position: "relative",
-                height: "auto",
-                mt: { xs: 0, sm: "1rem" },
-              }}
-            >
-              <Grid container spacing={1}>
-                <Grid item xs={12} align={isSmall && "center"}>
-                  <CustomStackFullWidth
-                    flexDirection="row"
-                    justifyContent="space-between"
-                    gap="10px"
-                  >
-                    <RouteLinks 
-                     token={token} configData={configData} />
-                    {isSmall && (
-                      <FooterBottomItems
-                        handleClickToRoute={handleClickToRoute}
-                        configData={configData}
-                      />
-                    )}
-                  </CustomStackFullWidth>
-                </Grid>
-              </Grid>
-            </Box>
-          </Box>
+        <Grid item xs={6} sm={12} md={2}>
+          <CustomStackFullWidth justifyContent="space-between" gap="10px">
+            <p class="footer-heading">Partner with us</p>
+            <RouteLinks token={token} configData={configData} />
+          </CustomStackFullWidth>
         </Grid>
-       
+        <Grid item xs={6} sm={12} md={2}>
+          <CustomStackFullWidth justifyContent="space-between" gap="10px">
+            <p class="footer-heading">Quick Links</p>
+           
+
+            <FooterBottomItems
+            configData={configData}
+            handleClickToRoute={handleClickToRoute}
+            />
+
+          </CustomStackFullWidth>
+        </Grid>
+        <Grid item xs={12}>
+          <Divider
+            sx={{
+              borderColor: "black",
+              
+            }}
+          />
+        </Grid>
       </Grid>
-      {open && (
-        <LocationViewOnMap
-          open={open}
-          handleClose={handleOpenCloseMap}
-          latitude={configData?.default_location?.lat}
-          longitude={configData?.default_location?.lng}
-          address={configData?.address}
-        />
-      )}
+   
+<Grid
+  container
+  item
+  xs={12}
+  sm={12}
+  md={12}
+  sx={{
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+  }}
+>
+  <Grid item sx={{ display: "flex", alignItems: "center" }}>
+    <p style={{ marginRight: '5px' }}>Follow Us on</p>
+    <InstagramIcon  />
+    <PinterestIcon  />
+    <FacebookIcon />
+    <LinkedInIcon />
+  </Grid>
+  <Grid item>
+    <p>Copyright © 2024, yehlo</p>
+  </Grid>
+</Grid>
     </CustomStackFullWidth>
   );
 };

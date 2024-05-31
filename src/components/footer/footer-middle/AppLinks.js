@@ -12,6 +12,7 @@ export const CustomButton = styled(Button)(({ theme, graybackground }) => ({
 	padding: "8px 15px",
 	borderRadius: "5px",
 	cursor: "pointer",
+	// width: "90%",
 	backgroundColor:
 		graybackground === "true"
 			? theme.palette.footer.appDownloadButtonBgGray
@@ -55,8 +56,8 @@ const AppLinks = (props) => {
 					src={playstoreicon.src}
 					alt="GooglePlay"
 					objectFit="cover"
-					height="24px"
-					width="24px"
+					height="20px"
+					width="20px"
 				/>
 				<Stack alignItems="flex-start" justifyContent="center">
 					<Typography
@@ -98,8 +99,8 @@ const AppLinks = (props) => {
 					src={appleicon.src}
 					alt="GooglePlay"
 					objectFit="cover"
-					height="30px"
-					width="30px"
+					height="20px"
+					width="20px"
 				/>
 				<Stack alignItems="flex-start" justifyContent="center">
 					<Typography
@@ -125,11 +126,11 @@ const AppLinks = (props) => {
 	);
 	return (
 		<Stack
-			direction="row"
+		direction={{ xs: 'row', md: 'column' }}
 			spacing={2}
 			// sx={{ mt: 4 }}
 			gap={language_direction === "rtl" && "10px"}
-			justifyContent="center"
+			
 		>
 			{Number.parseInt(
 				landingPageData?.download_user_app_links?.playstore_url_status
