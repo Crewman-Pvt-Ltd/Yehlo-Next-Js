@@ -16,6 +16,7 @@ export const PolicyShimmer = () => (
 const PolicyPage = (props) => {
   const { title, data, isFetching } = props;
   return (
+    <>
     <CustomContainer>
       <Box minHeight="80vh">
         <Grid container item md={12} xs={12} spacing={3} mt="1rem">
@@ -43,6 +44,7 @@ const PolicyPage = (props) => {
         </Grid>
       </Box>
     </CustomContainer>
+    </>
   );
 };
 
