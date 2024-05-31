@@ -1,5 +1,5 @@
 import { Grid, Skeleton, styled, Tooltip, Typography } from "@mui/material";
-import { Box } from "@mui/system";
+import { Box, height, textAlign } from "@mui/system";
 /* import { btoa } from "next/dist/compiled/@edge-runtime/primitives/encoding"; */
 import Link from "next/link";
 import React from "react";
@@ -11,9 +11,8 @@ import CustomImageContainer from "../CustomImageContainer";
 
 const Wrapper = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.background.paper,
-  padding: "5px",
+  // padding: "5px",
   border: "1px solid #EAEEF2",
-
   borderRadius: "10px",
   cursor: "pointer",
   width: "225px",
@@ -22,8 +21,11 @@ const Wrapper = styled(Box)(({ theme }) => ({
     transition: "all ease 0.5s",
   },
   [theme.breakpoints.down("md")]: {
-    width: "80px",
+    width: "89px",
+    height: "120px",
     display: "flex",
+    justifyContent: "center",
+    textAlign: "center",
     flexDirection: "column",
     alignItems: "center",
   },
@@ -107,11 +109,21 @@ const ShopCategoryCard = (props) => {
             <Grid
               item
               xs={12}
-              container
               sx={{ p: "8px" }}
               alignItems="center"
               justifyContent="center"
             >
+            <Grid item xs={12}>
+              <ImageWrapper>
+                <CustomImageContainer
+                  height="100%"
+                  width="100%"
+                  src={`${imageUrl}/${item?.image}`}
+                  borderRadius="5px"
+                  objectFit="cover"
+                />
+              </ImageWrapper>
+            </Grid>
               <Grid item xs={12}>
                 <Tooltip
                   title={item?.name}
@@ -143,17 +155,7 @@ const ShopCategoryCard = (props) => {
                 </Typography>
               </Grid>
             </Grid>
-            <Grid item xs={12}>
-              <ImageWrapper>
-                <CustomImageContainer
-                  height="100%"
-                  width="100%"
-                  src={`${imageUrl}/${item?.image}`}
-                  borderRadius="5px"
-                  objectFit="cover"
-                />
-              </ImageWrapper>
-            </Grid>
+            
           </Grid>
         </Link>
       )}
