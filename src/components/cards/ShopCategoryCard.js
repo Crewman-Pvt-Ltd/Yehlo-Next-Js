@@ -14,6 +14,7 @@ const Wrapper = styled(Box)(({ theme }) => ({
   // padding: "5px",
   border: "1px solid #EAEEF2",
   borderRadius: "10px",
+  textAlign: "center",
   cursor: "pointer",
   width: "225px",
   transition: "all ease 0.5s",
