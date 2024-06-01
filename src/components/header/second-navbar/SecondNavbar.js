@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import {
-  
   alpha,
   Avatar,
   IconButton,
@@ -45,6 +44,8 @@ import CallToAdmin from "../../CallToAdmin";
 import CustomLanguage from "../top-navbar/language/CustomLanguage";
 import ManageSearch from "./ManageSearch";
 import TrackParcelFromHomePage from "components/parcel/TrackParcelFromHomePage";
+import { CustomStackForLoaction } from "../NavBar.style";
+import AddressReselect from "../top-navbar/address-reselect/AddressReselect";
 
 const Cart = ({ isLoading }) => {
   const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
@@ -147,13 +148,13 @@ const SecondNavBar = ({ configData }) => {
   const [toggled, setToggled] = useState(false);
   const totalWishList = wishLists?.item?.length + wishLists?.store?.length;
   const anchorRef = useRef(null);
+  const [openDrawer, setOpenDrawer] = useState(false);
   let token = undefined;
   let location = undefined;
   // let zoneId = undefined;
   let guestId = undefined;
   let zoneid =
-  typeof window !== "undefined" ? localStorage.getItem("zoneid") : undefined;
-  
+    typeof window !== "undefined" ? localStorage.getItem("zoneid") : undefined;
 
   if (typeof window !== "undefined") {
     token = localStorage.getItem("token");
@@ -288,7 +289,7 @@ const SecondNavBar = ({ configData }) => {
         marginLeft: "0 !important",
       }}
     >
-      <Stack direction="row" alignItems="center" width="100%">
+      <Stack direction="row" alignItems="center" width="30%">
         {!isSmall && (
           <LogoSide
             width="110px"
@@ -301,6 +302,11 @@ const SecondNavBar = ({ configData }) => {
           <NavLinks t={t} zoneid="zoneid" moduleType={moduleType} />
         )} */}
       </Stack>
+      <CustomStackForLoaction direction="row" width="80%">
+        {location && (
+          <AddressReselect setOpenDrawer={setOpenDrawer} location={location} />
+        )}
+      </CustomStackForLoaction>
       {router.pathname !== "/" && (
         <ManageSearch
           zoneid={zoneid}

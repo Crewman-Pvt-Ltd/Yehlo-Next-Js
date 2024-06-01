@@ -45,13 +45,13 @@ const RouteLinks = (props) => {
 
     sx={{
 
-      display: "flex",
+      // display: "flex",
 
       flexDirection: {
 
         xs: "column",  
 
-        sm: "row"      
+       md: "column",  
 
       },
 
@@ -59,15 +59,15 @@ const RouteLinks = (props) => {
 
       alignItems: {
 
-        xs: "flex-start",  
+        // xs: "flex-start",  
 
-        sm: "center"    
+        // sm: "center"    
 
       },
 
       gap: "2",
 
-      width: "100%",
+      // width: "70%",
 
      
 

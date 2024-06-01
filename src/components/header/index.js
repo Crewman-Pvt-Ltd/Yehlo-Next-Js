@@ -12,7 +12,7 @@ import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import { Box } from "@mui/system";
 import SecondNavBar from "./second-navbar/SecondNavbar";
-import TopNavBar from "./top-navbar/TopNavBar";
+// import TopNavBar from "./top-navbar/TopNavBar";
 
 const HeaderComponent = () => {
   const router = useRouter();
@@ -35,15 +35,16 @@ const HeaderComponent = () => {
       <Box>
         <NoSsr>
           {(location || token) && (
-            <Card
-              sx={{
-                boxShadow: "none",
-              }}
-            >
-              <TopNavBar configData={configData} />
-            </Card>
+            // <Card
+            //   sx={{
+            //     boxShadow: "none",
+            //   }}
+            // >
+            //   <TopNavBar configData={configData} />
+            // </Card>
+            <SecondNavBar configData={configData} />
           )}
-          <SecondNavBar configData={configData} />
+         
         </NoSsr>
       </Box>
     </AppBarStyle>

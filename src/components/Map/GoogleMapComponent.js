@@ -28,7 +28,7 @@ const GoogleMapComponent = ({
   const isSmall = useMediaQuery(theme.breakpoints.down("sm"));
   const containerStyle = {
     width: "100%",
-    maxHeight: "50dvh",
+    maxHeight: "30dvh",
     height: isModalExpand
       ? "70vh"
       : height

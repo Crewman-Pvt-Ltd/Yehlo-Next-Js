@@ -81,7 +81,7 @@ const PopularItemsNearby = ({ title, subTitle }) => {
     infinite: false,
     speed: 500,
     slidesPerRow: 1,
-    rows: 3,
+    rows: 1,
     slidesToShow: flashSaleslength() ? 2 : 2.7,
     slidesToScroll: 1,
     cssEase: "linear",

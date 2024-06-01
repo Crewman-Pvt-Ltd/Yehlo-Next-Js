@@ -293,3 +293,9 @@ video {
 .slick-slider-container .slick-list {
   scroll-behavior: smooth;
 }
+
+.footer-heading{
+    color:black;
+    font-size: 14px;
+    font-weight: 500;
+}
