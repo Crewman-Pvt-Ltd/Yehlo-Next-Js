@@ -31,7 +31,14 @@ const DownloadApps = ({ theme, isSmall, landingPageData }) => {
           text={landingPageData?.download_user_app_sub_title}
         />
       </Typography>
-      <AppLinks landingPageData={landingPageData} graybackground />
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+  <AppLinks 
+    landingPageData={landingPageData} 
+    graybackground 
+    style={{ display: 'flex', flexDirection: 'row' }} // Apply this style to force single row
+  />
+</div>
+
     </CustomStackFullWidth>
   );
 };

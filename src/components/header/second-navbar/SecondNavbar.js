@@ -302,7 +302,15 @@ const SecondNavBar = ({ configData }) => {
           <NavLinks t={t} zoneid="zoneid" moduleType={moduleType} />
         )} */}
       </Stack>
-      <CustomStackForLoaction direction="row" width="80%">
+      <Stack direction="row" alignItems="center" width="50%">
+        {!isSmall && (
+          <p style={{ color : "black"}}>Delivery in 10 mins</p>
+        )}
+        {/* {!isSmall && location && (
+          <NavLinks t={t} zoneid="zoneid" moduleType={moduleType} />
+        )} */}
+      </Stack>
+      <CustomStackForLoaction direction="row" width="50%">
         {location && (
           <AddressReselect setOpenDrawer={setOpenDrawer} location={location} />
         )}
