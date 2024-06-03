@@ -88,12 +88,12 @@ const AddressReselect = ({ location, setOpenDrawer }) => {
           <CustomStackFullWidth direction="row" alignItems="center" spacing={1}>
             <RoomIcon
               sx={{
-                fontSize: { xs: "16px", sm: "20px" },
+                fontSize: { xs: "16px", sm: "25px" },
               }}
               color="primary"
             />
             <Typography
-              fontSize={{ xs: "12px", sm: "16px" }}
+              fontSize={{ xs: "12px", sm: "12px" }}
               align="center"
               color={theme.palette.neutral[1000]}
               sx={{

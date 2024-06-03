@@ -76,7 +76,7 @@ const InterestOptions = ({ configData }) => {
     >
       <H1 text="Choose Your Interests" />
       <Typography variant="h6" color="customColor.textGray">
-        {t("Get personalized food recommendations.")}
+        {t("Get personalized recommendations.")}
       </Typography>
       <Grid container spacing={2}>
         {categoryList.length > 0 ? (

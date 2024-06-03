@@ -299,3 +299,47 @@ video {
     font-size: 14px;
     font-weight: 500;
 }
+/* ----------------------------------------------Vendor-------------------------------------------- */
+.vendor-main-para1{
+    font-size: 16px;
+    color:rgba(46, 44, 44, 0.651);
+}
+.vendor-main-heading{
+    color:black;
+    font-size: 40px;
+     
+}
+.vendor-main-para2{
+    font-size: 16px;
+    color:rgba(46, 44, 44, 0.651);
+}
+@media (max-width: 769px) {
+    .vendor-main-para1{
+        font-size: 20px;
+       color: gray;
+        /* text-align: center; */
+    }
+    .vendor-main-heading {
+        font-size: 40px;
+        color: black;
+        /* text-align: center; */
+    }
+    .vendor-main-para2{
+        font-size: 16px;
+        color:rgba(46, 44, 44, 0.651);
+        /* text-align: center; */
+    }
+   .vendor-firstimgsec{
+    justify-content: center;
+   display: flex;
+   }
+   .vendor-firstimg{
+    height: 100%;
+    width: 140%;
+   }
+   .vendor-secondimgsec{
+    justify-content: center;
+   display: flex;
+   }
+   
+}
