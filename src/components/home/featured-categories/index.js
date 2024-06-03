@@ -61,6 +61,18 @@ const FeaturedCategories = ({ configData }) => {
     }
   }, [data]);
 
+  const ecomslidersettings = {
+    dots: false,
+    infinite: true,
+    adaptiveHeight: true,
+    slidesToShow: 8,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 800,
+    autoplaySpeed: 800,
+    cssEase: "linear",
+  };
+
   const moduleWiseCard = () => {
     switch (getCurrentModuleType()) {
       case ModuleTypes.GROCERY:
@@ -91,37 +103,33 @@ const FeaturedCategories = ({ configData }) => {
         );
       case ModuleTypes.PHARMACY:
         return (
-          <Grid container columnSpacing={{ xs: 3, md: 1 }} rowSpacing={{ xs: 3, md: 1 }}>
+          <Slider {...ecomslidersettings}>
             {featuredCategories?.map((item, index) => {
               return (
-                <Grid item xs={3} md={2}>
-                  <PharmacyCategoryCard
-                    key={index}
-                    image={`${configData?.base_urls?.category_image_url}/${item?.image}`}
-                    title={item?.name}
-                    slug={item?.slug}
-                    id={item?.id}
-                  />
-                </Grid>
+                <PharmacyCategoryCard
+                  key={index}
+                  image={`${configData?.base_urls?.category_image_url}/${item?.image}`}
+                  title={item?.name}
+                  slug={item?.slug}
+                  id={item?.id}
+                />
               );
             })}
-          </Grid>
+          </Slider>
         );
       case ModuleTypes.ECOMMERCE:
         return (
-          <Grid container columnSpacing={{ xs: 0, md: 1 }} rowSpacing={{ xs: 1, md: 1 }} style={{justifyContent: "center"}}>
+          <Slider {...ecomslidersettings}>
             {featuredCategories?.map((item, index) => {
               return (
-                <Grid item xs={3} md={3}>
-                  <ShopCategoryCard
-                    key={index}
-                    imageUrl={configData?.base_urls?.category_image_url}
-                    item={item}
-                  />
-                </Grid>
+                <ShopCategoryCard
+                  key={index}
+                  imageUrl={configData?.base_urls?.category_image_url}
+                  item={item}
+                />
               );
             })}
-          </Grid>
+          </Slider>
         );
       case ModuleTypes.FOOD:
         return (

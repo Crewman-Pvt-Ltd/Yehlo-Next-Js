@@ -10,13 +10,13 @@ import { textWithEllipsis } from "../../styled-components/TextWithEllipsis";
 import CustomImageContainer from "../CustomImageContainer";
 
 const Wrapper = styled(Box)(({ theme }) => ({
-  backgroundColor: theme.palette.background.paper,
-  // padding: "5px",
-  border: "1px solid #EAEEF2",
-  borderRadius: "10px",
+  // backgroundColor: theme.palette.background.paper,
+  padding: "5px",
+  // border: "1px solid #EAEEF2",
+  // borderRadius: "10px",
   textAlign: "center",
   cursor: "pointer",
-  width: "225px",
+  width: "140px",
   transition: "all ease 0.5s",
   ".MuiTypography-h7": {
     transition: "all ease 0.5s",
@@ -31,20 +31,20 @@ const Wrapper = styled(Box)(({ theme }) => ({
     alignItems: "center",
   },
   "&:hover": {
-    boxShadow: "0px 10px 20px rgba(88, 110, 125, 0.1)",
+    // boxShadow: "0px 10px 20px rgba(88, 110, 125, 0.1)",
     ".MuiTypography-h7": {
       color: theme.palette.primary.main,
       letterSpacing: "0.02em",
     },
     img: {
-      transform: "scale(1.1)",
+      transform: "scale(1.04)",
     }
   },
 }));
 const ImageWrapper = styled(CustomBoxFullWidth)(({ theme }) => ({
   position: "relative",
-  borderRadius: "10px",
-  height: "115px",
+  // borderRadius: "10px",
+  height: "90px",
   [theme.breakpoints.down("md")]: {
     height: "50px",
     width: "100%",
