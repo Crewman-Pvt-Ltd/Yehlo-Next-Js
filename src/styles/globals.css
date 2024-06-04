@@ -334,7 +334,11 @@ video {
    display: flex;
    }
    .vendor-firstimg{
-    height: 100%;
+    height: 400px;
+    width: 140%;
+   }
+   .vendor-secondimg{
+    height: 300px;
     width: 140%;
    }
    .vendor-secondimgsec{
@@ -343,3 +347,10 @@ video {
    }
    
 }
+@media (min-width: 1299px) {
+    /* .vendor-firstimg{
+        height: 70%;
+        width: 130%;
+       } */
+}
+
