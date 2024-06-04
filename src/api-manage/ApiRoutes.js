@@ -115,3 +115,4 @@ export const cashback_list = "api/v1/cashback/list";
 export const cashback_amount = "api/v1/cashback/getCashback";
 export const brand_list = "api/v1/brand";
 export const brand_products = "api/v1/brand/items/";
+export const vendor_landing = 'api/v1/admin-landing-page'

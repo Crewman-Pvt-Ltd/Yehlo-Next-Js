@@ -650,13 +650,14 @@ const ProductCard = (props) => {
         </PrimaryToolTip>
         <Stack mt="5px">
           <Typography fontSize="10px">{t("start from")}</Typography>
-          <Typography
+          {/* <Typography
             fontSize={{ xs: "14px", md: "16px" }}
             fontWeight="600"
             color={theme.palette.text.primary}
           >
             {getAmountWithSign(item?.price)}
-          </Typography>
+          </Typography> */}
+          <AmountWithDiscountedAmount item={item} />
         </Stack>
         <CustomStackFullWidth
           direction="row"
