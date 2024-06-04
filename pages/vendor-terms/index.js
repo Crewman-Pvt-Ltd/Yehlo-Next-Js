@@ -24,13 +24,7 @@ import AppLinks from "../../src/components/footer/footer-middle/AppLinks";
 import Slider from "react-slick";
 import { SliderCustom } from "../../src/styled-components/CustomStyles.style";
 
-const imageUrls = [
-  "https://6ammart-admin.6amtech.com/storage/app/public/module/2022-04-24-6264c13107e3f.png",
-  "https://6ammart-admin.6amtech.com/storage/app/public/module/2022-04-24-6264c07fe7238.png",
-  "https://6ammart-admin.6amtech.com/storage/app/public/module/2022-04-24-6264c0169e405.png",
-  "https://6ammart-admin.6amtech.com/storage/app/public/module/2022-04-24-6264c16647b39.png",
-  "https://6ammart-admin.6amtech.com/storage/app/public/module/2022-04-24-6264bf928d116.png",
-];
+
 const Index = ({ configData, landingPageData }) => {
   const boxxstyle = () => ({
     margin: "0 10px",
