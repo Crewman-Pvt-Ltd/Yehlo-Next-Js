@@ -334,8 +334,12 @@ video {
    display: flex;
    }
    .vendor-firstimg{
-    height: 100%;
+    height: 400px;
     width: 140%;
+   }
+   .vendor-secondimg{
+    height: 300px;
+    width: 70%;
    }
    .vendor-secondimgsec{
     justify-content: center;
@@ -343,3 +347,18 @@ video {
    }
    
 }
+.driverpartnerimg{
+    height: 300px;
+    width: 100% !important;
+}
+.deliverypartnerimgsec{
+    text-align: center;
+    margin-top: 1rem;
+    width: 900px;
+}
+
+/* .deliverypartnerimgsec .slick-slide{
+    margin: 0px;
+} */
+
+
