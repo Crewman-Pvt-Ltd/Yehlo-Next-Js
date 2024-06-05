@@ -28,7 +28,7 @@ export const Card = styled(Box)(({ theme }) => ({
     boxShadow: "0px 15px 25px rgba(88, 110, 125, 0.1)",
     border: "0px",
   },
-  [theme.breakpoints.down("sm")]: {
+  [theme.breakpoints.down("md")]: {
     height: "110px",
     width: "110px",
   },
@@ -97,12 +97,12 @@ const FeaturedItemCard = (props) => {
             sx={{
               padding: ".5rem",
               cursor: "pointer",
-              height: { xs: "120px", md: "155px" },
-              width: { xs: "80px", md: "200px" },
-              backgroundColor: (theme) => theme.palette.background.paper,
+              height: { xs: "110px", md: "130px" },
+              width: { xs: "90px", md: "100px" },
+              // backgroundColor: (theme) => theme.palette.background.paper,
               // padding: ".5rem",
-              border: (theme) =>
-                `1.5px solid ${alpha(theme.palette.neutral[400], 0.2)}`,
+              // border: (theme) =>
+              //   `1.5px solid ${alpha(theme.palette.neutral[400], 0.2)}`,
               borderRadius: "10px",
               // margin: "10px",
               "&:hover": {
@@ -121,7 +121,7 @@ const FeaturedItemCard = (props) => {
             <Stack
               sx={{
                 position: "relative",
-                height: { xs: "95px", md: "110px" },
+                height: { xs: "60px", md: "80px" },
                 width: "100%",
               }}
             >
