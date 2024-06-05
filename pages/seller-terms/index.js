@@ -36,55 +36,7 @@ const Index = ({ configData, landingPageData }) => {
     refetch();
   }, []);
 
-  const ImageGrid = ({ imageUrls }) => {
-    return (
-      <Slider
-        className="custom-slider"  // Add custom classname
-        dots={true}
-        infinite={true}
-        speed={500}
-        slidesToShow={2.2}
-        slidesToScroll={1}
-        adaptiveHeight={true}
-        responsive={[
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              infinite: true,
-              dots: true
-            }
-          },
-          {
-            breakpoint: 960,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 1,
-              infinite: true,
-              dots: true
-            }
-          }
-        ]}
-      >
-        {imageUrls?.map((url, index) => (
-          <div key={index}>
-            <img
-              src={url?.image}
-              alt={`Image ${index + 1}`}
-              style={{
-                width: '100%',
-                height: '250px',
-                objectFit: 'cover',
-                borderRadius: '8px',
-                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-              }}
-            />
-          </div>
-        ))}
-      </Slider>
-    );
-  };
+
 
   const OuterContainer = () => {
     return (
