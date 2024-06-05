@@ -302,19 +302,24 @@ const SecondNavBar = ({ configData }) => {
           <NavLinks t={t} zoneid="zoneid" moduleType={moduleType} />
         )} */}
       </Stack>
-      <Stack direction="row" alignItems="center" width="50%">
+      {/* <Stack direction="row" alignItems="center" width="50%">
         {!isSmall && (
           <p style={{ color : "black"}}>Delivery in 10 mins</p>
         )}
-        {/* {!isSmall && location && (
+        {!isSmall && location && (
           <NavLinks t={t} zoneid="zoneid" moduleType={moduleType} />
-        )} */}
-      </Stack>
-      <CustomStackForLoaction direction="row" width="50%">
-        {location && (
-          <AddressReselect setOpenDrawer={setOpenDrawer} location={location} />
         )}
-      </CustomStackForLoaction>
+      </Stack> */}
+    <Stack direction="column" width="100%" spacing={0} >
+  <p style={{ color: "black", marginBottom: 0, fontWeight: "bold", fontSize: "18px"}}>Delivery in 10 mins</p>
+  <CustomStackForLoaction direction="row" width="50%" sx={{ marginTop: 0, paddingTop: 0 }}>
+    {location && (
+      <AddressReselect setOpenDrawer={setOpenDrawer} location={location} />
+    )}
+  </CustomStackForLoaction>
+</Stack>
+
+
       {router.pathname !== "/" && (
         <ManageSearch
           zoneid={zoneid}
