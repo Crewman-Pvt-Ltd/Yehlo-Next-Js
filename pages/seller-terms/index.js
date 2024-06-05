@@ -97,7 +97,7 @@ const Index = ({ configData, landingPageData }) => {
             sx={{}}
           >
             <img
-              src="https://yehloapp.com/static/freepik-export-20240603114618RdiP.png"
+              src="https://yehloapp.com/static/Shop%20images.png"
               width="100%"
               height="450px"
               className="vendor-firstimg"
@@ -109,7 +109,7 @@ const Index = ({ configData, landingPageData }) => {
           container
           sx={{
             textAlign: { xs: "left", md: "center" },
-           
+           marginTop: "1rem",
           }}
         >
           <Grid item xs={12} sm={12} md={12} sx={{
@@ -416,7 +416,7 @@ const Index = ({ configData, landingPageData }) => {
           <Grid item xs={12} sm={6} md={6} sx={{}}
            className="vendor-secondimgsec">
             <img
-              src="https://yehloapp.com/static/vendor-upper.png"
+              src="https://yehloapp.com/static/deliveryman.png"
               width="70%"
               height="450px"
               className="vendor-secondimg"

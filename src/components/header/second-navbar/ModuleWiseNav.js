@@ -74,11 +74,9 @@ const ModuleWiseNav = (props) => {
     </CustomStackFullWidth>
   );
   const handleIconClick = () => {
-    if (location) {
-      router.push("/home");
-    } else {
+   
       router.push("/");
-    }
+    
   };
   const getIcon = () => (
     <Box
@@ -125,7 +123,7 @@ const ModuleWiseNav = (props) => {
                 <Grid item xs={1.5} sm={1} align="left">
                   {router.pathname === "/home" && !router.query.search ? (
                     modules.length >= 2 ? (
-                      <MobileModuleSelection />
+                      getIcon()
                     ) : (
                       getIcon()
                     )

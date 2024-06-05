@@ -339,7 +339,7 @@ video {
    }
    .vendor-secondimg{
     height: 300px;
-    width: 140%;
+    width: 70%;
    }
    .vendor-secondimgsec{
     justify-content: center;
@@ -347,10 +347,18 @@ video {
    }
    
 }
-@media (min-width: 1299px) {
-    /* .vendor-firstimg{
-        height: 70%;
-        width: 130%;
-       } */
+.driverpartnerimg{
+    height: 300px;
+    width: 100% !important;
 }
+.deliverypartnerimgsec{
+    text-align: center;
+    margin-top: 1rem;
+    width: 900px;
+}
+
+/* .deliverypartnerimgsec .slick-slide{
+    margin: 0px;
+} */
+
 
