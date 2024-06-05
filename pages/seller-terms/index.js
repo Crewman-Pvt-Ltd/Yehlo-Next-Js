@@ -53,380 +53,230 @@ const Index = ({ configData, landingPageData }) => {
             width: { xs: "100%", sm:"100%", md: "100%" },
           }}
         >
-          <Grid
-            className="vendor-main-firstsec"
-            item
-            xs={12}
-            sm={12}
-            md={6}
-            sx={{
-              paddingLeft: { xs: 0, md: "50px" },
-              textAlign: { xs: "center", md: "left" },
-              paddingTop: { xs: "3px", md: "50px" },
-            }}
-          >
-            <p className="vendor-main-para1">Yehlo Seller Fees and Pricing</p>
-            <h1 className="vendor-main-heading">
-              Fees and Pricing for Yehlo Sellers
-            </h1>
-            <p className="vendor-main-para2">
-              Sell on yehlo and get a chance to receive benefits worth
-              ₹25,000*
-            </p>
-            <button
-              className="vendor-startsellingbtn"
-              style={{
-                backgroundColor: "darkblue",
-                color: "white",
-                height: "50px",
-                width: "150px",
-                border: "none",
-                borderRadius: "20px",
-                cursor: "pointer",
-                fontSize: "20px",
-              }}
-            >
-              Start Selling
-            </button>
-          </Grid>
-          <Grid
-            className="vendor-firstimgsec"
-            item
-            xs={12}
-            sm={12}
-            md={6}
-            sx={{}}
-          >
-            <img
-              src="https://yehloapp.com/static/Shop%20images.png"
-              width="100%"
-              height="450px"
-              className="vendor-firstimg"
-            />
-          </Grid>
-        </Grid>
-
-        <Grid
-          container
-          sx={{
-            textAlign: { xs: "left", md: "center" },
-           marginTop: "1rem",
-          }}
-        >
-          <Grid item xs={12} sm={12} md={12} sx={{
-               padding: { xs: "0 20px", md: "0" },
-          }}
-          >
-            <h1
-              style={{
-                fontSize: "30px",
-                color: "black",
-              }}
-            >
-             Factors Influencing Seller Fees and Pricing on yehlo
-            </h1>
-          </Grid>
-          <Grid item xs={12} sm={12} md={12} sx={{}}>
+        {data && (<>
             <Grid
-              container
+              className="vendor-main-firstsec"
+              item
+              xs={12}
+              sm={12}
+              md={6}
               sx={{
-                padding: { xs: "", md: "0 60px" },
+                paddingLeft: { xs: 0, md: "50px" },
+                textAlign: { xs: "center", md: "left" },
+                paddingTop: { xs: "3px", md: "50px" },
               }}
             >
-              <Grid
-                item
-                xs={12}
-                sm={6}
-                md={3}
-                sx={{ display: "flex", justifyContent: "center" }}
-              >
-                <Box
-                  sx={{
-                    height: { xs: "200px", md: "270px" },
-                    width: { xs: "90%", md: "90%" },
-                    backgroundColor: "white",
-                    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-                    padding: { xs: "20px 30px", md: "20px 30px" },
-                    borderRadius: 1.2,
-                  }}
-                >
-                  <p
-                    style={{
-                      color: "black",
-                      fontSize: "15px",
-                      marginBottom: 30,
-                    }}
-                  >
-                    REFERRAL FEES/ SELL ON YEHLO FEES
-                  </p>
-                  <p
-                    style={{
-                      color: "black",
-                      fontSize: "15px",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    Product category based fees
-                  </p>
-                  <p style={{ color: "gray", fontSize: "15px" }}>
-                   Upto 25%, varies based on product category
-                  </p>
-                </Box>
-              </Grid>
-
-              <Grid
-                item
-                xs={12}
-                sm={6}
-                md={3}
-                sx={{ display: "flex", justifyContent: "center", 
-                  marginTop: { xs: "8px", md: "0"},
+              <p className="vendor-main-para1">{data?.home_title}</p>
+              <h1 className="vendor-main-heading">
+                {data?.home_sub_title}
+              </h1>
+              <p className="vendor-main-para2">
+                {data?.home_heading}
+              </p>
+              <button
+                className="vendor-startsellingbtn"
+                style={{
+                  backgroundColor: "darkblue",
+                  color: "white",
+                  height: "50px",
+                  width: "150px",
+                  border: "none",
+                  borderRadius: "20px",
+                  cursor: "pointer",
+                  fontSize: "20px",
                 }}
               >
-                <Box
-                  sx={{
-                    height: { xs: "200px", md: "270px" },
-                    width: { xs: "90%", md: "90%" },
-                    backgroundColor: "white",
-                    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-                    padding: { xs: "20px 30px", md: "20px 30px" },
-                    borderRadius: 1.2,
-                  }}
-                >
-                  <p
-                    style={{
-                      color: "black",
-                      fontSize: "15px",
-                      marginBottom: 30,
-                    }}
-                  >
-                    CLOSING FEES
-                  </p>
-                  <p
-                    style={{
-                      color: "black",
-                      fontSize: "15px",
-                      fontWeight: "bold",
-                    }}
-                  >
-                   Based on price of item sold
-                  </p>
-                  <p style={{ color: "gray", fontSize: "15px" }}>
-                  starts at ₹ 5, Varies by product price range and fulfillment channel
-                  </p>
-                </Box>
-              </Grid>
-              <Grid
-                item
-                xs={12}
-                sm={6}
-                md={3}
-                sx={{ display: "flex", justifyContent: "center", 
-                  marginTop: { xs: "8px", md: "0"},
-                }}
-              >
-                <Box
-                  sx={{
-                    height: { xs: "200px", md: "270px" },
-                    width: { xs: "90%", md: "90%" },
-                    backgroundColor: "white",
-                    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-                    padding: { xs: "20px 30px", md: "20px 30px" },
-                    borderRadius: 1.2,
-                  }}
-                >
-                  <p
-                    style={{
-                      color: "black",
-                      fontSize: "15px",
-                      marginBottom: 30,
-                    }}
-                  >
-                    WEIGHT HANDLING FEES
-                  </p>
-                  <p
-                    style={{
-                      color: "black",
-                      fontSize: "15px",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    Fees for Shipping/Delivery
-                  </p>
-                  <p style={{ color: "gray", fontSize: "15px" }}>
-                  starts at Rs. 29 per item shipped, varies by item volume & distance
-                  </p>
-                </Box>
-              </Grid>
-              <Grid
-                item
-                xs={12}
-                sm={6}
-                md={3}
-                sx={{ display: "flex", justifyContent: "center", 
-                  marginTop: { xs: "8px", md: "0"},
-                }}
-              >
-                <Box
-                  sx={{
-                    height: { xs: "200px", md: "270px" },
-                    width: { xs: "90%", md: "90%" },
-                    backgroundColor: "white",
-                    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-                    padding: { xs: "20px 30px", md: "20px 30px" },
-                    borderRadius: 1.2,
-                  }}
-                >
-                  <p
-                    style={{
-                      color: "black",
-                      fontSize: "15px",
-                      marginBottom: 30,
-                    }}
-                  >
-                    OTHER FEES
-                  </p>
-                  <p
-                    style={{
-                      color: "black",
-                      fontSize: "15px",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    Based on program/service
-                  </p>
-                  <p style={{ color: "gray", fontSize: "15px" }}>
-                  Only applicable for certain Fulfillment Channel, and/or optional programs or services subscribed to
-                  </p>
-                </Box>
-              </Grid>
+                Start Selling
+              </button>
+            </Grid>
+            <Grid
+              className="vendor-firstimgsec"
+              item
+              xs={12}
+              sm={12}
+              md={6}
+              sx={{}}
+            >
+              <img
+                src={data?.home_seller_image}
+                width="100%"
+                height="100%"
+                className="vendor-firstimg"
+              />
             </Grid>
           </Grid>
-        </Grid>
+
+          {(data?.feature_title != null && data?.admin_features?.length > 0) &&
+
+            (<Grid
+              container
+              sx={{
+                textAlign: { xs: "left", md: "center" },
+
+              }}
+            >
+              <Grid item xs={12} sm={12} md={12} sx={{
+                padding: { xs: "0 20px", md: "0" },
+              }}
+              >
+                <h1
+                  style={{
+                    fontSize: "30px",
+                    color: "black",
+                  }}
+                >
+                  {data?.feature_title}
+                </h1>
+              </Grid>
+              <Grid item xs={12} sm={12} md={12} sx={{}}>
+                <Grid
+                  container
+                  sx={{
+                    padding: { xs: "", md: "0 60px" },
+                  }}
+                >
+
+                  {(data?.admin_features.length > 0) && data?.admin_features.map((item, index) => (
+                    <Grid
+                      item
+                      xs={12}
+                      sm={6}
+                      md={3}
+                      sx={{ display: "flex", justifyContent: "center" }}
+                    >
+                      <Box
+                        sx={{
+                          height: { xs: "200px", md: "270px" },
+                          width: { xs: "90%", md: "90%" },
+                          backgroundColor: "white",
+                          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+                          padding: { xs: "20px 30px", md: "20px 30px" },
+                          borderRadius: 1.2,
+                        }}
+                      >
+                        <p
+                          style={{
+                            color: "black",
+                            fontSize: "15px",
+                            marginBottom: 30,
+                          }}
+                        >
+                          {item?.title}
+                        </p>
+                        <p
+                          style={{
+                            color: "black",
+                            fontSize: "15px",
+                            fontWeight: "bold",
+                          }}
+                        >
+                          {item?.sub_title}
+                        </p>
+                        <p style={{ color: "gray", fontSize: "15px" }}>
+                          {item?.sub_title2}
+                        </p>
+                      </Box>
+                    </Grid>
+                  ))}
 
 
-        <Grid container sx={{}}>
-          <Grid
-            item
-            xs={12}
-            sm={12}
-            md={12}
-            sx={{
-              textAlign: { xs: "center", md: "center" },
-            }}
-          >
-            <h1
-              style={{
-                fontSize: "30px",
+                </Grid>
+              </Grid>
+            </Grid>
+            )
+          }
+
+          <Grid container sx={{}}>
+            <Grid
+              item
+              xs={12}
+              sm={12}
+              md={12}
+              sx={{
+                textAlign: { xs: "center", md: "center" },
+              }}
+            >
+              <h1
+                style={{
+                  fontSize: "30px",
+                  color: "black",
+                }}
+              >
+                {data?.seller_purchase}
+              </h1>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              sm={12}
+              md={12}
+              sx={{
+                textAlign: { xs: "center", md: "left" },
+                padding: { md: "0 50px 0 50px", xs: "0 10px 0 10px" },
                 color: "black",
               }}
             >
-              Yehlo Payment Cycles
-            </h1>
+              {data?.seller_purchase}
+            </Grid>
+            <Grid item xs={12} sm={6} md={6} sx={{}}></Grid>
           </Grid>
+
           <Grid
-            item
-            xs={12}
-            sm={12}
-            md={12}
+            container
             sx={{
-              textAlign: { xs: "center", md: "left" },
-              padding: { md: "0 50px 0 50px"  ,xs: "0 10px 0 10px"},
-              color: "black",
+              backgroundImage:
+                "url('https://m.media-amazon.com/images/G/01/sell/images/illustration/pf-wave-horizon-1.svg')",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+              height: { xs: 700, md: 420 },
+              width: { xs: "auto", md: "100%" },
             }}
           >
-            <p className="">
-              You are eligible to get paid for the order 7 days after the order
-              is delivered. yehlo ensures payment for your sales (minus the
-              Yehlo Seller fees) is deposited securely into your bank account
-              every 7 days, including your Pay on Delivery orders. Eligible
-              sellers will also receive options for faster payment cycles.
-            </p>
-
-            <p className="">
-              You can view your deposited balance along with tips to grow and
-              expand your business in your Seller Central account.
-            </p>
-            {/* <Grid  item
-            xs={12}
-            sm={12}
-            md={12}>
-                 <img
-              src="https://images.ctfassets.net/wob906kz2qeo/4wp1gjo1gsZhZA4Rz1mePc/cd7483a326b46dd6271e3d0f6521930d/Payments-Blog.png"
-              width="100%"
-              height="70%"
-              className="vendor-firstimg"
-            />
-            </Grid> */}
-            <p className="">
-              NOTE: The above information is applicable for new sellers who will
-              join the "Standard" level in the yehlo STEP program. As sellers
-              move up levels, they will be able to unlock multiple benefits
-              including fee waivers, account management faster disbursement
-              cycles, & more.
-            </p>
-          </Grid>
-          <Grid item xs={12} sm={6} md={6} sx={{}}></Grid>
-        </Grid>
-
-        <Grid
-          container
-          sx={{
-            backgroundImage:
-              "url('https://m.media-amazon.com/images/G/01/sell/images/illustration/pf-wave-horizon-1.svg')",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            height: { xs: 700, md: 420 },
-            width: { xs: "auto", md: "100%" },
-          }}
-        >
-          <Grid
-            item
-            xs={12}
-            sm={6}
-            md={6}
-            sx={{
-              paddingLeft: { xs: 0, md: "50px" },
-              textAlign: { xs: "center", md: "left" },
-              paddingTop: "50px",
-            }}
-          >
-            <h1 className="vendor-main-heading">Start your Seller Journey</h1>
-            <p className="vendor-main-para1">
-              Join our family of 12 Lakh+ businesses who sell on Yehlo
-            </p>
-
-            <button
-              style={{
-                backgroundColor: "darkblue",
-                color: "white",
-                height: "50px",
-                width: "150px",
-                border: "none",
-                borderRadius: "20px",
-                cursor: "pointer",
-                fontSize: "20px",
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              md={6}
+              sx={{
+                paddingLeft: { xs: 0, md: "50px" },
+                textAlign: { xs: "center", md: "left" },
+                paddingTop: "50px",
               }}
             >
-              Start Selling
-            </button>
-            <p className="vendor-main-para2">
-              It takes only 15 minutes to setup your account
-            </p>
-          </Grid>
-          <Grid item xs={12} sm={6} md={6} sx={{}}
-           className="vendor-secondimgsec">
-            <img
-              src="https://yehloapp.com/static/deliveryman.png"
-              width="70%"
-              height="450px"
-              className="vendor-secondimg"
-            />
-          </Grid>
-        </Grid>
+              <h1 className="vendor-main-heading">{data?.seller_footer_title}</h1>
+              <p className="vendor-main-para1">
+                {data?.seller_footer_sub_title}
+              </p>
 
-      
-      </>
+              <button
+                style={{
+                  backgroundColor: "darkblue",
+                  color: "white",
+                  height: "50px",
+                  width: "150px",
+                  border: "none",
+                  borderRadius: "20px",
+                  cursor: "pointer",
+                  fontSize: "20px",
+                }}
+              >
+                Start Selling
+              </button>
+              <p className="vendor-main-para2">
+                {data?.seller_footer_heading}
+              </p>
+            </Grid>
+            <Grid item xs={12} sm={6} md={6} sx={{}}
+              className="vendor-secondimgsec">
+              <img
+                src={data?.footer_seller_image}
+                width="90%"
+                height="80%"
+                className="vendor-secondimg"
+              />
+            </Grid>
+          </Grid>
+        </>)}</>
     );
   };
 

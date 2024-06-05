@@ -71,39 +71,45 @@ const FeaturedCategories = ({ configData }) => {
     speed: 800,
     autoplaySpeed: 800,
     cssEase: "linear",
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 6,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+        },
+      }
+    ],
   };
 
   const moduleWiseCard = () => {
     switch (getCurrentModuleType()) {
       case ModuleTypes.GROCERY:
         return (
-          <CustomBoxFullWidth
-            sx={{
-              "& .slick-slider": {
-                paddingY: "30px",
-              },
-            }}
-          >
-            <Grid container columnSpacing={{ xs: 3, md: 1 }} rowSpacing={{ xs: 3, md: 1 }}>
-              {[...featuredCategories].reverse().map((item, index) => {
-                return (
-                  <Grid item xs={3} md={2}>
-                    <FeaturedItemCard
-                      key={index}
-                      image={`${configData?.base_urls?.category_image_url}/${item?.image}`}
-                      title={item?.name}
-                      id={item?.id}
-                      slug={item?.slug}
-                    />
-                  </Grid>
-                );
-              })}
-            </Grid>
-          </CustomBoxFullWidth>
+          <Slider {...ecomslidersettings}>
+            {[...featuredCategories].reverse().map((item, index) => {
+              return (
+                <FeaturedItemCard
+                  key={index}
+                  image={`${configData?.base_urls?.category_image_url}/${item?.image}`}
+                  title={item?.name}
+                  id={item?.id}
+                  slug={item?.slug}
+                />
+              );
+            })}
+          </Slider>
         );
       case ModuleTypes.PHARMACY:
         return (
-          <Slider {...ecomslidersettings}>
+          <Slider>
             {featuredCategories?.map((item, index) => {
               return (
                 <PharmacyCategoryCard
