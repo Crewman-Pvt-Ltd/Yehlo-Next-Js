@@ -22,7 +22,7 @@ const Wrapper = styled(Box)(({ theme }) => ({
     transition: "all ease 0.5s",
   },
   [theme.breakpoints.down("md")]: {
-    width: "89px",
+    width: "100px",
     height: "120px",
     display: "flex",
     justifyContent: "center",
