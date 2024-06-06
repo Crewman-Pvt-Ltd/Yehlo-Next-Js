@@ -41,6 +41,7 @@ const Index = ({ configData, landingPageData }) => {
   const OuterContainer = () => {
     return (
       <>
+      {data && (<>
         <Grid
           container
           sx={{
@@ -53,7 +54,6 @@ const Index = ({ configData, landingPageData }) => {
             width: { xs: "100%", sm:"100%", md: "100%" },
           }}
         >
-        {data && (<>
             <Grid
               className="vendor-main-firstsec"
               item
@@ -99,8 +99,8 @@ const Index = ({ configData, landingPageData }) => {
             >
               <img
                 src={data?.home_seller_image}
-                width="100%"
-                height="100%"
+                width="80%"
+                height="80%"
                 className="vendor-firstimg"
               />
             </Grid>
@@ -152,6 +152,7 @@ const Index = ({ configData, landingPageData }) => {
                           boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
                           padding: { xs: "20px 30px", md: "20px 30px" },
                           borderRadius: 1.2,
+                          marginBottom: 2,
                         }}
                       >
                         <p
@@ -216,7 +217,7 @@ const Index = ({ configData, landingPageData }) => {
                 color: "black",
               }}
             >
-              {data?.seller_purchase}
+              {data?.seller_description}
             </Grid>
             <Grid item xs={12} sm={6} md={6} sx={{}}></Grid>
           </Grid>
@@ -270,14 +271,15 @@ const Index = ({ configData, landingPageData }) => {
               className="vendor-secondimgsec">
               <img
                 src={data?.footer_seller_image}
-                width="90%"
-                height="80%"
+                width="75%"
+                height="75%"
                 className="vendor-secondimg"
               />
             </Grid>
           </Grid>
-        </>)}</>
-    );
+
+        </>)}
+  </>);
   };
 
   const { t } = useTranslation();
