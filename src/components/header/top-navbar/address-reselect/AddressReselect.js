@@ -86,12 +86,12 @@ const AddressReselect = ({ location, setOpenDrawer }) => {
       >
         <Grid item xs={11} align="left">
           <CustomStackFullWidth direction="row" alignItems="center" spacing={1}>
-            <RoomIcon
+            {/* <RoomIcon
               sx={{
                 fontSize: { xs: "16px", sm: "25px" },
               }}
               color="primary"
-            />
+            /> */}
             <Typography
               fontSize={{ xs: "12px", sm: "12px" }}
               align="center"

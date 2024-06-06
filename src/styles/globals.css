@@ -313,21 +313,21 @@ video {
     font-size: 16px;
     color:rgba(46, 44, 44, 0.651);
 }
-@media (max-width: 769px) {
+@media screen and (max-width: 769px) {
     .vendor-main-para1{
         font-size: 20px;
        color: gray;
-        /* text-align: center; */
+        text-align: center;
     }
     .vendor-main-heading {
         font-size: 40px;
         color: black;
-        /* text-align: center; */
+        text-align: center;
     }
     .vendor-main-para2{
         font-size: 16px;
         color:rgba(46, 44, 44, 0.651);
-        /* text-align: center; */
+        text-align: center;
     }
    .vendor-firstimgsec{
     justify-content: center;
@@ -335,7 +335,7 @@ video {
    }
    .vendor-firstimg{
     height: 400px;
-    width: 140%;
+    width: 100%;
    }
    .vendor-secondimg{
     height: 300px;
@@ -347,6 +347,11 @@ video {
    }
    
 }
+
+/* .deliverypartnerimgsec .slick-slide{
+    margin: 0px;
+} */
+/* -------------deliveryPartner------------------------------------------ */
 .driverpartnerimg{
     height: 300px;
     width: 100% !important;
@@ -356,9 +361,55 @@ video {
     margin-top: 1rem;
     width: 900px;
 }
-
-/* .deliverypartnerimgsec .slick-slide{
-    margin: 0px;
-} */
-
-
+.deliverypartner-main-para1{
+    font-size: 40px;
+    color:black;
+}
+.deliverypartner-main-para2{
+    font-size: 20px;
+    color:black;
+}
+.deliverypartner-main-heading{
+    color:black;
+    font-size: 40px;
+     
+}
+.deliverypartnertestimonal{
+    margin-top: 5rem;
+        }
+@media (max-width: 769px) {
+    .deliverypartner-firstimgsec{
+        justify-content: center;
+       display: flex;
+       align-items: center;
+       }
+       .deliverypartner-firstimg{
+        height: 228px;
+        width: 67%;
+       }
+       .deliverypartner-main-para1{
+        font-size: 25px;
+        color:black;
+    }
+    .deliverypartner-main-para2{
+        font-size: 17px;
+        color:black;
+    }
+    .deliverypartner-main-heading {
+        font-size: 24px;
+        color: black;
+        /* text-align: center; */
+    }
+    .driverpartnerimg{
+        height: 170px;
+        width: 100% !important;
+    }
+    .deliverypartnerimgsec{
+        text-align: center;
+        margin-top: 1rem;
+        width: 380px;
+    }
+    .deliverypartnertestimonal{
+margin-top: 10px;
+    }
+}

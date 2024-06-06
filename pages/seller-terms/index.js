@@ -44,12 +44,13 @@ const Index = ({ configData, landingPageData }) => {
         <Grid
           container
           sx={{
-            backgroundImage:
-              "url('https://m.media-amazon.com/images/G/01/sell/images/colors/blue50-100.svg')",
+            // backgroundImage:
+            //   "url('https://m.media-amazon.com/images/G/01/sell/images/colors/blue50-100.svg')",
+            backgroundColor: "#2299dd0f",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             height: { xs: 800, md: 420 },
-            width: { xs: "auto", md: "100%" },
+            width: { xs: "100%", sm:"100%", md: "100%" },
           }}
         >
           <Grid
@@ -435,7 +436,7 @@ const Index = ({ configData, landingPageData }) => {
     <>
       <CssBaseline />
       <SEO
-        title={configData ? `Vendor Terms` : "Loading..."}
+        title={configData ? `Seller Terms` : "Loading..."}
         image={`${configData?.base_urls?.business_logo_url}/${configData?.fav_icon}`}
         businessName={configData?.business_name}
       />
