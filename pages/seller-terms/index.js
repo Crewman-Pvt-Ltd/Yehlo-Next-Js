@@ -217,7 +217,7 @@ const Index = ({ configData, landingPageData }) => {
                 color: "black",
               }}
             >
-              {data?.seller_purchase}
+              {data?.seller_description}
             </Grid>
             <Grid item xs={12} sm={6} md={6} sx={{}}></Grid>
           </Grid>
