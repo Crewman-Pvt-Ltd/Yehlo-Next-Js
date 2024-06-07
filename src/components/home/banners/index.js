@@ -174,7 +174,7 @@ const Banners = (props) => {
     }
   };
 
-  const settings = {
+  const customSettings = {
     dots: false,
     infinite: bannersData.length > 2 && true,
     slidesToShow: getModuleWiseBanners(),
@@ -209,7 +209,7 @@ const Banners = (props) => {
         {isFetching ? (
           <Grid container spacing={2}>
             <Grid item xs={12}>
-              <Slider {...settings}>
+              <Slider {...customSettings}>
                 {[...Array(getModuleWiseBanners())].map((index) => {
                   return (
                     <BannersWrapper key={index}>
@@ -226,7 +226,7 @@ const Banners = (props) => {
           </Grid>
         ) : (
           <SliderCustom>
-            <Slider {...settings}>
+            <Slider {...customSettings}>
               {bannersData?.length > 0 &&
                 bannersData?.map((item, index) => {
                   return (
