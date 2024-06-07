@@ -23,41 +23,7 @@ import "slick-carousel/slick/slick-theme.css";
   },
 })); */
 
-var settings = {
-  dots: false,
-  infinite: true,
-  adaptiveHeight: true,
-  speed: 500,
-  slidesToShow: 8,
-  slidesToScroll: 1,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 8,
-        slidesToScroll: 1,
-        infinite: true,
-      }
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        infinite: true
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        infinite: true
 
-      }
-    }
-  ]
-};
 
 const useStyles = makeStyles((theme) => ({
   slider: {
@@ -109,6 +75,42 @@ export const zoneWiseModule = (data) => {
     return currentZoneIds?.some((id) => zoneIds?.includes(id));
   });
   return result;
+};
+
+const settings = {
+  dots: false,
+  infinite: true,
+  adaptiveHeight: true,
+  speed: 500,
+  slidesToShow: 8,
+  slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 8,
+        slidesToScroll: 1,
+        infinite: true,
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        infinite: true
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        infinite: true
+
+      }
+    }
+  ]
 };
 
 const ModuleSelect = ({

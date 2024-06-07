@@ -59,6 +59,9 @@ const PrevWrapper = styled(Box)(({ theme, isdisabled }) => ({
   height: "35px",
   width: "35px",
   borderRadius: "50%",
+  "&:hover": {
+    backgroundColor: theme.palette.primary.main,
+  },
 }));
 const NextWrapper = styled(Box)(({ theme, isdisabled }) => ({
   top: "50%",
@@ -73,6 +76,9 @@ const NextWrapper = styled(Box)(({ theme, isdisabled }) => ({
   justifyContent: "center",
   height: "35px",
   width: "35px",
+  "&:hover": {
+    backgroundColor: theme.palette.primary.main,
+  },
 }));
 export const NextFood = ({
   onClick,
@@ -98,18 +104,18 @@ export const NextFood = ({
         isdisabled={className?.includes("slick-disabled")}
       >
         {getLanguage() === "rtl" ? (
-         <ChevronLeftIcon
-         sx={{
-           fontSize: "30px",
-           color: "white", 
-         }}
-       />
-       
+          <ChevronLeftIcon
+            sx={{
+              fontSize: "30px",
+              color: "black",
+            }}
+          />
+
         ) : (
           <ChevronRightIcon
             sx={{
               fontSize: "30px",
-              color: "white", 
+              color: "white",
             }}
           />
         )}
