@@ -27,6 +27,7 @@ const ModuleWiseNav = (props) => {
   const favIcon = `${configData?.base_urls?.business_logo_url}/${configData?.fav_icon}`;
   const lanDirection = getLanguage();
   const dispatch = useDispatch();
+  
   useEffect(() => {
     if (modules?.length === 0) {
       refetch();
@@ -132,15 +133,19 @@ const ModuleWiseNav = (props) => {
                   )}
                 </Grid>
                 {location ? (
-                  <Grid item xs={10.5} sm={11} align="left">
-                    <AddressReselect
-                      setOpenDrawer={setOpenDrawer}
-                      location={location}
-                      openDrawer={openDrawer}
-                    />
-                  </Grid>
+                 <Grid item xs={10.5} sm={11} align="left">
+                 <p style={{ color: "black", fontWeight: "bold", fontSize: "14px", marginBottom: 0 }}>Delivery in 10 mins</p>
+                 <AddressReselect
+                     setOpenDrawer={setOpenDrawer}
+                     location={location}
+                     openDrawer={openDrawer}
+                 />
+             </Grid>
+             
                 ) : (
-                  <Grid item xs={10} sm={11}></Grid>
+                  <Grid item xs={10} sm={11}>
+                    
+                  </Grid>
                 )}
               </Grid>
             </CustomBoxFullWidth>

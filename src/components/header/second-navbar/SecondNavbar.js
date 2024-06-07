@@ -311,7 +311,7 @@ const SecondNavBar = ({ configData }) => {
         )}
       </Stack> */}
     <Stack direction="column" width="100%" spacing={0} >
-  <p style={{ color: "black", marginBottom: 0, fontWeight: "bold", fontSize: "18px"}}>Delivery in 10 mins</p>
+  <p style={{ color: "black", marginTop: 3, marginBottom: 3, fontWeight: "bold", fontSize: "18px"}}>Delivery in 10 mins</p>
   <CustomStackForLoaction direction="row" width="50%" sx={{ marginTop: 0, paddingTop: 0 }}>
     {location && (
       <AddressReselect setOpenDrawer={setOpenDrawer} location={location} />

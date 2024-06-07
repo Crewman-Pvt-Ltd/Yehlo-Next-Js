@@ -17,12 +17,12 @@ import CustomImageContainer from "../../../CustomImageContainer";
 import { settings } from "./sliderSettings";
 
 const CardWrapper = styled(Stack)(({ theme, bg_change }) => ({
-	backgroundColor: theme.palette.background.paper,
+	// backgroundColor: theme.palette.background.paper,
 	color: "inherit",
-	minWidth: "80px",
-	minHeight: "80px",
-	padding: "12px",
-	border: `1px solid ${alpha(theme.palette.neutral[400], 0.2)}`,
+	minWidth: "60px",
+	minHeight: "70px",
+	padding: "10px",
+	// border: `1px solid ${alpha(theme.palette.neutral[400], 0.2)}`,
 	borderRadius: "10px",
 	cursor: "pointer",
 	transition: "all ease 0.5s",
@@ -50,7 +50,7 @@ const Card = ({ item, configData, isSelected, handleClick }) => {
 			bg_change={isSelected === item?.module_type ? "true" : "false"}
 			textAlign="center"
 			alignItems="center"
-			width={{ xs: '10%', sm: '30%', md: '15%' }}
+			width={{ xs: '10%', sm: '30%', md: '12%' }}
 				display="flex"
 		>
 			<ImageWrapper>
