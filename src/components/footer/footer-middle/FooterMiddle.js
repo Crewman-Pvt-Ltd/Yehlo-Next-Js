@@ -99,7 +99,7 @@ const FooterMiddle = (props) => {
                 sx={{
                   width: {
                     sm: '50%',
-                  md: '50%',
+                  md: '80%',
                   },
                   marginTop: {
                     sm: '0',

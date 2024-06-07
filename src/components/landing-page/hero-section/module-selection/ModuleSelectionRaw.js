@@ -19,8 +19,8 @@ import { settings } from "./sliderSettings";
 const CardWrapper = styled(Stack)(({ theme, bg_change }) => ({
 	backgroundColor: theme.palette.background.paper,
 	color: "inherit",
-	minWidth: "100px",
-	minHeight: "100px",
+	minWidth: "80px",
+	minHeight: "80px",
 	padding: "12px",
 	border: `1px solid ${alpha(theme.palette.neutral[400], 0.2)}`,
 	borderRadius: "10px",
@@ -50,8 +50,8 @@ const Card = ({ item, configData, isSelected, handleClick }) => {
 			bg_change={isSelected === item?.module_type ? "true" : "false"}
 			textAlign="center"
 			alignItems="center"
-			width={{ xs: '30%', sm: '30%', md: '15%' }}
-			
+			width={{ xs: '10%', sm: '30%', md: '15%' }}
+				display="flex"
 		>
 			<ImageWrapper>
 		<CustomImageContainer
@@ -68,7 +68,7 @@ const Card = ({ item, configData, isSelected, handleClick }) => {
 				sx={{
 					cursor: "pointer",
 				}}
-				variant={IsSmallScreen() ? "h7" : "h6"}
+				variant={IsSmallScreen() ? "h8" : "h6"}
 			>
 				{item?.module_name}
 			</Typography>
@@ -134,6 +134,7 @@ const ModuleSelectionRaw = (props) => {
 		  flexWrap="wrap"
 		  gap="15px"
 		  mt="30px"
+		  sx={{ justifyContent: { xs: "center", sm: "left", md: "left" } }}
 		>
 		  {modules?.length > 0 &&
 			modules.map((item, index) => {

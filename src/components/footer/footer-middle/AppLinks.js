@@ -126,7 +126,7 @@ const AppLinks = (props) => {
 	);
 	return (
 		<Stack
-		direction={{ xs: 'row', md: 'column' }}
+		direction={{ xs: 'row', md: 'row' }}
 			spacing={2}
 			// sx={{ mt: 4 }}
 			gap={language_direction === "rtl" && "10px"}

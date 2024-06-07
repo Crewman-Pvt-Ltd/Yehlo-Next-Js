@@ -166,7 +166,7 @@ const HeroSection = ({ configData, landingPageData, handleOrderNow }) => {
               <DynamicModuleSelection isSmall />
             ) : (
               <CustomStackFullWidth mt="10px">
-                <HeroLocationForm />
+                {/* <HeroLocationForm /> */}
               </CustomStackFullWidth>
             )}
           </>

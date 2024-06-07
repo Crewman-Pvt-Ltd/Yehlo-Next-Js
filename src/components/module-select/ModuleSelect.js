@@ -87,11 +87,11 @@ const ModuleContainer = styled(Box)(({ theme, selected }) => ({
     : theme.palette.background.paper,
   background:
     selected &&
-    "radial-gradient(50% 50% at 50% 50%, rgba(0, 202, 108, 0) 0%, rgba(0, 255, 137, 0.2) 100%)",
+    "radial-gradient(50% 50% at 50% 50%, rgba(1, 13, 117, 0) 0%, rgba(1, 13, 117, 0.1) 100%)",
   "&:hover": {
     borderColor: theme.palette.primary.main,
     background:
-      "radial-gradient(50% 50% at 50% 50%, rgba(0, 202, 108, 0) 0%, rgba(0, 255, 137, 0.2) 100%)",
+      "radial-gradient(50% 50% at 50% 50%, rgba(1, 13, 117, 0) 0%, rgba(1, 13, 117, 0.2) 100%)",
     "img, svg": {
       transform: "scale(1.1)",
     },
