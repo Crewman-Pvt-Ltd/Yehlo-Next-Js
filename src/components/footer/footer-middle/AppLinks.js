@@ -26,7 +26,7 @@ export const CustomButton = styled(Button)(({ theme, graybackground }) => ({
 	},
 }));
 const AppLinks = (props) => {
-	const { changeSingle, graybackground, landingPageData } = props;
+	const { changeSingle, graybackground, landingPageData, direction } = props;
 	const theme = useTheme();
 	const isSmall = useMediaQuery(theme.breakpoints.down("sm"))
 
@@ -126,7 +126,7 @@ const AppLinks = (props) => {
 	);
 	return (
 		<Stack
-		direction={{ xs: 'row', md: 'row' }}
+		direction={{ xs: 'row', md: direction ? direction : 'row' }}
 			spacing={2}
 			// sx={{ mt: 4 }}
 			gap={language_direction === "rtl" && "10px"}

@@ -99,7 +99,7 @@ const FooterMiddle = (props) => {
                 sx={{
                   width: {
                     sm: '50%',
-                  md: '80%',
+                  md: '40%',
                   },
                   marginTop: {
                     sm: '0',
@@ -111,6 +111,7 @@ const FooterMiddle = (props) => {
                   configData={configData}
                   changeSingle
                   landingPageData={landingPageData}
+                  direction="column"
                 />
               </Box>
             )}
