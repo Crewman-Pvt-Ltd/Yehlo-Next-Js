@@ -1,4 +1,4 @@
-export const data_limit = "10";
+  export const data_limit = "10";
 export const config_api = "/api/v1/config";
 export const subscribe_api = "/api/v1/newsletter/subscribe";
 export const placeApiAutocomplete_api = "/api/v1/config/place-api-autocomplete";
@@ -117,3 +117,4 @@ export const brand_list = "api/v1/brand";
 export const brand_products = "api/v1/brand/items/";
 export const vendor_landing = 'api/v1/admin-landing-page';
 export const delivery_landing = 'api/v1/delivery-partner';
+export const nearest_store_time = 'api/v1/stores/get-stores-nearby/all';
