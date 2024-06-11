@@ -15,6 +15,7 @@ import DrawerMenu from "../top-navbar/drawer-menu/DrawerMenu";
 import MobileModuleSelection from "./mobile-module-select";
 import ManageSearch from "./ManageSearch";
 import SearchIcon from "@mui/icons-material/Search";
+import NearestStoreTime from "./NearestStoreTime";
 
 const ModuleWiseNav = (props) => {
   const { router, configData, token, setToggled, location } = props;
@@ -134,7 +135,9 @@ const ModuleWiseNav = (props) => {
                 </Grid>
                 {location ? (
                  <Grid item xs={10.5} sm={11} align="left">
-                 <p style={{ color: "black", fontWeight: "bold", fontSize: "14px", marginBottom: 0 }}>Delivery in 10 mins</p>
+                 <p style={{ color: "black", fontWeight: "bold", fontSize: "14px", marginBottom: 0 }}>
+                  <NearestStoreTime/>
+                 </p>
                  <AddressReselect
                      setOpenDrawer={setOpenDrawer}
                      location={location}

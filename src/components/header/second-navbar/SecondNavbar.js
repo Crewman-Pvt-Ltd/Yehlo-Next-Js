@@ -46,6 +46,7 @@ import ManageSearch from "./ManageSearch";
 import TrackParcelFromHomePage from "components/parcel/TrackParcelFromHomePage";
 import { CustomStackForLoaction } from "../NavBar.style";
 import AddressReselect from "../top-navbar/address-reselect/AddressReselect";
+import NearestStoreTime from "./NearestStoreTime";
 
 const Cart = ({ isLoading }) => {
   const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
@@ -310,14 +311,16 @@ const SecondNavBar = ({ configData }) => {
           <NavLinks t={t} zoneid="zoneid" moduleType={moduleType} />
         )}
       </Stack> */}
-    <Stack direction="column" width="100%" spacing={0} >
-  <p style={{ color: "black", marginTop: 3, marginBottom: 3, fontWeight: "bold", fontSize: "18px"}}>Delivery in 10 mins</p>
-  <CustomStackForLoaction direction="row" width="50%" sx={{ marginTop: 0, paddingTop: 0 }}>
-    {location && (
-      <AddressReselect setOpenDrawer={setOpenDrawer} location={location} />
-    )}
-  </CustomStackForLoaction>
-</Stack>
+      <Stack direction="column" width="100%" spacing={0} >
+        <p style={{ color: "black", marginTop: 3, marginBottom: 3, fontWeight: "bold", fontSize: "18px" }}>
+          <NearestStoreTime />
+        </p>
+        <CustomStackForLoaction direction="row" width="50%" sx={{ marginTop: 0, paddingTop: 0 }}>
+          {location && (
+            <AddressReselect setOpenDrawer={setOpenDrawer} location={location} />
+          )}
+        </CustomStackForLoaction>
+      </Stack>
 
 
       {router.pathname !== "/" && (
