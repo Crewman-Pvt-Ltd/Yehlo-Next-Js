@@ -63,16 +63,21 @@ const ModuleWiseNav = (props) => {
         sx={{ width: 18, height: 18, cursor: "pointer" }}
         onClick={handleProfileClick}
       /> */}
+       {router.pathname !== "/" && (
       <SearchIcon
        sx={{
         color:"black"
       }}></SearchIcon>
-        {/* <ManageSearch></ManageSearch> */}
-      <DrawerMenu
-        setToggled={setToggled}
-        setOpenDrawer={setOpenDrawer}
-        openDrawer={openDrawer}
-      />
+    )}
+
+        {router.pathname !== "/" && (
+        <DrawerMenu
+               setToggled={setToggled}
+               setOpenDrawer={setOpenDrawer}
+               openDrawer={openDrawer}
+              />
+)}
+
     </CustomStackFullWidth>
   );
   const handleIconClick = () => {
@@ -134,8 +139,8 @@ const ModuleWiseNav = (props) => {
                   )}
                 </Grid>
                 {location ? (
-                 <Grid item xs={10.5} sm={11} align="left">
-                 <p style={{ color: "black", fontWeight: "bold", fontSize: "14px", marginBottom: 0 }}>
+                 <Grid item xs={10.5} sm={11} align="center">
+                 <p style={{ color: "black", fontWeight: "bold", fontSize: "14px", marginTop: "0px", marginBottom: "0px" }}>
                   <NearestStoreTime/>
                  </p>
                  <AddressReselect

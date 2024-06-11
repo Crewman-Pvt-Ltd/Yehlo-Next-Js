@@ -79,7 +79,7 @@ const AddressReselect = ({ location, setOpenDrawer }) => {
         justifyContent="flex-end"
         sx={{
           color: (theme) => theme.palette.neutral[1000],
-          maxWidth: { xs: "230px", sm: "280px" },
+          maxWidth: { xs: "150px", sm: "280px" },
         }}
         ref={anchorRef}
         onClick={handleClickToLandingPage}
