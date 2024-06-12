@@ -68,8 +68,8 @@ const FeaturedCategories = ({ configData }) => {
     slidesToShow: 8,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 800,
-    autoplaySpeed: 800,
+    speed: 1600,
+    autoplaySpeed: 1600,
     cssEase: "linear",
     responsive: [
       {
