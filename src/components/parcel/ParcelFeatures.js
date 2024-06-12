@@ -11,7 +11,7 @@ import Slider from "react-slick";
 import useWhyChoose from "../../api-manage/hooks/react-query/percel/UseWhyChoose";
 import WhyChooseSimmer from "../Shimmer/Parcel/WhyChooseSimmer";
 
-const settings = {
+const settingsparcel = {
   dots: false,
   infinite: false,
   speed: 500,
@@ -151,7 +151,7 @@ const ParcelFeatures = () => {
 
         <CustomStackFullWidth>
           <SliderCustomStyle>
-            <Slider {...settings}>
+            <Slider {...settingsparcel}>
               {[...Array(4)].map((index) => {
                 return <WhyChooseSimmer key={index} />;
               })}
@@ -179,7 +179,7 @@ const ParcelFeatures = () => {
 
         <CustomStackFullWidth>
           <SliderCustomStyle>
-            <Slider {...settings}>
+            <Slider {...settingsparcel}>
               {data?.banners.map((item, index) => {
                 return (
                   <Stack

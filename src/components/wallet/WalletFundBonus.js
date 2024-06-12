@@ -22,7 +22,7 @@ const WalletFundBonus = () => {
     refetch();
   }, []);
 
-  const settings = {
+  const wallet = {
     dots: false,
     //infinite: true,
     slidesToShow: 2,
@@ -71,7 +71,7 @@ const WalletFundBonus = () => {
   return !isLoading ? (
     <Stack>
       <SliderCustom>
-        <Slider {...settings}>
+        <Slider {...wallet}>
           {data?.map((item, i) => (
             <Box key={i} pr={1.4}>
               <CustomWalletStack>

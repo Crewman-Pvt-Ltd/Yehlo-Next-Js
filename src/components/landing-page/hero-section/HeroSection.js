@@ -42,7 +42,7 @@ const HeroSection = ({ configData, landingPageData, handleOrderNow }) => {
       return {
         xs: "4rem",
         sm: "5rem",
-        md: "7rem",
+        md: "5rem",
       };
     } else {
       return {

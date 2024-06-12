@@ -111,7 +111,7 @@ const Prev = ({ onClick, className }) => {
   );
 };
 
-export const settings = {
+export const settingspp = {
   dots: false,
   infinite: false,
   speed: 500,

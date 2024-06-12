@@ -21,7 +21,7 @@ const CustomBox = styled(Box)(({ theme }) => ({
   width: "fit-content",
   cursor: "pointer",
 }));
-const settings = {
+const settingsaa = {
   dots: true,
   infinite: false,
   speed: 500,
@@ -174,7 +174,7 @@ const Coupons = (props) => {
             },
           }}
         >
-          <Slider {...settings}>
+          <Slider {...settingsaa}>
             {data?.map((item, index) => {
               return <CouponBox key={index} item={item} />;
             })}

@@ -27,7 +27,7 @@ const SpecialFoodOffers = ({ title }) => {
   useEffect(() => {
     refetch();
   }, []);
-  const settings = {
+  const settingsjj = {
     dots: false,
     infinite: data?.products?.length > 5 ? true : false,
     slidesToShow: isLoading ? 1 : 5,
@@ -162,13 +162,13 @@ const SpecialFoodOffers = ({ title }) => {
           >
             <>
               {isLoading ? (
-                <Slider {...settings}>
+                <Slider {...settingsjj}>
                   {[...Array(5)].map((item, index) => {
                     return <SpecialOfferCardShimmer key={index} />;
                   })}
                 </Slider>
               ) : (
-                <Slider {...settings}>
+                <Slider {...settingsjj}>
                   {data?.products?.map((item, index) => {
                     return (
                       <ProductCard key={index} item={item} specialCard="true" />

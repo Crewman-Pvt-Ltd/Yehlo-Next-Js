@@ -119,7 +119,7 @@ const Top = (props) => {
   const ACTION = {
     setViewMap: "setViewMap",
   };
-  const settings = {
+  const settingsoo = {
     dots: false,
     infinite: true,
     slidesToShow: 1,
@@ -241,7 +241,7 @@ const Top = (props) => {
             }}
           >
             {bannersData?.length ? (
-              <Slider {...settings}>
+              <Slider {...settingsoo}>
                 {bannersData?.map((banner) => {
                   return (
                     <Stack
@@ -736,7 +736,7 @@ const Top = (props) => {
             {!isLoading ? (
               <>
                 {bannersData?.length ? (
-                  <Slider {...settings}>
+                  <Slider {...settingsoo}>
                     {bannersData?.map((banner) => {
                       return (
                         <Stack

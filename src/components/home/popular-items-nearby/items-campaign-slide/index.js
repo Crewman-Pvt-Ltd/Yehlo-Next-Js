@@ -11,7 +11,7 @@ import CustomImageContainer from "../../../CustomImageContainer";
 import bg from "./assets/bg.png";
 import Slide from "./Slide";
 import Slider from "react-slick";
-import { settings } from "./Settings";
+import { settingshh } from "./Settings";
 import CustomSlider from "../../../search/CustomSlider";
 import { Box } from "@mui/system";
 import { styled } from "@mui/material/styles";
@@ -79,7 +79,7 @@ const ItemsCampaign = ({ flashSales }) => {
       }}
     >
       <StyledCustomSlider isSmall={isSmall}>
-        <Slider {...settings}>
+        <Slider {...settingshh}>
           {flashSales?.active_products?.slice(0,15).map((item, index) => {
             return (
               <Box key={index}>

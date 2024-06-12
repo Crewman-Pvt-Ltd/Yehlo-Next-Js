@@ -98,7 +98,7 @@ const PharmacyStaticBanners = (props) => {
       { shallow: true }
     );
   };
-  const settings = {
+  const settingspharmacy = {
     dots: false,
     infinite: data?.length > 2 && true,
     slidesToShow: 2,
@@ -134,7 +134,7 @@ const PharmacyStaticBanners = (props) => {
           {isLoading ? (
             <Grid container spacing={2}>
               <Grid item xs={12}>
-                <Slider {...settings}>
+                <Slider {...settingspharmacy}>
                   {[...Array(2)].map((index) => {
                     return (
                       <BannersWrapper key={index}>
@@ -151,7 +151,7 @@ const PharmacyStaticBanners = (props) => {
             </Grid>
           ) : (
             <SliderCustom>
-              <Slider {...settings}>
+              <Slider {...settingspharmacy}>
                 {data?.length > 0 &&
                   data?.map((item, index) => {
                     return (

@@ -24,7 +24,7 @@ import NearbyStoreCard from "../../cards/NearbyStoreCard";
 import ClosedNow from "../../closed-now";
 import { HomeComponentsWrapper } from "../HomePageComponents";
 import Menus from "../best-reviewed-items/Menus";
-import { foodNewArrivalsettings, settings } from "./sliderSettings";
+import { foodNewArrivalsettings, settingsff } from "./sliderSettings";
 import SpecialOfferCardShimmer from "../../Shimmer/SpecialOfferCardSimmer";
 
 const ImageWrapper = styled(Box)(({ theme }) => ({
@@ -134,13 +134,13 @@ const NewArrivalStores = () => {
       }}
     >
       {isLoading ? (
-        <Slider {...settings}>
+        <Slider {...settingsff}>
           {[...Array(6)].map((item, index) => {
             return <SpecialOfferCardShimmer key={index} width={290} />;
           })}
         </Slider>
       ) : (
-        <Slider {...settings} ref={slider}>
+        <Slider {...settingsff} ref={slider}>
           {storeData?.map((item, index) => {
             return (
               <NearbyStoreCard

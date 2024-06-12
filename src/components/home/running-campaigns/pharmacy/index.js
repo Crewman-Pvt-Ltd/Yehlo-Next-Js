@@ -4,7 +4,7 @@ import React from "react";
 import Slider from "react-slick";
 import { SliderCustom } from "../../../../styled-components/CustomStyles.style";
 import CustomImageContainer from "../../../CustomImageContainer";
-import { settings } from "./sliderSettings";
+import { settingsii } from "./sliderSettings";
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
@@ -18,7 +18,7 @@ const Pharmacy = (props) => {
   const { runningCampaigns, handleClick, configData, isFetching } = props;
   return (
     <SliderCustom>
-      <Slider {...settings}>
+      <Slider {...settingsii}>
         {runningCampaigns?.length > 0 &&
           runningCampaigns?.map((item, index) => {
             return (

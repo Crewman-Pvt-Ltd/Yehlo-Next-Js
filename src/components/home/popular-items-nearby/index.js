@@ -4,7 +4,7 @@ import useGetPopularItemsNearby from "../../../api-manage/hooks/react-query/useG
 
 import { Grid, Skeleton } from "@mui/material";
 import Slider from "react-slick";
-import { settings } from "./SliderSettings";
+import { settingsgg } from "./SliderSettings";
 
 import { useTranslation } from "react-i18next";
 
@@ -76,7 +76,7 @@ const PopularItemsNearby = ({ title, subTitle }) => {
     }
   }
 
-  const settings = {
+  const settingsgg = {
     dots: false,
     infinite: false,
     speed: 500,
@@ -195,7 +195,7 @@ const PopularItemsNearby = ({ title, subTitle }) => {
                         },
                       }}
                     >
-                      <Slider {...settings}>
+                      <Slider {...settingsgg}>
                         {[...Array(15)].map((item, index) => {
                           return <ProductCardSimmerHorizontal key={index} />;
                         })}
@@ -212,7 +212,7 @@ const PopularItemsNearby = ({ title, subTitle }) => {
                         },
                       }}
                     >
-                      <Slider currentSlide={0} {...settings}>
+                      <Slider currentSlide={0} {...settingsgg}>
                         {popularItemsNearby?.products?.map((item, index) => {
                           return (
                             <ProductCard
