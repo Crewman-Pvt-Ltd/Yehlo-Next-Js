@@ -109,41 +109,63 @@ const CampaignBanners = (props) => {
 		//setBannerData(null);
 	};
 
-	const getModuleWiseBanners = () => {
-		switch (getCurrentModuleType()) {
-			case ModuleTypes.GROCERY:
-				if (bannersData.length > 1) {
-					return 2;
-				} else {
-					return 1;
-				}
-			case ModuleTypes.PHARMACY:
-				if (bannersData.length === 1) {
-					return 1;
-				} else if (bannersData.length === 2) {
-					return 2;
-				} else {
-					return 3;
-				}
-			case ModuleTypes.ECOMMERCE:
-				if (bannersData.length > 1) {
-					return bannersData.length;
-				} else {
-					return 1;
-				}
-		}
-	};
+	// const getModuleWiseBanners = () => {
+	// 	switch (getCurrentModuleType()) {
+	// 		case ModuleTypes.GROCERY:
+	// 			if (bannersData.length > 1) {
+	// 				return 2;
+	// 			} else {
+	// 				return 1;
+	// 			}
+	// 		case ModuleTypes.PHARMACY:
+	// 			if (bannersData.length === 1) {
+	// 				return 1;
+	// 			} else if (bannersData.length === 2) {
+	// 				return 2;
+	// 			} else {
+	// 				return 3;
+	// 			}
+	// 		case ModuleTypes.ECOMMERCE:
+	// 			if (bannersData.length > 1) {
+	// 				return bannersData.length;
+	// 			} else {
+	// 				return 1;
+	// 			}
+	// 	}
+	// };
 
 	const settingsecom = {
 		dots: false,
 		infinite: true,
-		slidesToShow: getModuleWiseBanners(),
+		slidesToShow: 3,
 		slidesToScroll: 1,
 		autoplay: true,
 		speed: 800,
 		autoplaySpeed: 4000,
 		cssEase: "linear",
 		responsive: [
+			{
+				breakpoint: 1480,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 1,
+				},
+			},
+			
+			{
+				breakpoint: 1000,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 1,
+				},
+			},
+			{
+				breakpoint: 800,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 1,
+				},
+			},
 			{
 				breakpoint: 600,
 				settings: {

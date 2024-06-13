@@ -295,10 +295,10 @@ const Index = ({ configData, landingPageData }) => {
                       fontWeight: "bold",
                     }}
                   >
-                    Monthly earnings
+                   Weekly payout
                   </p>
                   <p style={{ color: "black", fontSize: "16px" }}>
-                    Earn upto ₹50,000 with incentives and other benefits
+                  Payment made every 7 days
                   </p>
                 </Box>
               </Grid>
@@ -338,10 +338,10 @@ const Index = ({ configData, landingPageData }) => {
                       fontWeight: "bold",
                     }}
                   >
-                    Monthly earnings
+                    Flexible schedule
                   </p>
                   <p style={{ color: "black", fontSize: "16px" }}>
-                    Earn upto ₹50,000 with incentives and other benefits
+                  Be your own boss; choose your work hours (4, 8 or 10 hours)
                   </p>
                 </Box>
               </Grid>
@@ -381,10 +381,10 @@ const Index = ({ configData, landingPageData }) => {
                       fontWeight: "bold",
                     }}
                   >
-                    Monthly earnings
+                    Insurance coverage
                   </p>
                   <p style={{ color: "black", fontSize: "16px" }}>
-                    Earn upto ₹50,000 with incentives and other benefits
+                  Deliver safe with our accidental and medical insurance
                   </p>
                 </Box>
               </Grid>
