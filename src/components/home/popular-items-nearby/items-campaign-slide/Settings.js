@@ -1,6 +1,6 @@
 import React from "react";
 
-export const settings = {
+export const settingshh = {
   dots: true,
   infinite: true,
   slidesToShow: 1,

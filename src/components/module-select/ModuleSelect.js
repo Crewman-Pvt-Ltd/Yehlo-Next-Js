@@ -38,8 +38,8 @@ const ModuleContainer = styled(Box)(({ theme, selected }) => ({
   zIndex: 1000,
   padding: "10px",
   cursor: "pointer",
-  width: "120px",
-  height: "120px",
+  width: "100px",
+  height: "100px",
   borderRadius: "11px",
   display: "flex",
   flexDirection: "column",
@@ -77,19 +77,19 @@ export const zoneWiseModule = (data) => {
   return result;
 };
 
-const settings = {
+const settingsmm = {
   dots: false,
   infinite: true,
   adaptiveHeight: true,
   speed: 500,
-  slidesToShow: 8,
-  slidesToScroll: 1,
+  slidesToShow: 11,
+  slidesToScroll: 4,
   responsive: [
     {
       breakpoint: 1024,
       settings: {
-        slidesToShow: 8,
-        slidesToScroll: 1,
+        slidesToShow: 11,
+        slidesToScroll: 4,
         infinite: true,
       }
     },
@@ -97,7 +97,7 @@ const settings = {
       breakpoint: 600,
       settings: {
         slidesToShow: 4,
-        slidesToScroll: 1,
+        slidesToScroll: 4,
         infinite: true
       }
     },
@@ -105,7 +105,7 @@ const settings = {
       breakpoint: 480,
       settings: {
         slidesToShow: 4,
-        slidesToScroll: 1,
+        slidesToScroll: 4,
         infinite: true
 
       }
@@ -121,6 +121,7 @@ const ModuleSelect = ({
   dispatch,
 }) => {
   const handleModuleSelect = (item) => {
+    
     dispatch(setSelectedModule(item));
     moduleSelectHandler(item);
   };
@@ -132,7 +133,7 @@ const ModuleSelect = ({
     <>
       {data ? (
         <div className="slick-slider-container">
-          <Slider {...settings} className={classes2.slider}>
+          <Slider {...settingsmm} className={classes2.slider}>
             {zoneWiseModule?.(data)?.map((item, index) => {
               return (
                 <>

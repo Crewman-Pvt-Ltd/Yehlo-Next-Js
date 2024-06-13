@@ -31,7 +31,7 @@ const menus = [
     "Infection",
     "All Medicine",
 ];
-export const settings = {
+export const settingsdd = {
     dots: false,
     infinite: false,
     speed: 300,
@@ -229,7 +229,7 @@ const FeaturedCategoriesWithFilter = (props) => {
                                         //   },
                                         // }}
                                     >
-                                        <Slider {...settings}>
+                                        <Slider {...settingsdd}>
                                             {data?.products?.map((item, index) => {
                                                 return (
                                                     <ProductCard

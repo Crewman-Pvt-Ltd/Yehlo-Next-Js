@@ -9,7 +9,7 @@ import Subtitle1 from "../../typographies/Subtitle1";
 import Slider from "react-slick";
 import { alpha, useTheme } from "@mui/material";
 import VisitAgainCard from "../../cards/VisitAgainCard";
-import { settings } from "./SliderSettings";
+import { settingskk } from "./SliderSettings";
 import { IsSmallScreen } from "utils/CommonValues";
 import CustomContainer from "../../container";
 import { ModuleTypes } from "helper-functions/moduleTypes";
@@ -103,7 +103,7 @@ const VisitAgain = (props) => {
               padding: { xs: "7px", md: "17px" },
             }}
           >
-            <Slider {...settings}>
+            <Slider {...settingskk}>
               {visitedStores?.reverse()?.map((item, index) => {
                 return (
                   <VisitAgainCard

@@ -7,7 +7,7 @@ import {getCurrentModuleType} from "helper-functions/getCurrentModuleType";
 import {ModuleTypes} from "helper-functions/moduleTypes";
 import {CustomBoxFullWidth, CustomStackFullWidth, SliderCustom,} from "styled-components/CustomStyles.style";
 import H1 from "../../typographies/H1";
-import {settings} from "./settings";
+import {settingspp} from "./settings";
 import ProductCard from "../../cards/ProductCard";
 import useGetCommonConditionStore
   from "../../../api-manage/hooks/react-query/common-conditions/useGetCommonConditionStore";
@@ -110,7 +110,7 @@ const PopularInTheStore = ({ id, storeShare }) => {
               <CustomStackFullWidth spacing={2.2}>
                 <H1 textAlign="start" text={getBG()?.title} />
                 {!isLoading && (
-                  <Slider {...settings}>
+                  <Slider {...settingspp}>
                     {commonConditionitems?.products?.map((item, index) => {
                       return (
                         <ProductCard
@@ -144,7 +144,7 @@ const PopularInTheStore = ({ id, storeShare }) => {
               <CustomStackFullWidth spacing={2.2}>
                 <H1 textAlign="start" text={getBG()?.title} />
                 {!isLoading && (
-                  <Slider {...settings}>
+                  <Slider {...settingspp}>
                     {data?.items?.map((item, index) => {
                       return (
                         <ProductCard

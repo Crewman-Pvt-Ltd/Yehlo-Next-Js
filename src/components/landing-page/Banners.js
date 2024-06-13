@@ -97,7 +97,7 @@ const Banners = ({ landingPageData, isSmall }) => {
           },
         }}
       >
-        <Slider {...settings}>
+        <Slider {...settingsll}>
           {landingPageData?.promotion_banners?.map((item, index) => {
             return (
               <Box
@@ -136,7 +136,7 @@ const Banners = ({ landingPageData, isSmall }) => {
       </SliderCustom>
     );
   };
-  const settings = {
+  const settingsll = {
     dots: false,
     infinite: infiniteManage(),
     slidesToShow: slidesToShowManage(),

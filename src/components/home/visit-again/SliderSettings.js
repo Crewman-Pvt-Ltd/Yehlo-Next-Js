@@ -139,7 +139,7 @@ export const WhitePrev = ({
   );
 };
 
-export const settings = {
+export const settingskk = {
   dots: false,
   infinite: false,
   speed: 500,

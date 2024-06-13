@@ -8,7 +8,7 @@ import {
 import PharmacyFeaturedStoreCard from "../../../../cards/PharmacyFeaturedStoreCard";
 import H2 from "../../../../typographies/H2";
 import { HomeComponentsWrapper } from "../../../HomePageComponents";
-import { settings } from "./SliderSettings";
+import { settingsee } from "./SliderSettings";
 import { Skeleton } from "@mui/material";
 import SpecialOfferCardShimmer from "../../../../Shimmer/SpecialOfferCardSimmer";
 
@@ -43,7 +43,7 @@ const FeaturedStores = (props) => {
       {isLoading ? (
         <CustomStackFullWidth spacing={1}>
           <Skeleton width="200px" />
-          <Slider {...settings}>
+          <Slider {...settingsee}>
             {[...Array(6)].map((item, index) => {
               return <SpecialOfferCardShimmer key={index} width={290} />;
             })}
@@ -71,7 +71,7 @@ const FeaturedStores = (props) => {
                   },
                 }}
               >
-                <Slider {...settings}>
+                <Slider {...settingsee}>
                   {featuredStores?.map((item, index) => {
                     const {
                       name,

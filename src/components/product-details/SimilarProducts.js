@@ -13,7 +13,7 @@ import ProductCard, { CardWrapper } from "../cards/ProductCard";
 
 import useGetSimilarProduct from "../../api-manage/hooks/react-query/product-details/useGetSimilarProduct";
 import { Skeleton } from "@mui/material";
-import { settings } from "../home/popular-items-nearby/SliderSettings";
+import { settingsnn } from "../home/popular-items-nearby/SliderSettings";
 import ProductCardShimmer from "../search/ProductCardShimmer";
 const Shimmer = () => {
   return (
@@ -38,7 +38,7 @@ const SimilarProducts = ({ productId }) => {
             {t("Similar Products")}
           </Typography>
           <SliderCustom>
-            <Slider ref={SliderRef} {...settings}>
+            <Slider ref={SliderRef} {...settingsnn}>
               {data &&
                 data?.length > 0 &&
                 data?.map((item, index) => {

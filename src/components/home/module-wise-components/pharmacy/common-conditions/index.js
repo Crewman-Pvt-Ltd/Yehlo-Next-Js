@@ -98,7 +98,7 @@ const CommonConditions = (props) => {
     setConditionId(id);
   };
 
-  const settings = {
+  const settingsbb = {
     dots: true,
     infinite: false,
     speed: 500,
@@ -279,7 +279,7 @@ const CommonConditions = (props) => {
               ) : (
                 <CustomBoxFullWidth>
                   <StyledCustomSlider>
-                    <Slider {...settings}>
+                    <Slider {...settingsbb}>
                       {data?.products?.length > 0 &&
                         data?.products?.map((item) => (
                           <ProductCard

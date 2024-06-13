@@ -134,7 +134,7 @@ const CampaignBanners = (props) => {
 		}
 	};
 
-	const settings = {
+	const settingsecom = {
 		dots: false,
 		infinite: true,
 		slidesToShow: getModuleWiseBanners(),
@@ -167,7 +167,7 @@ const CampaignBanners = (props) => {
 					},
 				}}
 			>
-				<Slider {...settings}>
+				<Slider {...settingsecom}>
 					{bannersData.length > 0 &&
 						bannersData?.map((item, index) => {
 							return (

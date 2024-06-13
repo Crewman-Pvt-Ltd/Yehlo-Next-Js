@@ -1,6 +1,6 @@
 import { WhiteNext, WhitePrev } from "../../../visit-again/SliderSettings";
 
-export const settings = {
+export const settingsee = {
   dots: false,
   infinite: false,
   speed: 500,

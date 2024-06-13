@@ -335,7 +335,7 @@ const FeaturedCategories = ({ configData }) => {
     ],
   };
 
-  const settings = {
+/*   const settings = {
     dots: false,
     infinite: false,
     speed: 500,
@@ -432,7 +432,7 @@ const FeaturedCategories = ({ configData }) => {
         },
       },
     ],
-  };
+  }; */
 
   const foodCategorySliderSettings = {
     dots: false,
@@ -502,9 +502,9 @@ const FeaturedCategories = ({ configData }) => {
     <CustomBoxFullWidth sx={{ mt: "20px" }}>
       {isFetching ? (
         <HomeComponentsWrapper>
-          <SliderCustom nopadding="true">
+          {/* <SliderCustom nopadding="true">
             {moduleWiseCardShimmer()}
-          </SliderCustom>
+          </SliderCustom> */}
         </HomeComponentsWrapper>
       ) : (
         featuredCategories &&

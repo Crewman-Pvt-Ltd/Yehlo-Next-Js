@@ -11,7 +11,7 @@ const BgBox = styled(Box)(({ theme }) => ({
   overflow: "hidden",
 }));
 
-const settings = {
+const settingsparcelontime = {
   dots: false,
   infinite: true,
   speed: 500,
@@ -34,7 +34,7 @@ const ParcelOnTime = () => {
           {data && (
             <BgBox>
               <SliderCustom>
-                <Slider {...settings}>
+                <Slider {...settingsparcelontime}>
                   {data?.banners?.map((item, index) => {
                     return (
                       <Stack key={index}>
