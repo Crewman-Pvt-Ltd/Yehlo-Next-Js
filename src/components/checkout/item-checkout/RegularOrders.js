@@ -12,6 +12,8 @@ import {
 	OrderFoodName,
 	OrderFoodSubtitle,
 } from "../CheckOut.style";
+import { getCurrentModuleType } from "helper-functions/getCurrentModuleType";
+import { ModuleTypes } from "helper-functions/moduleTypes";
 
 export const VegNonveg = ({ theme, item, t }) => {
 	return (
@@ -83,7 +85,7 @@ const RegularOrders = (props) => {
 								<Stack>
 									<Box>
 										<OrderFoodName>{item.name}</OrderFoodName>
-										{item.is_prescription_required !== 0 && (
+										{(getCurrentModuleType() === ModuleTypes.PHARMACY && item?.is_basic === 0) && (
 											<Box
 												fontSize={"10px"}
 												sx={{ color: theme.palette.error.main }}

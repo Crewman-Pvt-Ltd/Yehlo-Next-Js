@@ -9,8 +9,8 @@ import CustomImageContainer from "../CustomImageContainer";
 
 const Wrapper = styled(Box)(({ theme }) => ({
   cursor: "pointer",
-  width: "122px",
-  height: "183px",
+  width: "90px",
+  height: "120px",
   backgroundColor: theme.palette.background.default,
   borderRadius: "60px",
   transition: "all ease 0.5s",
@@ -23,7 +23,7 @@ const Wrapper = styled(Box)(({ theme }) => ({
   },
   [theme.breakpoints.down("md")]: {
     width: "80px",
-    height: "140px",
+    height: "120px",
     boxShadow: "0px 10px 20px rgba(88, 110, 125, 0.1)",
   },
   [theme.breakpoints.down("sm")]: {
@@ -34,7 +34,7 @@ const ImageWrapper = styled(Box)(({ theme }) => ({
   position: "relative",
   borderRadius: "60px 60px 0px 0px",
   [theme.breakpoints.down("md")]: {
-    height: "80px",
+    height: "60px",
   },
 }));
 const TextWrapper = styled(Box)(({ theme }) => ({

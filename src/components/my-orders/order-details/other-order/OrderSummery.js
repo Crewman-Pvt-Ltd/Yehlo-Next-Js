@@ -29,6 +29,7 @@ import PrescriptionOrderSummery from "../prescription-order/PrescriptionOrderSum
 import SingleOrderAttachment from "../singleOrderAttachment";
 import InstructionBox from "./InstructionBox";
 import OrderCalculation from "./OrderCalculation";
+import { textWithEllipsis } from "styled-components/TextWithEllipsis";
 
 const getAddOnsNames = (addOns) => {
   const names = addOns?.map(
@@ -71,6 +72,9 @@ const OrderSummery = (props) => {
     setModalOpen(value);
     setModalImage(null);
   };
+
+  const ellipsis = textWithEllipsis();
+
   const handleClickOffline = () => {
     setOpenOfflineDetails(!openOfflineDetails);
   };
@@ -147,7 +151,7 @@ const OrderSummery = (props) => {
                     </Grid>
                     <Grid item md={10.8} xs={9} sm={10.8} align="left">
                       <Stack
-                        direction={{ xs: "column", md: "row" }}
+                        direction={{ xs: "column", md: "column" }}
                         justifyContent="space-between"
                         paddingBottom={{ xs: "5px", md: "0px" }}
                       >
@@ -157,7 +161,7 @@ const OrderSummery = (props) => {
                             fontSize="13px"
                           >
                             <Stack flexDirection={"row"} gap={"4px"}>
-                              {t(product?.item_details?.name)} 
+                              <p className={ellipsis.singleLineEllipsis}>{t(product?.item_details?.name)}</p>
                               {product?.item_details?.halal_tag_status && product?.item_details?.is_halal ? (
                                 <FoodHalalHaram position="relative" width={23} />
                               ) : (

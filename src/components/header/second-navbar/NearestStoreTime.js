@@ -17,7 +17,7 @@ const NearestStoreTime = () => {
 
     useEffect(() => {
         getNearestStoreTime();
-    }, [currentLatLng]);
+    }, []);
 
     return (
         <>

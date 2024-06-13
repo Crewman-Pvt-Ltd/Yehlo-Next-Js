@@ -313,7 +313,7 @@ const SecondNavBar = ({ configData }) => {
       </Stack> */}
       <Stack direction="column" width="100%" spacing={0} >
         <p style={{ color: "black", marginTop: 3, marginBottom: 3, fontWeight: "bold", fontSize: "18px" }}>
-          <NearestStoreTime />
+          {/* <NearestStoreTime /> */}
         </p>
         <CustomStackForLoaction direction="row" width="50%" sx={{ marginTop: 0, paddingTop: 0 }}>
           {location && (

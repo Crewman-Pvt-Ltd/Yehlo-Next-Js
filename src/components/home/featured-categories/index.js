@@ -109,7 +109,7 @@ const FeaturedCategories = ({ configData }) => {
         );
       case ModuleTypes.PHARMACY:
         return (
-          <Slider>
+          <Slider {...ecomslidersettings}>
             {featuredCategories?.map((item, index) => {
               return (
                 <PharmacyCategoryCard

@@ -141,7 +141,7 @@ const ModuleWiseNav = (props) => {
                 {location ? (
                  <Grid item xs={10.5} sm={11} align="center">
                  <p style={{ color: "black", fontWeight: "bold", fontSize: "14px", marginTop: "0px", marginBottom: "0px" }}>
-                  <NearestStoreTime/>
+                  {/* <NearestStoreTime/> */}
                  </p>
                  <AddressReselect
                      setOpenDrawer={setOpenDrawer}
