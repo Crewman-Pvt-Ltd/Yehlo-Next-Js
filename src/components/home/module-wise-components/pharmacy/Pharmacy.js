@@ -76,7 +76,7 @@ const Pharmacy = ({ configData }) => {
       </Grid>
       <Grid item xs={12}>
         <CustomContainer>
-          <CommonConditions title="Common Conditions" />
+          <CommonConditions title="Suitable For" />
         </CustomContainer>
       </Grid>
       {/*<Grid item xs={12}>*/}

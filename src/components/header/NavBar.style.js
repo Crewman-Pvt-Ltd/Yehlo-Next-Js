@@ -18,8 +18,8 @@ export const AppBarStyle = styled(AppBar)(({ theme, scrolling, isSmall }) => ({
   // transition: "all ease-in-out 0.3s",
   top: !scrolling ? "0" : isSmall ? "0px" : "0px",
   background: `${theme.palette.mode === "light" && "#fff !important"}`,
-  WebkitAnimation: !isSmall && scrolling ? "fadeInUp 0.4s" : "fadeInDown 0.4s",
-  animation: !isSmall && scrolling ? "fadeInUp 0.4s" : "fadeInDown 0.4s",
+  /* WebkitAnimation: !isSmall && scrolling ? "fadeInUp 0.4s" : "fadeInDown 0.4s",
+  animation: !isSmall && scrolling ? "fadeInUp 0.4s" : "fadeInDown 0.4s", */
   "@keyframes fadeInUp": {
     "0%": {
       transform: "translateY(30px)",
