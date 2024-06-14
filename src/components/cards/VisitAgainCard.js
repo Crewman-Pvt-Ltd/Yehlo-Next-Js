@@ -201,6 +201,8 @@ const VisitAgainCard = (props) => {
 
 	return (
 		<Card
+		onClick={handleClick}
+
 			sx={{
 				background: theme.palette.neutral[100],
 				padding: "10px",
@@ -336,7 +338,6 @@ const VisitAgainCard = (props) => {
 										alpha(theme.palette.moduleTheme.food, 0.7),
 								},
 							}}
-							onClick={handleClick}
 						>
 							{t("Visit Again")}
 						</Button>

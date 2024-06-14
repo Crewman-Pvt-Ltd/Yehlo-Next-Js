@@ -131,6 +131,26 @@ const Card = ({
           </Stack>
         </Grid>
         <Grid item xs={3} sm={3} md={2.5} align="end">
+        <a 
+        href={redirectLink} 
+        style={{
+          backgroundColor: '#101d75',
+          color: '#ffffff',
+          '&:hover': {
+            backgroundColor: '#0e195e',
+          },
+          padding: "15px 35px",
+          borderRadius: "8px",
+          fontSize: "15px",
+        }}
+        variant="contained"
+      >
+        Explore
+      </a>
+          
+        </Grid>
+      </Grid>
+        {/* <Grid item xs={3} sm={3} md={2.5} align="end">
           {(data?.download_business_app_links
             ?.seller_playstore_url_status === "1" ||
             data?.download_business_app_links
@@ -156,8 +176,7 @@ const Card = ({
               />
             )}
           
-        </Grid>
-      </Grid>
+        </Grid> */}
     </CustomBoxFullWidth>
   );
 };
