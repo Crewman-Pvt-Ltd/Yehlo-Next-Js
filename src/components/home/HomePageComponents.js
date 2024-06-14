@@ -18,7 +18,7 @@ import CustomContainer from "components/container";
 import CampaignBanners from "./module-wise-components/ecommerce/CampaignBanners";
 import PushNotificationLayout from "../PushNotificationLayout";
 import CustomModal from "../modal";
-import CashBackPopup from "components/cash-back-popup/CashBackPopup";
+// import CashBackPopup from "components/cash-back-popup/CashBackPopup";
 import LastOrderReview from "./LastOrderReview";
 import TopBanner from "./top-banner";
 import SearchWithTitle from "./SearchWithTitle";
@@ -207,7 +207,7 @@ const HomePageComponents = ({ configData }) => {
           </Box>
         </Box>
       </CustomModal>
-      {token && <CashBackPopup />}
+      {/* {token && <CashBackPopup />} */}
     </PushNotificationLayout>
   );
 };

@@ -10,7 +10,7 @@ import CustomImageContainer from "../CustomImageContainer";
 const Wrapper = styled(Box)(({ theme }) => ({
   cursor: "pointer",
   width: "90px",
-  height: "120px",
+  height: "130px",
   backgroundColor: theme.palette.background.default,
   borderRadius: "60px",
   transition: "all ease 0.5s",

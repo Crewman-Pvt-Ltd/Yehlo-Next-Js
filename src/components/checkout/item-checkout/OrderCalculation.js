@@ -51,7 +51,7 @@ const OrderCalculation = (props) => {
     setPayableAmount,
     additionalCharge,
     payableAmount,
-    cashbackAmount,
+    // cashbackAmount,
     handleExtraPackaging,
     isPackaging,
     packagingCharge,
@@ -429,7 +429,7 @@ const OrderCalculation = (props) => {
               backgroundColor={alpha(theme.palette.primary.main, 0.051)}
               fontSize={{ xs: "0.7rem" }}
             >
-              {cashbackAmount
+              {/* {cashbackAmount
                 ? `${text1} ${
                     cashbackAmount?.cashback_type === "percentage"
                       ? cashbackAmount?.cashback_amount + "%"
@@ -445,7 +445,7 @@ const OrderCalculation = (props) => {
                       : ""
                   }
 `
-                : ""}
+                : ""} */}
             </Box>
           </Grid>
         )}
