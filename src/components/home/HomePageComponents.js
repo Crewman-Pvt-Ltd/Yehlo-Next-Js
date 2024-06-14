@@ -14,7 +14,8 @@ import {
   setStoreSelectedItems,
   setStoreSelectedItems2,
 } from "redux/slices/categoryIds";
-
+import CustomContainer from "components/container";
+import CampaignBanners from "./module-wise-components/ecommerce/CampaignBanners";
 import PushNotificationLayout from "../PushNotificationLayout";
 import CustomModal from "../modal";
 import CashBackPopup from "components/cash-back-popup/CashBackPopup";
@@ -126,8 +127,8 @@ const HomePageComponents = ({ configData }) => {
   return (
     <PushNotificationLayout>
       <CustomStackFullWidth>
-        <CustomStackFullWidth sx={{ position: "relative" }}>
-          <TopBanner />
+        <CustomContainer sx={{ position: "relative" }}>
+          {/* <TopBanner />
           <CustomStackFullWidth
             alignItems="center"
             justifyContent="center"
@@ -139,8 +140,9 @@ const HomePageComponents = ({ configData }) => {
               query={router.query.search}
               name={router.query.name}
             />
-          </CustomStackFullWidth>
-        </CustomStackFullWidth>
+          </CustomStackFullWidth> */}
+               <CampaignBanners />
+        </CustomContainer>
         {router.query.data_type ? (
           <SearchResult
             key={router.query.id}
