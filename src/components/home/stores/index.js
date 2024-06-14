@@ -191,42 +191,37 @@ const Stores = (props) => {
     }
   }, [selectedMenuIndex, selectedFilterValue]);
   return (
-    <>
-    <h1>{totalDataCount}</h1>
-      {totalDataCount ?
-        (<HomeComponentsWrapper sx={{ paddingTop: "1rem" }}>
-          <CustomStackFullWidth
-            direction="row"
-            alignItems="center"
-            justifyContent="space-between"
-            py="10px"
-            pl="20px"
-            sx={{
-              position: "sticky",
-              top: { xs: "55px", md: "63px" },
-              zIndex: 100,
-              background: (theme) => theme.palette.neutral[300],
-            }}
-          >
-            {totalDataCount ? (
-              <H2 text={`${totalDataCount} ${stores}`} />
-            ) : (
-              <Skeleton variant="text" width="80px" />
-            )}
+    <HomeComponentsWrapper sx={{ paddingTop: "1rem" }}>
+      <CustomStackFullWidth
+        direction="row"
+        alignItems="center"
+        justifyContent="space-between"
+        py="10px"
+        pl="20px"
+        sx={{
+          position: "sticky",
+          top: { xs: "55px", md: "63px" },
+          zIndex: 100,
+          background: (theme) => theme.palette.neutral[300],
+        }}
+      >
+        {totalDataCount ? (
+          <H2 text={`${totalDataCount} ${stores}`} />
+        ) : (
+          <Skeleton variant="text" width="80px" />
+        )}
 
-            {isSmall ? mobileScreenHandler() : desktopScreenHandler()}
-          </CustomStackFullWidth>
-          <CustomBoxFullWidth
-            key={selectedFilterValue}
-            sx={{
-              minHeight: "20vh",
-            }}
-          >
-            {handleStoresLayout()}
-          </CustomBoxFullWidth>
-        </HomeComponentsWrapper>) : (<></>)
-      }
-    </>
+        {isSmall ? mobileScreenHandler() : desktopScreenHandler()}
+      </CustomStackFullWidth>
+      <CustomBoxFullWidth
+        key={selectedFilterValue}
+        sx={{
+          minHeight: "20vh",
+        }}
+      >
+        {handleStoresLayout()}
+      </CustomBoxFullWidth>
+    </HomeComponentsWrapper>
   );
 };
 
