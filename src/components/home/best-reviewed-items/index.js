@@ -99,9 +99,9 @@ const BestReviewedItems = (props) => {
         key={product?.id}
         item={product}
         cardheight="340px"
-        cardFor="vertical"
+        // cardFor="vertical"
         cardType="vertical-type"
-        // cardFor="popular items"
+        cardFor="popular items"
       />
     ));
 

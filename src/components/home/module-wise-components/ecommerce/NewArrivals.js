@@ -212,9 +212,9 @@ const NewArrivals = ({ bannerData }) => {
                           <ProductCard
                             item={product}
                             cardheight="300px"
-                            cardFor="vertical"
+                            // cardFor="vertical"
                             noMargin
-                            // cardFor="popular items"
+                            cardFor="popular items"
                           />
                         </Grid>
                       ))}

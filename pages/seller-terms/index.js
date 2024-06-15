@@ -28,7 +28,7 @@ const Index = ({ configData, landingPageData }) => {
   const boxxstyle = () => ({
     margin: "0 10px",
     width: "20%",
-    height: "200px"
+    height: "200px",
   });
 
   const { data, refetch, isFetching } = useGetVendorLandingPage();
@@ -36,88 +36,177 @@ const Index = ({ configData, landingPageData }) => {
     refetch();
   }, []);
 
-
+  console.log("Seller Landing", data);
 
   const OuterContainer = () => {
     return (
       <>
-      {data && (<>
-        <Grid
-          container
-          sx={{
-            // backgroundImage:
-            //   "url('https://m.media-amazon.com/images/G/01/sell/images/colors/blue50-100.svg')",
-            backgroundColor: "#2299dd0f",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            height: { xs: 800, md: 420 },
-            width: { xs: "100%", sm:"100%", md: "100%" },
-          }}
-        >
+        {data && (
+          <>
             <Grid
-              className="vendor-main-firstsec"
-              item
-              xs={12}
-              sm={12}
-              md={6}
-              sx={{
-                paddingLeft: { xs: 0, md: "50px" },
-                textAlign: { xs: "center", md: "left" },
-                paddingTop: { xs: "3px", md: "50px" },
-              }}
-            >
-              <p className="vendor-main-para1">{data?.home_title}</p>
-              <h1 className="vendor-main-heading">
-                {data?.home_sub_title}
-              </h1>
-              <p className="vendor-main-para2">
-                {data?.home_heading}
-              </p>
-              <button
-                className="vendor-startsellingbtn"
-                style={{
-                  backgroundColor: "darkblue",
-                  color: "white",
-                  height: "50px",
-                  width: "150px",
-                  border: "none",
-                  borderRadius: "20px",
-                  cursor: "pointer",
-                  fontSize: "20px",
-                }}
-              >
-                Start Selling
-              </button>
-            </Grid>
-            <Grid
-              className="vendor-firstimgsec"
-              item
-              xs={12}
-              sm={12}
-              md={6}
-              sx={{}}
-            >
-              <img
-                src={data?.home_seller_image}
-                width="80%"
-                height="80%"
-                className="vendor-firstimg"
-              />
-            </Grid>
-          </Grid>
-
-          {(data?.feature_title != null && data?.admin_features?.length > 0) &&
-
-            (<Grid
               container
               sx={{
-                textAlign: { xs: "left", md: "center" },
-
+                // backgroundImage:
+                //   "url('https://m.media-amazon.com/images/G/01/sell/images/colors/blue50-100.svg')",
+                backgroundColor: "#2299dd0f",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                height: { xs: 800, md: 420 },
+                width: { xs: "100%", sm: "100%", md: "100%" },
               }}
             >
-              <Grid item xs={12} sm={12} md={12} sx={{
-                padding: { xs: "0 20px", md: "0" },
-              }}
+              <Grid
+                className="vendor-main-firstsec"
+                item
+                xs={12}
+                sm={12}
+                md={6}
+                sx={{
+                  paddingLeft: { xs: 0, md: "50px" },
+                  textAlign: { xs: "center", md: "left" },
+                  paddingTop: { xs: "3px", md: "50px" },
+                }}
+              >
+                <p className="vendor-main-para1">{data?.home_title}</p>
+                <h1 className="vendor-main-heading">{data?.home_sub_title}</h1>
+                <p className="vendor-main-para2">{data?.home_heading}</p>
+                
+                  <Grid item xs={3} sm={3} md={2.5} align="end">
+                    {(data?.download_business_app_links
+                      ?.seller_playstore_url_status === "1" ||
+                      data?.download_business_app_links
+                        ?.seller_appstore_url_status === "1") && (
+                      <CustomButtonComponent
+                        t={t}
+                        landingPageData={data}
+                        title={t("Register")}
+                        urls={{
+                          playStoreStatus:
+                            data?.download_business_app_links
+                              ?.seller_playstore_url_status,
+                          playStoreUrl:
+                            data?.download_business_app_links
+                              ?.seller_playstore_url,
+                          appStoreStatus:
+                            data?.download_business_app_links
+                              ?.seller_appstore_url_status,
+                          appStoreUrl:
+                            data?.download_business_app_links
+                              ?.seller_appstore_url,
+                        }}
+                      />
+                    )}
+                  </Grid>
+                
+              </Grid>
+              <Grid
+                className="vendor-firstimgsec"
+                item
+                xs={12}
+                sm={12}
+                md={6}
+                sx={{}}
+              >
+                <img
+                  src={data?.home_seller_image}
+                  width="80%"
+                  height="80%"
+                  className="vendor-firstimg"
+                />
+              </Grid>
+            </Grid>
+
+            {data?.feature_title != null &&
+              data?.admin_features?.length > 0 && (
+                <Grid
+                  container
+                  sx={{
+                    textAlign: { xs: "left", md: "center" },
+                  }}
+                >
+                  <Grid
+                    item
+                    xs={12}
+                    sm={12}
+                    md={12}
+                    sx={{
+                      padding: { xs: "0 20px", md: "0" },
+                    }}
+                  >
+                    <h1
+                      style={{
+                        fontSize: "30px",
+                        color: "black",
+                      }}
+                    >
+                      {data?.feature_title}
+                    </h1>
+                  </Grid>
+                  <Grid item xs={12} sm={12} md={12} sx={{}}>
+                    <Grid
+                      container
+                      sx={{
+                        padding: { xs: "", md: "0 60px" },
+                      }}
+                    >
+                      {data?.admin_features.length > 0 &&
+                        data?.admin_features.map((item, index) => (
+                          <Grid
+                            item
+                            xs={12}
+                            sm={6}
+                            md={3}
+                            sx={{ display: "flex", justifyContent: "center" }}
+                          >
+                            <Box
+                              sx={{
+                                height: { xs: "200px", md: "270px" },
+                                width: { xs: "90%", md: "90%" },
+                                backgroundColor: "white",
+                                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+                                padding: { xs: "20px 30px", md: "20px 30px" },
+                                borderRadius: 1.2,
+                                marginBottom: 2,
+                              }}
+                            >
+                              <p
+                                style={{
+                                  color: "black",
+                                  fontSize: "15px",
+                                  marginBottom: 30,
+                                }}
+                              >
+                                {item?.title}
+                              </p>
+                              <p
+                                style={{
+                                  color: "black",
+                                  fontSize: "15px",
+                                  fontWeight: "bold",
+                                }}
+                              >
+                                {item?.sub_title}
+                              </p>
+                              <p style={{ color: "gray", fontSize: "15px" }}>
+                                {item?.sub_title2}
+                              </p>
+                            </Box>
+                          </Grid>
+                        ))}
+                    </Grid>
+                  </Grid>
+                </Grid>
+              )}
+
+            <Grid container sx={{}}>
+              <Grid
+                item
+                xs={12}
+                sm={12}
+                md={12}
+                sx={{
+                  textAlign: { xs: "center", md: "center" },
+                }}
               >
                 <h1
                   style={{
@@ -125,161 +214,92 @@ const Index = ({ configData, landingPageData }) => {
                     color: "black",
                   }}
                 >
-                  {data?.feature_title}
+                  {data?.seller_purchase}
                 </h1>
               </Grid>
-              <Grid item xs={12} sm={12} md={12} sx={{}}>
-                <Grid
-                  container
-                  sx={{
-                    padding: { xs: "", md: "0 60px" },
-                  }}
-                >
-
-                  {(data?.admin_features.length > 0) && data?.admin_features.map((item, index) => (
-                    <Grid
-                      item
-                      xs={12}
-                      sm={6}
-                      md={3}
-                      sx={{ display: "flex", justifyContent: "center" }}
-                    >
-                      <Box
-                        sx={{
-                          height: { xs: "200px", md: "270px" },
-                          width: { xs: "90%", md: "90%" },
-                          backgroundColor: "white",
-                          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-                          padding: { xs: "20px 30px", md: "20px 30px" },
-                          borderRadius: 1.2,
-                          marginBottom: 2,
-                        }}
-                      >
-                        <p
-                          style={{
-                            color: "black",
-                            fontSize: "15px",
-                            marginBottom: 30,
-                          }}
-                        >
-                          {item?.title}
-                        </p>
-                        <p
-                          style={{
-                            color: "black",
-                            fontSize: "15px",
-                            fontWeight: "bold",
-                          }}
-                        >
-                          {item?.sub_title}
-                        </p>
-                        <p style={{ color: "gray", fontSize: "15px" }}>
-                          {item?.sub_title2}
-                        </p>
-                      </Box>
-                    </Grid>
-                  ))}
-
-
-                </Grid>
-              </Grid>
-            </Grid>
-            )
-          }
-
-          <Grid container sx={{}}>
-            <Grid
-              item
-              xs={12}
-              sm={12}
-              md={12}
-              sx={{
-                textAlign: { xs: "center", md: "center" },
-              }}
-            >
-              <h1
-                style={{
-                  fontSize: "30px",
+              <Grid
+                item
+                xs={12}
+                sm={12}
+                md={12}
+                sx={{
+                  textAlign: { xs: "center", md: "left" },
+                  padding: { md: "0 50px 0 50px", xs: "0 10px 0 10px" },
                   color: "black",
                 }}
               >
-                {data?.seller_purchase}
-              </h1>
+                {data?.seller_description}
+              </Grid>
+              <Grid item xs={12} sm={6} md={6} sx={{}}></Grid>
             </Grid>
+
             <Grid
-              item
-              xs={12}
-              sm={12}
-              md={12}
+              container
               sx={{
-                textAlign: { xs: "center", md: "left" },
-                padding: { md: "0 50px 0 50px", xs: "0 10px 0 10px" },
-                color: "black",
+                backgroundImage:
+                  "url('https://m.media-amazon.com/images/G/01/sell/images/illustration/pf-wave-horizon-1.svg')",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                height: { xs: 700, md: 420 },
+                width: { xs: "auto", md: "100%" },
               }}
             >
-              {data?.seller_description}
-            </Grid>
-            <Grid item xs={12} sm={6} md={6} sx={{}}></Grid>
-          </Grid>
-
-          <Grid
-            container
-            sx={{
-              backgroundImage:
-                "url('https://m.media-amazon.com/images/G/01/sell/images/illustration/pf-wave-horizon-1.svg')",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-              height: { xs: 700, md: 420 },
-              width: { xs: "auto", md: "100%" },
-            }}
-          >
-            <Grid
-              item
-              xs={12}
-              sm={6}
-              md={6}
-              sx={{
-                paddingLeft: { xs: 0, md: "50px" },
-                textAlign: { xs: "center", md: "left" },
-                paddingTop: "50px",
-              }}
-            >
-              <h1 className="vendor-main-heading">{data?.seller_footer_title}</h1>
-              <p className="vendor-main-para1">
-                {data?.seller_footer_sub_title}
-              </p>
-
-              <button
-                style={{
-                  backgroundColor: "darkblue",
-                  color: "white",
-                  height: "50px",
-                  width: "150px",
-                  border: "none",
-                  borderRadius: "20px",
-                  cursor: "pointer",
-                  fontSize: "20px",
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                md={6}
+                sx={{
+                  paddingLeft: { xs: 0, md: "50px" },
+                  textAlign: { xs: "center", md: "left" },
+                  paddingTop: "50px",
                 }}
               >
-                Start Selling
-              </button>
-              <p className="vendor-main-para2">
-                {data?.seller_footer_heading}
-              </p>
-            </Grid>
-            <Grid item xs={12} sm={6} md={6} sx={{}}
-              className="vendor-secondimgsec">
-              <img
-                src={data?.footer_seller_image}
-                width="75%"
-                height="75%"
-                className="vendor-secondimg"
-              />
-            </Grid>
-          </Grid>
+                <h1 className="vendor-main-heading">
+                  {data?.seller_footer_title}
+                </h1>
+                <p className="vendor-main-para1">
+                  {data?.seller_footer_sub_title}
+                </p>
 
-        </>)}
-  </>);
+                <button
+                  style={{
+                    backgroundColor: "darkblue",
+                    color: "white",
+                    height: "50px",
+                    width: "150px",
+                    border: "none",
+                    borderRadius: "20px",
+                    cursor: "pointer",
+                    fontSize: "20px",
+                  }}
+                >
+                  Start Selling
+                </button>
+                <p className="vendor-main-para2">
+                  {data?.seller_footer_heading}
+                </p>
+              </Grid>
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                md={6}
+                sx={{}}
+                className="vendor-secondimgsec"
+              >
+                <img
+                  src={data?.footer_seller_image}
+                  width="75%"
+                  height="75%"
+                  className="vendor-secondimg"
+                />
+              </Grid>
+            </Grid>
+          </>
+        )}
+      </>
+    );
   };
 
   const { t } = useTranslation();
