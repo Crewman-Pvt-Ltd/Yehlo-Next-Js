@@ -61,7 +61,7 @@ const BestReviewedItems = (props) => {
     ...new Set(getCategoryIds().map((item) => JSON.stringify(item))),
   ].map(JSON.parse);
   useEffect(() => {
-    if (bestReviewedItems.products.length === 0) {
+    if (bestReviewedItems?.products?.length === 0) {
       refetch();
     }
   }, [bestReviewedItems]);
@@ -343,7 +343,7 @@ const BestReviewedItems = (props) => {
             </CustomStackFullWidth>
           ) : (
             <>
-              {bestReviewedItems && filteredData.length > 0 && (
+              {bestReviewedItems && filteredData?.length > 0 && (
                 <HomeComponentsWrapper sx={{ paddingTop: "1rem" }}>
                   <CustomStackFullWidth
                     direction="row"
