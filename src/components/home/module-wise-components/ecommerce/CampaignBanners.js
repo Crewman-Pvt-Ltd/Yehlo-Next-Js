@@ -141,6 +141,7 @@ const CampaignBanners = (props) => {
 		slidesToScroll: 1,
 		autoplay: true,
 		speed: 800,
+		adaptiveHeight: true,
 		autoplaySpeed: 4000,
 		cssEase: "linear",
 		responsive: [
