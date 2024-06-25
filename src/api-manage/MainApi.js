@@ -8,7 +8,6 @@ MainApi.interceptors.request.use(function (config) {
   let token = undefined;
   let language = undefined;
   let currentLocation = '259, Block A, Industrial Area, Sector 62, Noida, Uttar Pradesh 201307, India';
-  let software_id = 33571750;
   let hostname = process.env.NEXT_CLIENT_HOST_URL;
   let moduleid = undefined;
 
@@ -26,7 +25,6 @@ MainApi.interceptors.request.use(function (config) {
   if (token) config.headers.authorization = `Bearer ${token}`;
   if (language) config.headers["X-localization"] = 'default';
   if (hostname) config.headers["origin"] = hostname;
-  config.headers["X-software-id"] = software_id;
   config.headers["Accept"] = 'application/json'
   return config;
 });

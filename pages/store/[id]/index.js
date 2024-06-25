@@ -97,7 +97,6 @@ export const getServerSideProps = async (context) => {
     {
       method: "GET",
       headers: {
-        "X-software-id": 33571750,
         "X-server": "server",
         origin: process.env.NEXT_CLIENT_HOST_URL,
         "X-localization": language,
@@ -112,7 +111,6 @@ export const getServerSideProps = async (context) => {
       method: "GET",
       headers: {
         moduleId: moduleId,
-        "X-software-id": 33571750,
         "X-server": "server",
         origin: process.env.NEXT_CLIENT_HOST_URL,
         "X-localization": language,
@@ -124,7 +122,6 @@ export const getServerSideProps = async (context) => {
     {
       method: "GET",
       headers: {
-        "X-software-id": 33571750,
         "X-server": "server",
         origin: process.env.NEXT_CLIENT_HOST_URL,
         "X-localization": language,

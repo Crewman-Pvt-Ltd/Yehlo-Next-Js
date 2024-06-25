@@ -22,6 +22,7 @@ import Subtitle1 from "../typographies/Subtitle1";
 import deliveryMan from "./assets/delivery-man.svg";
 import seller from "./assets/seller.svg";
 import CustomButtonComponent from "./app-download-section/CustomButtonComponent";
+import Link from "@mui/material/Link";
 
 const ImageContainer = styled(Box)(({ theme }) => ({
   position: "relative",
@@ -131,22 +132,26 @@ const Card = ({
           </Stack>
         </Grid>
         <Grid item xs={3} sm={3} md={2.5} align="end">
-        <a 
+        <Link 
         href={redirectLink} 
-        style={{
+        sx={{
           backgroundColor: '#101d75',
           color: '#ffffff',
           '&:hover': {
             backgroundColor: '#0e195e',
           },
-          padding: "15px 35px",
+          padding: {xs : "10px 15px", md: "15px 35px"},
           borderRadius: "8px",
-          fontSize: "15px",
+          fontSize: {xs: '10px', md: '14px'},
+          textDecoration: "none"
         }}
-        variant="contained"
+        style={{
+          textDecoration : "none"
+        }}
+        variant="button"
       >
         Explore
-      </a>
+      </Link>
           
         </Grid>
       </Grid>

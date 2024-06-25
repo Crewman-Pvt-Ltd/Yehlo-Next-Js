@@ -24,6 +24,8 @@ import AppLinks from "../../src/components/footer/footer-middle/AppLinks";
 import Slider from "react-slick";
 import { SliderCustom } from "../../src/styled-components/CustomStyles.style";
 import useGetVendorLandingPage from "../../src/api-manage/hooks/react-query/useGetVendorLandingPage";
+import CustomButtonComponent from "../../src/components/landing-page/app-download-section/CustomButtonComponent";
+
 const Index = ({ configData, landingPageData }) => {
   const boxxstyle = () => ({
     margin: "0 10px",
@@ -35,8 +37,6 @@ const Index = ({ configData, landingPageData }) => {
   useEffect(() => {
     refetch();
   }, []);
-
-  console.log("Seller Landing", data);
 
   const OuterContainer = () => {
     return (
@@ -72,27 +72,27 @@ const Index = ({ configData, landingPageData }) => {
                 <p className="vendor-main-para2">{data?.home_heading}</p>
                 
                   <Grid item xs={3} sm={3} md={2.5} align="end">
-                    {(data?.download_business_app_links
-                      ?.seller_playstore_url_status === "1" ||
-                      data?.download_business_app_links
-                        ?.seller_appstore_url_status === "1") && (
+                    {(data?.download_user_app_links
+                      ?.playstore_url_status === "1" ||
+                      data?.download_user_app_links
+                        ?.apple_store_url_status === "1") && (
                       <CustomButtonComponent
                         t={t}
                         landingPageData={data}
                         title={t("Register")}
                         urls={{
                           playStoreStatus:
-                            data?.download_business_app_links
-                              ?.seller_playstore_url_status,
+                            data?.download_user_app_links
+                              ?.playstore_url_status,
                           playStoreUrl:
-                            data?.download_business_app_links
-                              ?.seller_playstore_url,
+                            data?.download_user_app_links
+                              ?.playstore_url,
                           appStoreStatus:
-                            data?.download_business_app_links
-                              ?.seller_appstore_url_status,
+                            data?.download_user_app_links
+                              ?.apple_store_url_status,
                           appStoreUrl:
-                            data?.download_business_app_links
-                              ?.seller_appstore_url,
+                            data?.download_user_app_links
+                              ?.apple_store_url,
                         }}
                       />
                     )}
