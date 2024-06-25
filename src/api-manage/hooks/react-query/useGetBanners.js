@@ -5,6 +5,7 @@ import { banners } from "../../ApiRoutes";
 
 const getBanners = async () => {
   const { data } = await MainApi.get(banners);
+  console.log("Banners Data", data);
   return data;
 };
 

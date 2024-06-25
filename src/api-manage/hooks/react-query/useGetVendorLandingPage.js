@@ -7,7 +7,6 @@ import {
 import MainApi from "../../MainApi";
 const getVendorLandingPage = async () => {
   const { data } = await MainApi.get(`${vendor_landing}`);
-  console.log(vendor_landing, data);
   return data;
 };
 
