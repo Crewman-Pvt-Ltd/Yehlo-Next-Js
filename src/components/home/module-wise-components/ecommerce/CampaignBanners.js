@@ -8,7 +8,7 @@ import useGetBanners from "../../../../api-manage/hooks/react-query/useGetBanner
 import { getCurrentModuleType } from "../../../../helper-functions/getCurrentModuleType";
 import { getModuleId } from "../../../../helper-functions/getModuleId";
 import { ModuleTypes } from "../../../../helper-functions/moduleTypes";
-import { setBanners } from "../../../../redux/slices/storedData";
+import { setBanners, setResetStoredData } from "../../../../redux/slices/storedData";
 import { CustomStackFullWidth } from "../../../../styled-components/CustomStyles.style";
 import CustomImageContainer from "../../../CustomImageContainer";
 import FoodDetailModal from "../../../food-details/foodDetail-modal/FoodDetailModal";
@@ -35,7 +35,7 @@ const CampaignBanners = (props) => {
 	const router = useRouter();
 	const { selectedModule } = useSelector((state) => state.utilsData);
 	const { banners } = useSelector((state) => state.storedData);
-	const { data, refetch: refetchBannerData, isFetching } = useGetBanners();
+	const { data, refetch: refetchBannerData, isFetching } = props.is_top == "true" ? useGetBanners("top-banners") : useGetBanners("banners");
 	const [bannersData, setBannersData] = useState([]);
 	const [foodBanner, setFoodBanner] = useState();
 	const [openModal, setOpenModal] = useState(false);
@@ -49,21 +49,22 @@ const CampaignBanners = (props) => {
 	}, [banners]);
 	useEffect(() => {
 	  if (data?.campaigns) {
-		dispatch(setBanners(data));
+		const mergedData = handleBannersData(data);
+		setBannersData(mergedData);  
 	  }
 	}, [data]);
-	useEffect(() => {
+/* 	useEffect(() => {
 	  if (banners.banners.length > 0) {
 		handleBannersData();
 	  }
-	}, [banners]);
+	}, [banners]); */
   
-	const handleBannersData = () => {
-	  let mergedBannerData = [];
-	  if (banners?.banners?.length > 0) {
-		banners?.banners?.forEach((item) => mergedBannerData.push(item));
-	  }
-	  setBannersData(mergedBannerData);
+	const handleBannersData = (data) => {
+		let mergedBannerData = [];
+		if (data?.banners?.length > 0) {
+		  data.banners.forEach((item) => mergedBannerData.push(item));
+		}
+		return mergedBannerData;
 	};
 	const handleBannerClick = (banner) => {
 	  if (banner?.type === "default") {

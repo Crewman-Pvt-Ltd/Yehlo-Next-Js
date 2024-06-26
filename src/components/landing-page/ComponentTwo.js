@@ -10,7 +10,7 @@ import React from "react";
 import CustomContainer from "../container";
 import DownloadApps from "./DownloadApps";
 import SolutionSvg from "./SolutionSvg";
-
+import ComponentOneImage from "./ComponentOneImage";
 export const ComponentTwoContainer = styled(Box)(
   ({ theme, paddingTop, paddingBottom, background }) => ({
     marginTop: ".6rem",
@@ -53,7 +53,7 @@ const ComponentTwo = ({ configData, landingPageData }) => {
                     height: { xs: "150px", md: "380px" },
                   }}
                 >
-                  <SolutionSvg />
+                   <ComponentOneImage image={`${landingPageData?.base_urls?.promotional_banner_url}/${landingPageData?.banner_image_download}`} isSmall={true}/>
                 </Box>
               </Grid>
               <Grid

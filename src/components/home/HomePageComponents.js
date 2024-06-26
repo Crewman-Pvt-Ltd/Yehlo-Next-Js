@@ -141,7 +141,7 @@ const HomePageComponents = ({ configData }) => {
               name={router.query.name}
             />
           </CustomStackFullWidth> */}
-               <CampaignBanners />
+               <CampaignBanners is_top="true"/>
         </CustomContainer>
         {router.query.data_type ? (
           <SearchResult

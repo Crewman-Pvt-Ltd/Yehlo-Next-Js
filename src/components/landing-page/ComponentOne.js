@@ -18,7 +18,7 @@ import { IsSmallScreen } from "../../utils/CommonValues";
 import CustomContainer from "../container";
 import DollarSignHighlighter from "../DollarSignHighlighter";
 import DeliveryImage from "./svg-components/deliveryImage";
-
+import ComponentOneImage from "./ComponentOneImage";
 export const CustomButton = styled(Button)(({ theme, boxshadow }) => ({
   backgroundColor: theme.palette.primary.main,
 //   width: "150px",
@@ -39,6 +39,7 @@ export const CustomButton = styled(Button)(({ theme, boxshadow }) => ({
   },
 }));
 const ComponentOne = ({ landingPageData, configData, handleOrderNow }) => {
+  // console.log(landingPageData?.base_urls?.promotional_banner_url/landingPageData?.banner_image_company)
   const theme = useTheme();
   const isSmall = useMediaQuery(theme.breakpoints.down("sm"));
   const router = useRouter();
@@ -135,7 +136,7 @@ const ComponentOne = ({ landingPageData, configData, handleOrderNow }) => {
               // 	},
               // }}
             >
-              <DeliveryImage />
+              <ComponentOneImage image={`${landingPageData?.base_urls?.promotional_banner_url}/${landingPageData?.banner_image_company}`} isSmall={true}/>
             </Grid>
           </Grid>
         </CustomBoxFullWidth>

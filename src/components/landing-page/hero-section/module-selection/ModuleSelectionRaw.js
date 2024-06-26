@@ -72,7 +72,7 @@ const Card = ({ item, configData, isSelected, handleClick }) => {
 			>
 				{item?.module_name}
 			</Typography>
-			<CustomStackFullWidth
+			{/* <CustomStackFullWidth
 				direction="column"
 				alignItems="center"
 				spacing={1}
@@ -88,9 +88,9 @@ const Card = ({ item, configData, isSelected, handleClick }) => {
 				
 				{item?.module_type !== "parcel" && (
 					<Stack>
-						{/* <Typography variant="body2" color="text.secondary" className="text">
+						<Typography variant="body2" color="text.secondary" className="text">
 							{t("Over")}
-						</Typography> */}
+						</Typography>
 						{item?.module_type === "ecommerce" ? (
 							<Typography variant="body2" color="text.secondary" className="text">
 								{item?.items_count > 2
@@ -109,7 +109,7 @@ const Card = ({ item, configData, isSelected, handleClick }) => {
 						)}
 					</Stack>
 				)}
-			</CustomStackFullWidth>
+			</CustomStackFullWidth> */}
 		</CardWrapper>
 	);
 };
@@ -133,8 +133,11 @@ const ModuleSelectionRaw = (props) => {
 		  alignItems="center"
 		  flexWrap="wrap"
 		  gap="15px"
-		  mt="30px"
-		  sx={{ justifyContent: { xs: "center", sm: "left", md: "left" } }}
+		//   mt="30px"
+		  sx={{ justifyContent: { xs: "center", sm: "left", md: "left" }, 
+		marginTop: {xs: "0px", md: "30px"}
+		
+		}}
 		>
 		  {modules?.length > 0 &&
 			modules.map((item, index) => {

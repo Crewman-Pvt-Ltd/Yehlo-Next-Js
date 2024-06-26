@@ -22,6 +22,8 @@ import MapModal from "../Map/MapModal";
 
 const LandingPage = ({ configData, landingPageData }) => {
 
+  console.log("Landing Page", landingPageData);
+
 
   const theme = useTheme();
   const isXSmall = useMediaQuery(theme.breakpoints.down(600));
