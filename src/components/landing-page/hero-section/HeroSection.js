@@ -57,11 +57,7 @@ const HeroSection = ({ configData, landingPageData, handleOrderNow }) => {
     if (currentLocation) {
       return <ModuleSelectionRaw />;
     } else {
-      return (
-        <CustomStackFullWidth mt="15px">
-          {/* <HeroLocationForm /> */}
-        </CustomStackFullWidth>
-      );
+      return <CustomStackFullWidth mt="15px"></CustomStackFullWidth>;
     }
   };
 
@@ -71,8 +67,8 @@ const HeroSection = ({ configData, landingPageData, handleOrderNow }) => {
         <CustomBoxFullWidth
           sx={{
             backgroundImage: `url(${landingPageData?.base_urls?.header_banner_url}/${landingPageData?.header_banner})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
             marginTop: calculateTopMagin(),
             backgroundPosition: "center",
             borderRadius: "20px",
@@ -81,19 +77,9 @@ const HeroSection = ({ configData, landingPageData, handleOrderNow }) => {
             ".shape img": {
               transition: "all ease-in 1s",
             },
-            backgroundPosition:"center"
+            backgroundPosition: "center",
           }}
         >
-          {/* <Box sx={{ position: "absolute" }} className="shape">
-            <CustomImageContainer
-              src={iconicBg.src}
-              alt={t("Background")}
-              height="100%"
-              width="100%"
-              borderRadius="20px"
-              objectFit="cover"
-            />
-          </Box> */}
           <Grid container>
             <Grid
               item
@@ -109,68 +95,37 @@ const HeroSection = ({ configData, landingPageData, handleOrderNow }) => {
                 />
               </NoSsr>
             </Grid>
-            {/* <Grid item xs={4} md={5} align="right">
-            <CustomStackFullWidth height="100%"
-              alignItems="flex-start"
-              justifyContent="flex-end" paddingTop={{ xs: "2rem", md: "3rem" }} >
-              <Box
-                sx={{
-                  height: { xs: "125px", sm: "350px", md: "420px" },
-                  width: { xs: "78px", sm: "210px", md: "240px" },
-                  borderRadius: isXSmall ? "5px 5px 0 0" : "16px 16px 0 0",
-                  position: "relative",
-                  zIndex: "99",
-                  backgroundImage: `url(${landingPageData?.base_urls?.header_banner_url}/${landingPageData?.header_banner})`,
-                  backgroundSize: 'cover',
-                  backgroundRepeat: 'no-repeat',
-                  marginInline: "auto",
-                  padding: "0"
-                }}
-              >{landingPageData?.header_banner &&
-                <Stack margin={isXSmall ? "-5px 0 0 -3px" : "-5px 0 0 -3px"}>
-                  <MobileFrame
-                    width={isXSmall ? "85" : (isSmall ? "215" : "246")}
-                    height={isXSmall ? "148" : (isSmall ? "370" : "427")}
-                  />
-                </Stack>
-                }
-              </Box>
-              <Box
-                sx={{
-                  position: "absolute",
-                  width: { xs: "50px", sm: "120px", md: "210px" },
-                  height: { xs: "50px", sm: "110px", md: "190px" },
-                  bottom: isXSmall ? 5 : 16,
-                  right: { xs: 7, sm: 10, md: 30 },
-                  zIndex: 100,
-                }}
-              >
-                <CustomImageContainer
-                  src={`${landingPageData?.base_urls?.header_icon_url}/${landingPageData?.header_icon}`}
-                  alt={t("icon")}
-                  height="100%"
-                  width="100%"
-                  objectFit="cover"
-                />
-              </Box>
-            </CustomStackFullWidth>
-          </Grid> */}
           </Grid>
         </CustomBoxFullWidth>
-        <Grid container>
-          {!isXSmall && getSearchOrModulesBySelectedModules()}
-        </Grid>
-        {isXSmall && (
+
+        {!isXSmall && (
           <>
-            {currentLocation ? (
-              <DynamicModuleSelection isSmall />
-            ) : (
-              <CustomStackFullWidth mt="10px">
-                {/* <HeroLocationForm /> */}
-              </CustomStackFullWidth>
-            )}
+            <Grid container>
+            <Grid item  md={12} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: "25px" }}>
+        <h1>Shop Smart, Shop Local</h1>
+      </Grid>
+              <Grid item> {getSearchOrModulesBySelectedModules() }</Grid>
+            </Grid>
           </>
         )}
+
+{isXSmall && (
+  <>
+    {currentLocation ? (
+      <>
+        <Grid item xs={12} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize:"11px"}}>
+          <h1>Shop Smart, Shop Local</h1>
+        </Grid>
+        <Grid item>
+          <DynamicModuleSelection isSmall />
+        </Grid>
+      </>
+    ) : (
+      <CustomStackFullWidth mt="10px" />
+    )}
+  </>
+)}
+
       </CustomContainer>
     </>
   );

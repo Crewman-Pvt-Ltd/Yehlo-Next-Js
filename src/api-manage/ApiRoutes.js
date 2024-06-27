@@ -116,5 +116,8 @@ export const get_search_page_data = "api/v1/get-combined-data";
 export const brand_list = "api/v1/brand";
 export const brand_products = "api/v1/brand/items/";
 export const vendor_landing = 'api/v1/admin-landing-page';
-export const delivery_landing = 'api/v1/delivery-partner';
+export const delivery_landing = 'api/v1/deliveryman-landing-page';
 export const nearest_store_time = 'api/v1/stores/get-stores-nearby/all';
+export const top_banners = 'api/v1/top-banner';
+
+

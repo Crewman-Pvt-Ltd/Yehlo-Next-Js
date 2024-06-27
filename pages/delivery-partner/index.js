@@ -29,7 +29,7 @@ import { Grid } from "@mui/material";
 import AppLinks from "../../src/components/footer/footer-middle/AppLinks";
 import Slider from "react-slick";
 import { SliderCustom } from "../../src/styled-components/CustomStyles.style";
-import useGetVendorLandingPage from "../../src/api-manage/hooks/react-query/useGetVendorLandingPage";
+import useGetDeliverymanLandingPage from "../../src/api-manage/hooks/react-query/useGetDeliverymanLandingPage";
 const Index = ({ configData, landingPageData }) => {
   const boxxstyle = () => ({
     margin: "0 10px",
@@ -37,7 +37,7 @@ const Index = ({ configData, landingPageData }) => {
     height: "200px",
   });
 
-  const { data, refetch, isFetching } = useGetVendorLandingPage();
+  const { data, refetch, isFetching } = useGetDeliverymanLandingPage();
   useEffect(() => {
     refetch();
   }, []);
@@ -64,6 +64,8 @@ const Index = ({ configData, landingPageData }) => {
     };
     return (
       <>
+       {data && (
+      <>
         <Grid
           container
           sx={{
@@ -84,7 +86,7 @@ const Index = ({ configData, landingPageData }) => {
             className="deliverypartner-firstimgsec"
           >
             <img
-              src="https://yehloapp.com/static/ezgif.png"
+              src={data?.delivery_head_image}
               height="500px"
               width="80%"
               className="deliverypartner-firstimg"
@@ -101,91 +103,17 @@ const Index = ({ configData, landingPageData }) => {
             }}
           >
             <h1 className="deliverypartner-main-para1">
-              Earn upto ₹ 50,000 with Yehlo Delivery. JOIN NOW!
+            {data?.delivery_heading}
             </h1>
             <p className="deliverypartner-main-para2">
-              JOINING BONUS of upto ₹ 4,000 | Upto ₹ 10 lacs medical insurance
+            {data?.delivery_sub_heading}
             </p>
-            {/* <form
-              style={{
-                backgroundColor: "white",
-                width: "60%",
-                height: "350px",
-                borderRadius: "10px",
-                padding: "20px 30px 20px 30px",
-                marginTop: 200,
-                marginLeft:100,
-              }}
-            >
-              <h1>Become a Yehlo rider</h1>
-              <p>To deliver orders for Blinkit, please fill this form</p>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "10px",
-                }}
-              >
-                <div style={{ display: "flex", gap: "10px" }}>
-                  <input
-                    type="text"
-                    placeholder="Name"
-                    style={{
-                      flex: "1",
-                      padding: "15px",
-                      borderRadius: "5px",
-                      backgroundColor: "#80808026",
-                      border: "none",
-                      outline: "none",
-                    }}
-                  />
-                  <input
-                    type="tel"
-                    placeholder="Phone Number"
-                    style={{
-                      flex: "1",
-                      padding: "15px",
-                      borderRadius: "5px",
-                      border: "none",
-                      backgroundColor: "#80808026",
-                      outline: "none",
-                    }}
-                  />
-                </div>
-                <input
-                  type="text"
-                  placeholder="City"
-                  style={{
-                    width: "100%",
-                    padding: "15px",
-                    borderRadius: "5px",
-                    border: "none",
-                    backgroundColor: "#80808026",
-                    outline: "none",
-                  }}
-                />
-                <input
-                  type="submit"
-                  value="Join to earn"
-                  style={{
-                    width: "30%",
-                    padding: "15px",
-                    borderRadius: "10px",
-                    border: "none",
-                    backgroundColor: "#007bff",
-                    color: "white",
-                    cursor: "pointer",
-                    margin: "auto",
-                    display: "block",
-                    fontSize: "15px",
-                    backgroundColor: "#010d75",
-                  }}
-                />
-              </div>
-            </form> */}
+           
           </Grid>
         </Grid>
 
+        {data?.delivery_promotion?.main_heading != null &&
+              data?.delivery_promotion?.promotional_data?.length > 0 && (
         <Grid
           container
           sx={{
@@ -209,7 +137,7 @@ const Index = ({ configData, landingPageData }) => {
                 color: "black",
               }}
             >
-              Join India’s most loved quick commerce platform
+                {data?.delivery_promotion?.main_heading}
             </h1>
           </Grid>
           <Grid item xs={12} sm={12} md={12} sx={{}}>
@@ -220,6 +148,8 @@ const Index = ({ configData, landingPageData }) => {
                 marginTop: "2rem",
               }}
             >
+               {data?.delivery_promotion?.promotional_data?.length > 0 &&
+                        data?.delivery_promotion?.promotional_data?.map((item, index) => (
               <Grid
                 item
                 xs={12}
@@ -241,7 +171,7 @@ const Index = ({ configData, landingPageData }) => {
                   }}
                 >
                   <img
-                    src="https://blinkit.com/careers/sites/default/files/2021-12/deliver-icon-earnings.png"
+                    src={item?.image}
                     height="90px"
                     width="40%"
                   />
@@ -252,146 +182,23 @@ const Index = ({ configData, landingPageData }) => {
                       fontWeight: "bold",
                     }}
                   >
-                    Monthly earnings
+                    {item?.title}
                   </p>
                   <p style={{ color: "black", fontSize: "16px" }}>
-                    Earn upto ₹50,000 with incentives and other benefits
+                  {item?.sub_title}
                   </p>
                 </Box>
               </Grid>
-              <Grid
-                item
-                xs={12}
-                sm={6}
-                md={3}
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  marginTop: { xs: "8px", md: "0" },
-                }}
-              >
-                <Box
-                  sx={{
-                    height: { xs: "300px", md: "280px" },
-                    width: { xs: "85%", md: "90%" },
-                    backgroundColor: "white",
-                    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-                    padding: { xs: "20px 30px", md: "20px 30px" },
-                    borderRadius: 1.2,
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: { xs: "center", md: "center" },
-                  }}
-                >
-                  <img
-                    src="https://blinkit.com/careers/sites/default/files/2021-12/deliver-icon-earnings.png"
-                    height="90px"
-                    width="40%"
-                  />
-                  <p
-                    style={{
-                      color: "black",
-                      fontSize: "18px",
-                      fontWeight: "bold",
-                    }}
-                  >
-                   Weekly payout
-                  </p>
-                  <p style={{ color: "black", fontSize: "16px" }}>
-                  Payment made every 7 days
-                  </p>
-                </Box>
-              </Grid>
-              <Grid
-                item
-                xs={12}
-                sm={6}
-                md={3}
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  marginTop: { xs: "8px", md: "0" },
-                }}
-              >
-                <Box
-                  sx={{
-                    height: { xs: "300px", md: "280px" },
-                    width: { xs: "85%", md: "90%" },
-                    backgroundColor: "white",
-                    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-                    padding: { xs: "20px 30px", md: "20px 30px" },
-                    borderRadius: 1.2,
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: { xs: "center", md: "center" },
-                  }}
-                >
-                  <img
-                    src="https://blinkit.com/careers/sites/default/files/2021-12/deliver-icon-earnings.png"
-                    height="90px"
-                    width="40%"
-                  />
-                  <p
-                    style={{
-                      color: "black",
-                      fontSize: "18px",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    Flexible schedule
-                  </p>
-                  <p style={{ color: "black", fontSize: "16px" }}>
-                  Be your own boss; choose your work hours (4, 8 or 10 hours)
-                  </p>
-                </Box>
-              </Grid>
-              <Grid
-                item
-                xs={12}
-                sm={6}
-                md={3}
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  marginTop: { xs: "8px", md: "0" },
-                }}
-              >
-                <Box
-                  sx={{
-                    height: { xs: "300px", md: "280px" },
-                    width: { xs: "85%", md: "90%" },
-                    backgroundColor: "white",
-                    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-                    padding: { xs: "20px 30px", md: "20px 30px" },
-                    borderRadius: 1.2,
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: { xs: "center", md: "center" },
-                  }}
-                >
-                  <img
-                    src="https://blinkit.com/careers/sites/default/files/2021-12/deliver-icon-earnings.png"
-                    height="90px"
-                    width="40%"
-                  />
-                  <p
-                    style={{
-                      color: "black",
-                      fontSize: "18px",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    Insurance coverage
-                  </p>
-                  <p style={{ color: "black", fontSize: "16px" }}>
-                  Deliver safe with our accidental and medical insurance
-                  </p>
-                </Box>
-              </Grid>
+            ))}
             </Grid>
           </Grid>
         </Grid>
+              )}
 
+
+             
+        {data?.delivery_faqs != null &&
+              data?.delivery_faqs?.length > 0 && ( 
         <Grid
           container
           sx={{
@@ -418,6 +225,8 @@ const Index = ({ configData, landingPageData }) => {
               Frequently asked questions
             </h1>
           </Grid>
+          {data?.delivery_faqs.length > 0 &&
+                        data?.delivery_faqs.map((faq, index) => (
           <Accordion
             sx={{
               width: { xs: "100%", md: "60%" },
@@ -436,7 +245,7 @@ const Index = ({ configData, landingPageData }) => {
                   textAlign: "left",
                 }}
               >
-                Who are Yehlo delivery partners?
+                {faq?.question}
               </div>
             </AccordionSummary>
             <AccordionDetails>
@@ -446,240 +255,17 @@ const Index = ({ configData, landingPageData }) => {
                   color: "black",
                   textAlign: "left",
                 }}
+
+                dangerouslySetInnerHTML={{ __html: `${faq?.answer}` }}
               >
-                They are independent contractors who partner with Yehlo to pick
-                up grocery items ordered by consumers on the Yehlo app and
-                deliver those items to the convenience of the consumers
-                doorstep. They use their own 2-wheelers to make these deliveries
-                and pick their own schedule
+                {faq?.answer}
+                
               </div>
             </AccordionDetails>
           </Accordion>
-          <Accordion
-            sx={{
-              width: { xs: "100%", md: "60%" },
-            }}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1-content"
-              id="panel1-header"
-            >
-              <div
-                style={{
-                  fontSize: "19px",
-                  color: "black",
-                  fontWeight: "bold",
-                  textAlign: "left",
-                }}
-              >
-                What are the work timings?
-              </div>
-            </AccordionSummary>
-            <AccordionDetails>
-              <div
-                style={{
-                  fontSize: "14px",
-                  color: "black",
-                  textAlign: "left",
-                }}
-              >
-                The working hours are flexible and you have an option to choose
-                your own slots. We are happy to share more information at the
-                time of your interview
-              </div>
-            </AccordionDetails>
-          </Accordion>
-          <Accordion
-            sx={{
-              width: { xs: "100%", md: "60%" },
-            }}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1-content"
-              id="panel1-header"
-            >
-              <div
-                style={{
-                  fontSize: "19px",
-                  color: "black",
-                  fontWeight: "bold",
-                  textAlign: "left",
-                }}
-              >
-                When will I start getting the orders to deliver?
-              </div>
-            </AccordionSummary>
-            <AccordionDetails>
-              <div
-                style={{
-                  fontSize: "14px",
-                  color: "black",
-                  textAlign: "left",
-                }}
-              >
-                Once you submit all the required documents and your registration
-                is complete with us, our team will run a background verification
-                check. On successful clearance of the same and completion of the
-                onboarding and delivery training module, you will be eligible to
-                start working and delivering orders with us
-              </div>
-            </AccordionDetails>
-          </Accordion>
-          <Accordion
-            sx={{
-              width: { xs: "100%", md: "60%" },
-            }}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1-content"
-              id="panel1-header"
-            >
-              <div
-                style={{
-                  fontSize: "19px",
-                  color: "black",
-                  fontWeight: "bold",
-                  textAlign: "left",
-                }}
-              >
-                What is the mode of payment?
-              </div>
-            </AccordionSummary>
-            <AccordionDetails>
-              <div
-                style={{
-                  fontSize: "14px",
-                  color: "black",
-                  textAlign: "left",
-                }}
-              >
-                The earnings you make will be transferred into your bank account
-                on a weekly basis
-              </div>
-            </AccordionDetails>
-          </Accordion>
-          <Accordion
-            sx={{
-              width: { xs: "100%", md: "60%" },
-            }}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1-content"
-              id="panel1-header"
-            >
-              <div
-                style={{
-                  fontSize: "19px",
-                  color: "black",
-                  fontWeight: "bold",
-                  textAlign: "left",
-                }}
-              >
-                Do I get any bonuses?
-              </div>
-            </AccordionSummary>
-            <AccordionDetails>
-              <div
-                style={{
-                  fontSize: "14px",
-                  color: "black",
-                  textAlign: "left",
-                }}
-              >
-                Yes, we offer two kinds of bonuses: <br />
-                1- Joining Bonus: once you join us and complete a certain number
-                of order deliveries within a specified time frame, you will
-                receive this bonus.
-                <br />
-                2-Referral Bonus: you can refer your friends to become our
-                delivery partners to avail this bonus
-              </div>
-            </AccordionDetails>
-          </Accordion>
-          <Accordion
-            sx={{
-              width: { xs: "100%", md: "60%" },
-            }}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1-content"
-              id="panel1-header"
-            >
-              <div
-                style={{
-                  fontSize: "19px",
-                  color: "black",
-                  fontWeight: "bold",
-                  textAlign :"left",
-                }}
-              >
-                Are there any specific requirements I need to meet to become a
-                delivery partner with Blinkit?
-              </div>
-            </AccordionSummary>
-            <AccordionDetails>
-              <div
-                style={{
-                  fontSize: "14px",
-                  color: "black",
-                  textAlign :"left",
-                }}
-              >
-                Yes, here’s a quick list for your reference:
-                <br />
-               1- Be 18 years of age or older
-                <br />
-                2-Own a two-wheeler
-                <br />
-               3- Own an Android phone with an active internet connection
-                <br />
-               4- Have a valid driving license, registration certificate (RC),
-                insurance certificate and PAN (Permanent Account Number) card
-                <br />
-               5- Have an address proof and active bank account
-              </div>
-            </AccordionDetails>
-          </Accordion>
-          <Accordion
-            sx={{
-              width: { xs: "100%", md: "60%" },
-            }}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1-content"
-              id="panel1-header"
-            >
-              <div
-                style={{
-                  fontSize: "19px",
-                  color: "black",
-                  fontWeight: "bold",
-                  textAlign: "left",
-                }}
-              >
-                How much can I earn?
-              </div>
-            </AccordionSummary>
-            <AccordionDetails>
-              <div
-                style={{
-                  fontSize: "14px",
-                  color: "black",
-                  textAlign: "left",
-                }}
-              >
-                We follow the ‘per packet model’, wherein, your earnings will be based on every delivery you make.
-                 Plus, you also get additional incentives based on the weight you carry and the distance you cover
-              </div>
-            </AccordionDetails>
-          </Accordion>
+           ))}
         </Grid>
+  )}
 
         <Grid
           container
@@ -705,10 +291,10 @@ const Index = ({ configData, landingPageData }) => {
             }}
           >
             <h1 className="deliverypartner-main-heading">
-              Start your Delivery Partner Journey
+            {data?.delivery_footer_heading}
             </h1>
             <p className="vendor-main-para1">
-              Join our family of 12 Lakh+ Delivery Partner who Deliver on Yehlo
+            {data?.delivery_footer_sub_heading}
             </p>
 
             <button
@@ -726,7 +312,7 @@ const Index = ({ configData, landingPageData }) => {
               Start Deliver
             </button>
             <p className="vendor-main-para2">
-              It takes only 15 minutes to setup your account
+            {data?.sub_head_2}
             </p>
           </Grid>
           <Grid
@@ -738,7 +324,7 @@ const Index = ({ configData, landingPageData }) => {
             className="vendor-secondimgsec"
           >
             <img
-              src="https://yehloapp.com/static/vendor-upper.png"
+              src={data?.delivery_footer_image}
               width="70%"
               height="450px"
               className="vendor-secondimg"
@@ -746,28 +332,9 @@ const Index = ({ configData, landingPageData }) => {
           </Grid>
         </Grid>
 
-        {/* <center>
-
-          <h1 className="deliverypartnertestimonal">Partner testimonials</h1>
-          <Slider {...slidersettings} className="deliverypartnerimgsec">
-            <img
-              className="driverpartnerimg"
-              src="https://blinkit.com/careers/sites/default/files/2023-02/Group%2023335.png"
-            />
-            <img
-              className="driverpartnerimg"
-              src="https://blinkit.com/careers/sites/default/files/2023-02/Group%2023344.png"
-            />
-            <img
-              className="driverpartnerimg"
-              src="https://blinkit.com/careers/sites/default/files/2023-02/Group%2023335.png"
-            />
-            <img
-              className="driverpartnerimg"
-              src="https://blinkit.com/careers/sites/default/files/2023-02/Group%2023344.png"
-            />
-          </Slider>
-        </center> */}
+       
+      </>
+      )}
       </>
     );
   };
