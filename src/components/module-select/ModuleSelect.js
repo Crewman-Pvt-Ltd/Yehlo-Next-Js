@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
 
 const ModuleContainer = styled(Box)(({ theme, selected }) => ({
   zIndex: 1000,
-  padding: "10px",
+  padding: "14px",
   cursor: "pointer",
   width: "100px",
   height: "100px",
@@ -64,7 +64,7 @@ const ModuleContainer = styled(Box)(({ theme, selected }) => ({
   },
   [theme.breakpoints.down("sm")]: {
     width: "90px",
-    height: "75px",
+    height: "85px",
   },
 }));
 
@@ -153,8 +153,11 @@ const ModuleSelect = ({
                         src={`${configData?.base_urls?.module_image_url}/${item?.icon}`}
                         alt="mobile"
                         objectFit="cover"
+                        height="40px"
                       />
-                      <Typography className={classes.singleLineEllipsis}>
+                      <Typography sx={{
+                     padding: {sm: '20px' , md: '0px'},
+                      }} className={classes.singleLineEllipsis}>
                         {item?.module_name}
                       </Typography>
                     </ModuleContainer>

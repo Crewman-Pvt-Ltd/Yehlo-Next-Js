@@ -19,7 +19,7 @@ import { settings } from "./sliderSettings";
 const CardWrapper = styled(Stack)(({ theme, bg_change }) => ({
 	// backgroundColor: theme.palette.background.paper,
 	color: "inherit",
-	minWidth: "60px",
+	minWidth: "78px",
 	minHeight: "70px",
 	padding: "10px",
 	// border: `1px solid ${alpha(theme.palette.neutral[400], 0.2)}`,
@@ -67,8 +67,11 @@ const Card = ({ item, configData, isSelected, handleClick }) => {
 			<Typography
 				sx={{
 					cursor: "pointer",
+					fontSize: { xs: '11px', sm: '20px', md: '20px' },
+					fontWeight: "600",
 				}}
-				variant={IsSmallScreen() ? "h8" : "h6"}
+			
+				
 			>
 				{item?.module_name}
 			</Typography>
@@ -134,7 +137,7 @@ const ModuleSelectionRaw = (props) => {
 		  flexWrap="wrap"
 		  gap="15px"
 		//   mt="30px"
-		  sx={{ justifyContent: { xs: "center", sm: "left", md: "left" }, 
+		  sx={{ justifyContent: { xs: "left", sm: "left", md: "left" }, 
 		marginTop: {xs: "0px", md: "30px"}
 		
 		}}
