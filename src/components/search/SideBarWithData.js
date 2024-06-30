@@ -39,7 +39,7 @@ const SideBarWithData = forwardRef((props, ref) => {
     // Clear the timeout if the component unmounts before it fires
     return () => clearTimeout(timeoutId);
   }, []);
-  console.log({ pageData });
+
 
   const getProductShimmer = () => (
     <Grid item xs={12} sm={4} md={3}>
@@ -121,8 +121,9 @@ const SideBarWithData = forwardRef((props, ref) => {
         <>
           {pageData?.pages?.length > 0 && (
             <>
-              {pageData?.pages?.map((page, index) =>
-                page?.stores?.map((item, index) => (
+              {pageData?.pages?.map((data, index) =>
+                data?.stores?.data?.map((item, index) => (
+                  
                   <Grid key={index} item xs={12} sm={4} md={4}>
                     <StoreCard
                       item={item}
