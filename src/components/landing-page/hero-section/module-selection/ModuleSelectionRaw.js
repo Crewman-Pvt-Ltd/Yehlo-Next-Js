@@ -19,7 +19,7 @@ import { settings } from "./sliderSettings";
 const CardWrapper = styled(Stack)(({ theme, bg_change }) => ({
 	// backgroundColor: theme.palette.background.paper,
 	color: "inherit",
-	minWidth: "76px",
+	minWidth: "70px",
 	minHeight: "70px",
 	padding: "10px",
 	// border: `1px solid ${alpha(theme.palette.neutral[400], 0.2)}`,
